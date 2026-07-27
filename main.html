@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaurya - Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+    :root{
+      --bg: #000000;
+      --sky-500: #0ea5e9;
+      --sky-400: #38bdf8;
+      --sky-300: #7dd3fc;
+      --sky-200: #bae6fd;
+      --voilet-400: #818cf8;
+      --voilet-300: #a78bfa;
+      --ink: #f8fafc;
+      --muted: #94a3b8;
+    }
+
+    *{ box-sizing:border-box;}
+
+
+    html{
+        scroll-behavior: smooth;
+    }
+    html,body{
+        margin:0;
+        padding:0;
+        min-height:100vh;
+        font-family:'Inter', sans-serif;
+        color:var(--ink);
+    }
+
+    body{
+        background-color: #000000;
+        background-image:
+            radial-gradient(700px 320px at 50% -10%, rgba(56,189,248,.10), transparent 70%),
+            linear-gradient(rgba(56,189,248,.09)1px, transparent 1px),
+            linear-gradient(90deg, rgba(56,189,248,.09) 1px, transparent 1px);
+        background-size:
+            100% 100%,
+            120px 120px,
+            120px 120px;
+        background-repeat: no-repeat, repeat, repeat;
+
+    }
+
+    .navbar{
+        position:sticky;
+        top:18px;
+        z-index:100;
+        width:min(1300px,92vw);
+        margin:18px auto 0;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        height:64px;
+        padding:0 28px;
+        border-radius:999px;
+        background: rgba(0,0,0,.25);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        overflow:hidden;
+        box-shadow:
+            0 1px 0 rgba(56,189,248,0.30) inset,
+            0 8px 24px -6px rgba(14,165,233,0.40),
+            0 2px 14px -2px rgba(56,189,248,.30);
+
+        transition: box-shadow .4s ease, background .4s ease;
+    }
+
+    .navbar:hover{
+        background: rgba(0,0,0,.4);
+        box-shadow:
+            0 1px 0 rgba(186,230,253,0.65) inset,
+            0 10px 30px -4px rgba(56,189,248,0.65),
+            0 16px 46px -8px rgba(129,140,248,.55);
+    }
+
+    .stars{
+        position:absolute;
+        inset:0;
+        pointer-events:none;
+
+    }
+    .star{
+        position:absolute;
+        width:2px;
+        height:2px;
+        border-radius:50%;
+        background:var(--sky-200);
+        opacity:.25;
+        animation: twinkle 3.6s ease-in-out infinite;
+    }
+    @keyframes twinkle{
+        0%,100%{ opacity:.1; transform:scale(1); }
+        50%{ opacity:.7; transform:scale(1.6); }
+    }
+
+    
+
+    .logo-wrap{
+        position:relative;
+        display:flex;
+        align-items:center;
+        height:100%;
+        cursor:default;
+    }
+
+    .logo-wrap.displaced .letter{
+        animation:none;
+        color:var(--sky-200);
+        text-shadow:0 0 16px rgba(129,140,248,0.9), 0 0 8px rgba(186,230,253,.9);
+    }
+
+    .logo{
+        letter-spacing: .05em;
+    }
+    
+    .orbit-ring{
+        position:absolute;
+        left:50%;
+        top: 50%;
+        width:100px;
+        height:100px;
+        margin:-50px 0 0 -50px;
+        border:1px dashed rgba(56,189,248,0.35);
+        border-radius:50%;
+        animation: spin 18s linear infinite;
+        pointer-events:none;
+
+    }
+
+    .orbit-ring::before{
+        content:'';
+        position:absolute;
+        top:-3px;
+        left:50%;
+        width:6px;
+        height:6px;
+        margin-left:-3px;
+        border-radius:50%;
+        background:var(--sky-400);
+        box-shadow:0 0 8px 2px rgba(56,189,248,0.5);
+    }
+    @keyframes spin{
+        to{ transform:rotate(360deg); }
+    }
+    .logo{
+        position:relative;
+        display:flex;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight:600;
+        font-size:1.7rem;
+        letter-spacing:.02em;
+    }
+
+    .letter{
+        display:inline-block;
+        color:var(--ink);
+        text-shadow:0 0 12px rgba(56,189,248,0.35);
+        transition: transform .55s cubic-bezier(.34,1.56,.64,1), color .3s ease, text-shadow .3s ease;
+        animation: float 2.6s ease-in-out infinite;
+    }
+    .letter:nth-child(1){ animation-delay:0s; }
+    .letter:nth-child(2){ animation-delay:.08s; }
+    .letter:nth-child(3){ animation-delay:.16s; }
+    .letter:nth-child(4){ animation-delay:.24s; }
+    .letter:nth-child(5){ animation-delay:.32s; }
+    .letter:nth-child(6){ animation-delay:.40s; }
+    .letter:nth-child(7){ animation-delay:.48s; }
+
+    @keyframes float{
+        0%,100%{ transform:translateY(0); }
+        50%{ transform:translateY(-3px); }
+    }
+
+    
+    .nav-links{
+        display:flex;
+        align-items:center;
+        gap:40px;
+
+    }
+    .nav-link{
+        position:relative;
+        color:var(--muted);
+        text-decoration:none;
+        font-size:0.85rem;
+        font-weight:500;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+        padding:6px 2px;
+        transition:color .3s ease;
+    }
+
+    .nav-link::after{
+        content:'';
+        position:absolute;
+        left:0;
+        bottom:0;
+        width:100%;
+        height:1px;
+        background:var(--sky-400);
+        transform:scaleX(0);
+        transform-origin:left;
+        transition:transform .35s ease;
+        box-shadow:0 0 8px rgba(56,189,248,0.8);
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible{
+        color:var(--ink);
+    }
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after{
+        transform:scaleX(1);
+    }
+
+    .nav-link:focus-visible{
+        outline:2px solid var(--sky-400);
+        outline-offset:6px;
+        border-radius:2px;
+    }
+
+    /*name*/
+
+    .hero{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:32px;
+        flex-wrap:wrap;
+        padding:20px 10px 10px;
+        max-width:1200px;
+        margin:0 auto;
+        scroll-margin-top:100px;
+    }
+
+    .hero-content{
+        flex:1 1 420px;
+        min-width:280px;
+    }
+
+    .hero-meta{
+        display:flex;
+        flex-direction:column;
+        gap:2px;
+        margin-bottom:40px;
+        margin-top:20px;
+        color:var(--muted);
+        font-size:.8rem;
+        letter-spacing:.1em;
+        text-transform:uppercase;
+    }
+    .tz-time{
+        color:var(--ink);
+        font-weight:600;
+        letter-spacing:.02em;
+    }
+
+    .hero-name{
+        margin:0;
+        font-family:'Syne', sans-serif;
+        font-weight:700;
+        text-transform:uppercase;
+        line-height:.92;
+        letter-spacing:-0.01em;
+        font-size:clamp(2.6rem, 11vw, 8.5rem);
+        color:var(--ink);
+        text-shadow:0 0 30px rgba(56,189,248,.18)
+    }
+    .hero-line{ display:block; }
+
+    .hero-tagline{
+        margin:40px 0 12px;
+        font-size:.85rem;
+        font-weight:600;
+        letter-spacing:0.22em;
+        text-transform:uppercase;
+        color:var(--sky-300);
+    }
+
+    .hero-intro{
+        margin:0;
+        max-width:550px;
+        color:var(--muted);
+        font-size:1rem;
+        line-height:1.65;
+    }
+
+    .hero-photo-wrap{
+        position:relative;
+        flex:0 0 auto;
+        width:min(400px, 80vw);
+    }
+
+    .hero-photo{
+        width:100%;
+        display:block;
+        filter:drop-shadow(0 0 40px rgba(56,189,248,.28));
+        animation: photo-float 5s ease-in-out infinite;
+    }
+
+    .hero, section{
+        scroll-margin-top: 100px;
+    }
+
+    .social-row{
+        display:flex;
+        gap:14px;
+        margin-top:28px;
+    }
+    
+    .social-icon{
+        width:42px;
+        height:42px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:50%;
+        background: rgba(0,0,0,.4);
+        border:1px solid rgba(56,189,248,0.30);
+        color:var(--muted);
+        text-decoration:none;
+        transition:transform .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .social-icon svg{
+        width:18px;
+        height:18px;
+        fill:currentColor;
+    }
+    .social-icon:hover{
+        color:var(--sky-200);
+        border-color:var(--sky-400);
+        transform:translateY(-3px);
+        box-shadow:0 6px 18px -4px rgba(56,189,248,0.5);
+
+    }
+    .leetcode-icon{
+        font-size:.72rem;
+        font-weight:700;
+        letter-spacing: .02em;
+    }
+    .hero-actions{
+        display:flex;
+        gap:14px;
+        flex-wrap:wrap;
+        margin-top:40px;
+        margin-left: 55px;
+    }
+    .btn{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        padding:13px 24px;
+        border-radius:999px;
+        font-size:.82rem;
+        font-weight:600;
+        letter-spacing:.08rem;
+        text-transform:uppercase;
+        text-decoration:none;
+        transition:transform .3s ease,box-shadow .3s ease, background .3s ease,color .3s ease, border-color .3s ease;
+    }
+    .btn-resume{
+        background:var(--ink);
+        color:#000;
+    }
+    .btn-resume:hover{
+        background:var(--sky-200);
+        transform:translateY(-2px);
+        box-shadow:0 10px 26px -6px rgba(186,230,253,.5);
+    }
+    .btn-contact{
+        background:transparent;
+        color:var(--ink);
+        border:1px solid rgba(56,189,248,0.5);
+    }
+    .btn-contact:hover{
+        background:rgba(56,189,248,.12);
+        border-color:var(--sky-400);
+        transform:translateY(-2px);
+        box-shadow:0 10px 26px -6px rgba(56,189,248,0.5);
+    }
+
+
+    .divider{
+        height:1px;
+        max-width:1440px;
+        margin: 50px auto;
+        background:linear-gradient(90deg, transparent,rgba(56,140,248,.55), rgba(129,140,248,.55), transparent);
+        box-shadow:0 0 14px rgba(56,189,248,.3);
+    }
+
+    .about{
+        position:relative;
+        overflow:hidden;
+        padding:110px 64px 120px;
+        max-width:1200px;
+        margin:0 auto;
+        scroll-margin-top:100px;
+    }
+
+    /*cosmic background*/
+
+    .about-cosmic-bg{
+        position:absolute;
+        inset:0;
+        overflow:hidden;
+        z-index:0;
+        pointer-events:100px;
+    }
+
+    .nebula{
+        position:absolute;
+        border-radius:50%;
+        filter:blur(70px);
+        opacity:.35;
+    }
+
+    .nebula-1{
+        width:340px; height:340px;
+        bottom:-140px; left:-100px;
+        background:radial-gradient(circle, rgba(56,189,248,0.65), transparent 70%);
+        animation:nebula-drift 23s ease-in-out infinite reverse;
+    }
+    .nebula-2{
+        width:340px; height:-80px;
+        bottom:-140px; right:-80;
+        background:radial-gradient(circle, rgba(56,189,248,.55), transparent 70%);
+        animation:nebula-drift 23s ease-in-out infinite reverse;
+    }
+    .nebula-3{
+        width:260px; height:260px;
+        top:45%; right:12%;
+        background:radial-gradient(circle, rgba(244,114,182,.35), transparent 70%);
+        animation:nebula-drift 27s ease-in-out infinite;
+    }
+    @keyframes nebula-drift{
+        0%,100%{ transform:translate(0,0); }
+        50%{ transform:translate(30px,-24px); }
+    }
+
+    .deco-planet{
+        position:Aabsolute;
+        border-radius:50%;
+        opacity:.55;
+        animation:planet-float 7s ease-in-out infinite;
+    }
+    .deco-planet.p1{
+        width:64px; height:64px;
+        top:12%; right:9%;
+        background:radial-gradient(circle at 35% 35%, #a5e6ff, #38bdf8 45%, #075985 100%);
+        box-shadow:0 0 30px rgba(56,189,248,.4);
+    }
+    .deco-planet.p1::after{
+        content:'';
+        position:absolute;
+        top:50%; left:50%;
+        width:150%; height:34%;
+        border:2px solid rgba(186,230,253,.5);
+        border-radius:50%;
+        transform:translate(-50%,-50%) rotate(-15deg);
+    }
+    .deco-planet.p2{
+        width:42px; height:42px;
+        bottom:14%; left:6%;
+        background:radial-gradient(circle at 35% 35%, #fde68a, #f59e0b 45%, #7c2d12 100%);
+        box-shadow:0 0 24px rgba(245,158,11,.35);
+        animation-delay:1.4s;
+    }
+    @keyframes planet-float{
+        0%,100%{ transform:translateY(0); }
+        50%{ transform:translateY(-14px); }
+    }
+
+    .cosmic-star{
+        position:absolute;
+        border-radius:50%;
+        background:#fff;
+        animation:cosmic-twinkle linear infinite;
+    }
+    @keyframes cosmic-twinkle{
+        0%,100%{ opacity:.12; }
+        50%{ opacity:.9; }
+    }
+    .shooting-star{
+        position:absolute;
+        width:3px; height:3px;
+        border-radius:50%;
+        background:#fff;
+        box-shadow:0 0 6px 1px rgba(255,255,2552,.85);
+        opacity:0;
+        animation:shoot linear infinite;
+    }
+    .shooting-star::before{
+        content:'';
+        position:absolute;
+        top:50%; left:0;
+        width:90px; height:1.5px;
+        background:linear-gradient(90deg, rgba(255,255,2552.85), transparent);
+        transform:translateY(-50%);
+    }
+    @keyframes shoot{
+        0%{ transform:rotate(var(--ang,-30deg)) translateX(0); opacity:0; }
+        6%{ opacity:1; }
+        22%{ opacity:1; }
+        32%{ transform:rotate(var(--ang,-30deg)) translateX(-260px); opacity:0%; }
+        100%{ opacity:0; }
+    }
+
+    .about-content{
+        position:relative;
+        z-index:1;
+        max-width:1200px;
+        margin:0 auto;
+    }
+
+
+    .section-eyebrow{
+        display:inline-block;
+        font-size:.8rem;
+        font-weight:600;
+        text-decoration: underline;
+        text-decoration-color:var(--sky-400);
+        text-decoration-thickness: 5px;
+        letter-spacing:.22em;
+        text-transform:uppercase;
+        color:var(--sky-300);
+        margin-bottom:18px;
+    }
+
+    .section-eyebrow .dim{
+        color:var(--muted);
+    }
+
+    .about-heading{
+        font-family: 'Syne', sans-serif;
+        font-weight:700;
+        font-size:clamp(1,8rem, 4vw, 3.1rem);
+        line-height: 1.18;
+        color:var(--ink);
+        margin:0 0 48px;
+        max-width:820px;
+    }
+
+    .about-heading .accent{
+        color:var(--sky-300);
+    }
+
+    .about-subtext{
+        max-width: 600px;
+        margin:0 0 44px;
+        font-size: 1.08rem;
+        line-height:1.7;
+        color:var(--muted);
+    }
+
+
+    .about-grid{
+        display:flex;
+        gap:64px;
+        flex-wrap:wrap;
+        margin-bottom:48px;
+    }
+
+    .about-bio{
+        flex:1 1 380px;
+        color:var(--muted);
+        font-size:1.02rem;
+        line-height:1.85;
+    }
+
+    .about-bio-card{
+        max-width:720px;
+        margin:0 0 48px;
+        padding:28px 32px;
+        border-radius:18px;
+        background:linear-gradient(180deg, #171a20 0%, #0d0f13 100%);
+        border:1px solid rgba(148,163,184,.18);
+        box-shadow:0 14px 30px -18px rgba(0,0,0,.7);
+    }
+
+    .about-bio strong{
+        color:var(--ink);
+        font-weight:600;
+    }
+
+    .about-bio em{
+        display:block;
+        margin-top:16px;
+        color:#64748b;
+        font-size:.85;
+    }
+
+
+    /*stat card*/
+
+    .stats-grid{
+        display:grid;
+        grid-template-columns:repeat(4, 1fr);
+        gap:16px;
+        max-width:900px;
+        margin-bottom:52px;
+    }
+
+    .stat-card{
+        padding:22px 20px;
+        border-radius:14px;
+        background:linear-gradient(160deg, #14171c, #0c0e12);
+        border:1px solid rgba(148,163,184,.18);
+        transition:border-color .3s ease, transform .3s ease;
+    }
+    .stat-card:hover{
+        border-color:rgba(56,189,248,.4);
+        transform:translateY(-3px);
+    }
+    .stat-icon{
+        display:block;
+        font-size:1.5rem;
+        margin-bottom:10px;
+        opacity:.7;
+    }
+
+    .focus-label{
+        display:block;
+        font-size:.75rem;
+        font-weight:600;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        color:var(--muted);
+        margin-bottom:16px;
+    }
+
+
+    .about-stats{
+        flex:0 0 auto;
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+        gap:30px 48px;
+    }
+    .stat{
+        display:flex;
+        flex-direction:column;
+    }
+    .stat-num{
+        font-family:'Syne', sans-serif;
+        font-weight:800;
+        font-size:2.3rem;
+        color:var(--ink);
+        text-shadow:0 0 22px rgba(56,189,248,0.25);
+    }
+    .stat-label{
+        margin-top:4px;
+        font-size:.75rem;
+        letter-spacing: .1em;
+        text-transform:uppercase;
+        color:var(--muted);
+    }
+
+    .about-focus{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    .focus-chip{
+        padding:10px 22px;
+        border-radius:999px;
+        background: rgba(56,189,248,.3);
+        color:var(--sky-200);
+        font-size:.82rem;
+        font-weight:500;
+        letter-spacing:.04em;
+        transition:tranform .3s ease, background ,3s ease, box-shadow ,3s ease;
+    }
+    .focus-chip:hover{
+        background:rgba(56,189,248,.4);
+        transform:translateY(-2px);
+        box-shadow:0 8px 20px -6px rgba(56,189,248,.4);
+    }
+    .hero-photo-wrap{
+        position:relative;
+        flex:0 0 auto;
+        width:min(400px, 74vw);
+    }
+
+    .hero-photo-frame{
+        position:relative;
+        padding:2px;
+        border-radius:19px;
+        background:
+            linear-gradient(145deg, rgba(56,189,248,.10), rgba(129,140,248,.06));
+        border:1px solid rgba(56,189,248,.35);
+        box-shadow:
+            0 0 60px -8ppx rgba(56,189,248,.35),
+            inset 0 0 30px rgba(56,189,248,.08);
+        animation: photo-float 5s ease-in-out infinite;
+    }
+    
+
+    .corner{
+        position:absolute;
+        width:40px;
+        height:40px;
+        border-width: 5px;
+        border-color:var(--sky-300);
+        pointer-events:none;
+    }
+    .corner-tl{ top:0px; left:0px; border-top:2px solid; border-left:2px solid; border-top-left-radius:10px; }
+    .corner-tr{ top:0px; right:0px; border-top:2px solid; border-right:2px solid; border-top-right-radius:10px; }
+    .corner-bl{ bottom:0px; left:0px; border-bottom:2px solid; border-left:2px solid; border-bottom-left-radius:10px; }
+    .corner-br{ bottom:-1px; right:-1px; border-bottom:2px solid; border-right:2px solid; border-bottom-right-radius:10px; }
+
+
+    .emoji-chip{
+        position:absolute;
+        width:46px;
+        height:46px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:1.3rem;
+        border-radius:50%;
+        background: rgba(0,0,0,.45);
+        border:1px solid rgba(56,189,248,.28);
+        backdrop-filter:blur(6px);
+        -webkit-backdrop-filter:blur(6px);
+        box-shadow:0 0 16px rgba(56,189,248,0.28);
+        animation: chip-float 4.5s ease-in-out infinite;
+    }
+    @keyframes chip-float{
+        0%,100%{ transform:translateY(0) rotate(0deg); }
+        50%{ transform:translateY(-10px) rotate(6deg); }
+    }
+
+    /*exp timeline*/
+    .experience{
+        padding:70px 64px 30px;
+        max-width:900px;
+        margin:0 auto;
+        scroll-margin-top:100px;
+    }
+    .timeline{
+        position:relative;
+        padding-left:34px;
+        margin-top:20px;
+    }
+    .timline::before{
+        content:'';
+        position:absolute;
+        left:5px;
+        top:6px;
+        width:2px;
+        background:linear-gradient(180deg, var(--sky-400), var(--voilet-400), transparent);
+    }
+    .timeline-item{
+        position:relative;
+        margin-bottom:26px;
+    }
+    .timeline-item:last-child{ margin-bottom:0; }
+    .timeline-dot{
+        position:absolute;
+        left:-34px;
+        top:22px;
+        width:12px;
+        height:12px;
+        border-radius:50%;
+        background:var(--sky-400);
+        box-shadow:0 0 12px rgba(56,189,248,.7);
+        border:2px solid #000;
+    }
+    .timeline-card{
+        background:linear-gradient(160deg, #171a20, #0d0f13);
+        border:1px solid rgba(56,189,248,.25);
+        border-radius:16px;
+        padding:22px 24px;
+        box-shadow:0 12px 28px -16px rgba(0,0,0,.7);
+    }
+    .timeline-date{
+        display:block;
+        font-family:'JetBrains Mono', monospace;
+        font-size:.75rem;
+        color:var(--sky-300);
+        margin-bottom:8px;
+    }
+    .timeline-role{
+        font-family:'Space Grotesk', sans-serif;
+        font-weight:600;
+        font-size:1.1rem;
+        color:var(--ink);
+        margin:0 0 3px;
+    }
+    .timeline-org{
+        font-size:.85rem;
+        color:var(--sky-200);
+        margin:0 0 12px;
+        font-weight:500;
+    }
+    .timeline-desc{
+        color:var(--muted);
+        font-size:.9rem;
+        line-height:1.65;
+        margin:0;
+    }
+
+    /*tech stack*/
+    .tech-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fill, minmax(104px, 1fr));
+        gap:14px;
+        margin-top:14px;
+    }
+    .tech-card{
+        display:grid;
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+        padding:20px 10px;
+        border-radius:14px;
+        background:linear-gradient(160deg, #171a20, #0d0f13);
+        border:1px solid rgba(56,189,248,.25);
+        box-shadow:0 10px 24px -14px rgba(0,0,0,.7);
+        transition:transform .3s cubic-bezier(.34,1.2,.64,1), border-color .3s ease, box-shadow ,3s ease;
+    }
+    .tech-card:hover{
+        transform:translateY(-4px);
+        border-color:rgba(56,189,248,.55);
+        box-shadow:0 16px 32px -12px rgba(56,189,248,.35);
+    }
+    .tech-icon{
+        width:30px;
+        height:30px;
+    }
+    .tech-label{
+        font-size:.72rem;
+        color:var(--muted);
+        font-weight:500;
+        text-align:center;
+    }
+    .skills-note{
+        margin-top:26px;
+        font-family:'JetBrains Mono', monospace;
+        font-size:.78rem;
+        color:var(--muted);
+    }
+    
+
+    main{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        padding:120px 24px 120px;
+        color:var(--muted);
+    }
+
+    main p{
+        max-width:420px;
+        font-size:0.9rem;
+        line-height:1.6;
+    }
+
+    @media (max-width:640px){
+        .navbar{padding:0 20px; height:64px; }
+        .logo{ font-size:1.3rem; }
+        .nav-links{ gap:22px; }
+        .orbit-ring{ display:none; }
+        .hero{ padding:44px 24px 24px; }
+        .hero-intro{ margin-left:auto; margin-right:auto; }
+        .hero-photo-wrap{ width:min(240px, 60vw); margin:0 auto; }
+        .emoji-chip{ width:36px; height:36px; font-size:1rem; }
+        .social-row{ justify-content:center; }
+        .hero-actions{ justify-content:center; }
+        .about{ padding:60px 24px 80px; }
+        .about-grid{ gap:32px }
+        .about-stats{ margin:0 auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+        .letter, .star, orbit-ring, orbit-ring::before{
+            animation:none !important;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="stars" id="stars"></div>
+
+        <div class="logo-wrap" id="logoWrap">
+            <div class="orbit-ring"></div>
+            <span class="logo" aria-label="Shaurya">
+                <span class="letter">S</span><span class="letter">h</span><span class="letter">a</span><span class="letter">u</span><span class="letter">r</span><span class="letter">y</span><span class="letter">a</span>
+            </span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Projects</a>
+            <a href="#" class="nav-link">Journal</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-meta">
+                <span>Asia/Kolkata</span>
+                <span class="tz-time" id="tzTime">--:-- --</span>
+            </div>
+            <h1 class="hero-name"> 
+                <span class="hero-line">SHAURYA</span>
+                <span class="hero-line">PANDEY</span>
+            </h1>
+            <p class="hero-tagline">Code · Design · Innovation</p>
+            <p class="hero-intro">Engineering student specializing in CSE (AI/ML) — building things at the intersection of hardware, software and intelligence.</p>
+            
+            <div class="social-row">
+                <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener" class="social-icon" aria-label="Github">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/shaurya._.heree/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="" target="_blank" rel="noopener" class="social-icon" aria-label="X">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>              
+                <a href="https://leetcode.com/yourusername" target="_blank" rel="noopener" class="social-icon leetcode-icon" aria-label="LeetCode">LC</a>
+            </div>       
+        </div>
+        
+        <div class="hero-photo-wrap">
+            <div class="hero-photo-frame">
+                <img src="c:\Users\VICTUS\Downloads\ChatGPT Image Jul 21, 2026, 01_17_17 AM.png" alt="Shaurya Pandey" class="hero-photo">
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+            </div>
+            <span class="emoji-chip" style="top:20px; left:20px; animation-delay:0s;">💻</span>
+            <span class="emoji-chip" style="top:15%; right:15px; animation-delay:.7s;">✈️</span>
+            <span class="emoji-chip" style="bottom:20%; left:35px; animation-delay:1.4s;">🧠</span>
+            <span class="emoji-chip" style="bottom:80px; right:8%; animation-delay:2.1s;">⚙️</span>
+            <span class="emoji-chip" style="top:42%; left:15px; animation-delay:2.8s;">📡</span>
+            <div class="hero-actions">
+                <a href="resume.pdf" download class="btn btn-resume">Resume</a>
+                <a href="mailto:shauryaey246@gmail.com" class="btn btn-contact">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <section class="about" id="about">
+        <span class="section-eyebrow">About</span>
+        <h2 class="about-heading"><strong>Turning curiosity into</strong> <span class="accent">code</span>
+        
+        <div class="about-grid">
+            <p class="about-bio">
+                <strong>I'm Shaurya</strong>, currently studying Computer Science with a specialization in AI/ML. I'm drawn to problems that mix code with something tangible — whether that's a machine learning model, a piece of electronics, or a system inspired by aerospace engineering. When I'm not building something, I'm usually learning a new tool, solving problems on LeetCode, or reading about how things work under the hood.</em>
+                <br><br>
+                Beyond academics, I’m focused on growing into someone who can create meaningful, impactful technology. This portfolio is a reflection of that journey — a collection of my work, my learning process, and my continuous push to improve.
+                <br><br>
+                I’m not just learning to code or build — I’m learning how to think, solve, and create.
+            </p>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-num">__</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">100+</span>
+                    <span class="stat-label">Probelems Solved</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">2+</span>
+                    <span class="stat-label">Years Coding</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">3+</span>
+                    <span class="stat-label">Tools &amp; Frameworks</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-focus">
+            <span class="focus-chip">AI/ML</span>
+            <span class="focus-chip">Web Development</span>
+            <span class="focus-chip">Electronics</span>
+            <span class="focus-chip">Aerospace</span>
+        </div>
+
+        <div class="divider"></div>
+    </section>
+
+
+    <script>
+
+        // live clock
+        function updateClock(){
+            const el = document.getElementById('tzTime');
+            const formatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'Asia/Kolkata',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+            el.textContent = formatter.format(new Date());
+        }
+        updateClock();
+        setInterval(updateClock, 30000);
+
+
+        const logoWrap = document.getElementById('logoWrap');
+        
+        logoWrap.addEventListener('mouseenter', () => {
+            logoWrap.classList.add('displaced');
+            letters.forEach((el,i) => {
+                const x = (Math.random()*8 - 4).toFixed(1);
+                const y = (Math.random()*8 - 4).toFixed(1);
+                const r = (Math.random()*8 - 4).toFixed(1);
+                el.style.transitionDelay = (i * 0.03) + 's';
+                el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg)`;
+            })
+        });
+
+        logoWrap.addEventListener('mouseleave', () => {
+            logoWrap.classList.remove('displaced');
+        });
+
+
+        //star scattering
+        const starLayer = document.getElementById('stars');
+        const STAR_COUNT = 22;
+        for(let i=0;i<STAR_COUNT;i++){
+            const s = document.createElement('span');
+            s.className = 'star';
+            s.style.left = Math.random()*100 + '%';
+            s.style.top = Math.random()*100 + '%';
+            s.style.animationDuration = (2.5 + Math.random()*3) + 's';
+            starLayer.appendChild(s);
+        }
+        //letters ripple-displace like nudged planets on hover, ease back on leave
+    const letters = logoWrap.querySelectorAll('.letter');
+    const logowrap = document.getElementById('logoWrap');
+
+    logoWrap.addEventListener('mouseenter', () => {
+        logoWrap.classList.add('displaced');
+        letters.forEach((letter)=>{
+            const x = (Math.random()*16 - 8).toFixed(1);
+            const y = (Math.random()*16 - 8).toFixed(1);
+            const r = (Math.random()*14 - 7).toFixed(1);
+            letter.style.transform = `translate(${x}px,${y}px) rotate(${r}deg)`;
+        });
+    });
+
+    logoWrap.addEventListener('mouseleave', () => {
+        logoWrap.classList.remove('displaced');
+        letters.forEach(el => {
+            el.style.tranform = '';
+        });
+    });
+    </script>
+</body>
+</html>
