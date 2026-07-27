@@ -16,6 +16,8 @@
       --sky-200: #bae6fd;
       --voilet-400: #818cf8;
       --voilet-300: #a78bfa;
+      --amber-400: #fbbf24;
+      --amber-300: #fcd34d;
       --ink: #f8fafc;
       --muted: #94a3b8;
     }
@@ -38,13 +40,18 @@
         background-color: #000000;
         background-image:
             radial-gradient(700px 320px at 50% -10%, rgba(56,189,248,.10), transparent 70%),
+            radial-gradient(900px 500px at 12% 45%, rgba(129,140,248,.07), transparent 70%),
+            radial-gradient(900px 500px at 88% 75%, rgba(251,191,36,.05), transparent 70%),
             linear-gradient(rgba(56,189,248,.09)1px, transparent 1px),
             linear-gradient(90deg, rgba(56,189,248,.09) 1px, transparent 1px);
         background-size:
             100% 100%,
+            100% 100%,
+            100% 100%,
             120px 120px,
             120px 120px;
-        background-repeat: no-repeat, repeat, repeat;
+
+        background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
 
     }
 
@@ -68,7 +75,6 @@
             0 1px 0 rgba(56,189,248,0.30) inset,
             0 8px 24px -6px rgba(14,165,233,0.40),
             0 2px 14px -2px rgba(56,189,248,.30);
-
         transition: box-shadow .4s ease, background .4s ease;
     }
 
@@ -262,6 +268,7 @@
         letter-spacing:.02em;
     }
 
+
     .hero-name{
         margin:0;
         font-family:'Syne', sans-serif;
@@ -396,6 +403,9 @@
         box-shadow:0 0 14px rgba(56,189,248,.3);
     }
 
+
+    /*ABOUT SECTION*/
+
     .about{
         position:relative;
         overflow:hidden;
@@ -423,14 +433,14 @@
     }
 
     .nebula-1{
-        width:340px; height:340px;
-        bottom:-140px; left:-100px;
-        background:radial-gradient(circle, rgba(56,189,248,0.65), transparent 70%);
-        animation:nebula-drift 23s ease-in-out infinite reverse;
+        width:380px; height:380px;
+        bottom:-120px; left:-100px;
+        background:radial-gradient(circle, rgba(129,140,248,0.6), transparent 70%);
+        animation:nebula-drift 19s ease-in-out infinite reverse;
     }
     .nebula-2{
-        width:340px; height:-80px;
-        bottom:-140px; right:-80;
+        width:340px; height:340px;
+        bottom:-140px; right:-80px;
         background:radial-gradient(circle, rgba(56,189,248,.55), transparent 70%);
         animation:nebula-drift 23s ease-in-out infinite reverse;
     }
@@ -446,7 +456,7 @@
     }
 
     .deco-planet{
-        position:Aabsolute;
+        position:absolute;
         border-radius:50%;
         opacity:.55;
         animation:planet-float 7s ease-in-out infinite;
@@ -493,7 +503,7 @@
         width:3px; height:3px;
         border-radius:50%;
         background:#fff;
-        box-shadow:0 0 6px 1px rgba(255,255,2552,.85);
+        box-shadow:0 0 6px 1px rgba(255,255,255,.85);
         opacity:0;
         animation:shoot linear infinite;
     }
@@ -502,7 +512,7 @@
         position:absolute;
         top:50%; left:0;
         width:90px; height:1.5px;
-        background:linear-gradient(90deg, rgba(255,255,2552.85), transparent);
+        background:linear-gradient(90deg, rgba(255,255,255,.85), transparent);
         transform:translateY(-50%);
     }
     @keyframes shoot{
@@ -512,6 +522,9 @@
         32%{ transform:rotate(var(--ang,-30deg)) translateX(-260px); opacity:0%; }
         100%{ opacity:0; }
     }
+
+
+    /*foreground content*/
 
     .about-content{
         position:relative;
@@ -523,13 +536,10 @@
 
     .section-eyebrow{
         display:inline-block;
+        font-family:'JetBrains Mono', monospace;
         font-size:.8rem;
         font-weight:600;
-        text-decoration: underline;
-        text-decoration-color:var(--sky-400);
-        text-decoration-thickness: 5px;
-        letter-spacing:.22em;
-        text-transform:uppercase;
+        letter-spacing:.02em;
         color:var(--sky-300);
         margin-bottom:18px;
     }
@@ -541,7 +551,7 @@
     .about-heading{
         font-family: 'Syne', sans-serif;
         font-weight:700;
-        font-size:clamp(1,8rem, 4vw, 3.1rem);
+        font-size:clamp(1.8rem, 4vw, 3.1rem);
         line-height: 1.18;
         color:var(--ink);
         margin:0 0 48px;
@@ -550,6 +560,7 @@
 
     .about-heading .accent{
         color:var(--sky-300);
+        text-shadow:0 0 26px rgba(56,189,248,.35);
     }
 
     .about-subtext{
@@ -561,20 +572,6 @@
     }
 
 
-    .about-grid{
-        display:flex;
-        gap:64px;
-        flex-wrap:wrap;
-        margin-bottom:48px;
-    }
-
-    .about-bio{
-        flex:1 1 380px;
-        color:var(--muted);
-        font-size:1.02rem;
-        line-height:1.85;
-    }
-
     .about-bio-card{
         max-width:720px;
         margin:0 0 48px;
@@ -583,6 +580,14 @@
         background:linear-gradient(180deg, #171a20 0%, #0d0f13 100%);
         border:1px solid rgba(148,163,184,.18);
         box-shadow:0 14px 30px -18px rgba(0,0,0,.7);
+    }
+
+    .about-bio{
+        flex:1 1 380px;
+        color:var(--muted);
+        font-size:1.02rem;
+        line-height:1.85;
+
     }
 
     .about-bio strong{
@@ -596,6 +601,7 @@
         color:#64748b;
         font-size:.85;
     }
+
 
 
     /*stat card*/
@@ -626,27 +632,6 @@
         opacity:.7;
     }
 
-    .focus-label{
-        display:block;
-        font-size:.75rem;
-        font-weight:600;
-        letter-spacing:.16em;
-        text-transform:uppercase;
-        color:var(--muted);
-        margin-bottom:16px;
-    }
-
-
-    .about-stats{
-        flex:0 0 auto;
-        display:grid;
-        grid-template-columns:repeat(2, 1fr);
-        gap:30px 48px;
-    }
-    .stat{
-        display:flex;
-        flex-direction:column;
-    }
     .stat-num{
         font-family:'Syne', sans-serif;
         font-weight:800;
@@ -662,6 +647,16 @@
         color:var(--muted);
     }
 
+    .focus-label{
+        display:block;
+        font-size:.75rem;
+        font-weight:600;
+        letter-spacing:.16em;
+        text-transform:uppercase;
+        color:var(--muted);
+        margin-bottom:16px;
+    }
+
     .about-focus{
         display:flex;
         flex-wrap:wrap;
@@ -672,6 +667,7 @@
         padding:10px 22px;
         border-radius:999px;
         background: rgba(56,189,248,.3);
+        border:1px solid rgba(56,189,248,.12);
         color:var(--sky-200);
         font-size:.82rem;
         font-weight:500;
@@ -679,10 +675,13 @@
         transition:tranform .3s ease, background ,3s ease, box-shadow ,3s ease;
     }
     .focus-chip:hover{
-        background:rgba(56,189,248,.4);
+        background:rgba(56,189,248,.22);
         transform:translateY(-2px);
-        box-shadow:0 8px 20px -6px rgba(56,189,248,.4);
+        box-shadow:0 8px 20px -6px rgba(56,189,248,.45);
     }
+
+
+
     .hero-photo-wrap{
         position:relative;
         flex:0 0 auto;
@@ -697,7 +696,7 @@
             linear-gradient(145deg, rgba(56,189,248,.10), rgba(129,140,248,.06));
         border:1px solid rgba(56,189,248,.35);
         box-shadow:
-            0 0 60px -8ppx rgba(56,189,248,.35),
+            0 0 60px -8px rgba(56,189,248,.35),
             inset 0 0 30px rgba(56,189,248,.08);
         animation: photo-float 5s ease-in-out infinite;
     }
@@ -816,7 +815,7 @@
         margin-top:14px;
     }
     .tech-card{
-        display:grid;
+        display:flex;
         flex-direction:column;
         align-items:center;
         gap:10px;
@@ -906,7 +905,7 @@
         border-bottom:1px solid rgba(148,163,184,.18);
     }
     .skill-tags{
-        display:frlx;
+        display:flex;
         flex-wrap:wrap;
         gap:10px;
     }
@@ -960,9 +959,20 @@
         .about{ padding:60px 24px 80px; }
         .about-grid{ gap:32px }
         .about-stats{ margin:0 auto; }
+        .stats-grid{ grid-template-columns:repeat(2, 1fr); gap:12px; }
+        .deco-planet.p1{ width:44px; height:44px; }
+        .deco-planet.p2{ width:30px; height:30px; }
+        .nebula{ filter:blur(50px); }
+        .skills{ padding:50px 24px 20px; }
+        .skills-grid{ gap: 24px; }
+        .experience{ padding:50px 24px 20px; }
+        .github-section{ padding:40px 24px; }
+        .terminal-body{ padding:20px; }
+
     }
 
     @media (prefers-reduced-motion: reduce){
+        .nebula, .deco-planet, .cosmic-star, .shooting-star,
         .letter, .star, orbit-ring, orbit-ring::before{
             animation:none !important;
         }
@@ -983,7 +993,7 @@
 
         <div class="nav-links">
             <a href="#home" class="nav-link">Home</a>
-            <a href="#" class="nav-link">About</a>
+            <a href="#about" class="nav-link">About</a>
             <a href="#" class="nav-link">Projects</a>
             <a href="#" class="nav-link">Journal</a>
             <a href="#" class="nav-link">Contact</a>
@@ -1043,47 +1053,59 @@
     <div class="divider"></div>
 
     <section class="about" id="about">
-        <span class="section-eyebrow">About</span>
-        <h2 class="about-heading"><strong>Turning curiosity into</strong> <span class="accent">code</span>
-        
-        <div class="about-grid">
-            <p class="about-bio">
-                <strong>I'm Shaurya</strong>, currently studying Computer Science with a specialization in AI/ML. I'm drawn to problems that mix code with something tangible — whether that's a machine learning model, a piece of electronics, or a system inspired by aerospace engineering. When I'm not building something, I'm usually learning a new tool, solving problems on LeetCode, or reading about how things work under the hood.</em>
-                <br><br>
-                Beyond academics, I’m focused on growing into someone who can create meaningful, impactful technology. This portfolio is a reflection of that journey — a collection of my work, my learning process, and my continuous push to improve.
-                <br><br>
-                I’m not just learning to code or build — I’m learning how to think, solve, and create.
-            </p>
+        <div class="about-cosmic-bg" id="aboutCosmicBg">
+            <div class="nebula nebula-1"></div>
+            <div class="nebula nebula-2"></div>
+            <div class="nebula nebula-3"></div>
+            <div class="deco-planet p1"></div>
+            <div class="deco-planet p2"></div>
+            <div class="cosmic-stars-layer" id="cosmicStars"></div>
+            <div class="shooting-layer" id="shootingLayer"></div>
+        </div>
 
-            <div class="about-stats">
-                <div class="stat">
+        <div class="about-content">
+            <span class="section-eyebrow">About</span>
+            <h2 class="about-heading"><strong>Turning curiosity into</strong> <span class="accent">code</span></h2>
+        
+            <div class="about-bio-card">
+                <p class="about-bio">
+                    <strong>I'm Shaurya</strong>, currently studying Computer Science with a specialization in AI/ML. I'm drawn to problems that mix code with something tangible — whether that's a machine learning model, a piece of electronics, or a system inspired by aerospace engineering. When I'm not building something, I'm usually learning a new tool, solving problems on LeetCode, or reading about how things work under the hood.
+                    <br><br>
+                    Beyond academics, I’m focused on growing into someone who can create meaningful, impactful technology. This portfolio is a reflection of that journey — a collection of my work, my learning process, and my continuous push to improve.
+                    <br><br>
+                    I’m not just learning to code or build — I’m learning how to think, solve, and create.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
                     <span class="stat-num">__</span>
                     <span class="stat-label">Projects Built</span>
                 </div>
-                <div class="stat">
+                <div class="stat-card">
                     <span class="stat-num">100+</span>
                     <span class="stat-label">Probelems Solved</span>
                 </div>
-                <div class="stat">
+                <div class="stat-card">
                     <span class="stat-num">2+</span>
                     <span class="stat-label">Years Coding</span>
                 </div>
-                <div class="stat">
+                <div class="stat-card">
                     <span class="stat-num">3+</span>
                     <span class="stat-label">Tools &amp; Frameworks</span>
                 </div>
             </div>
-        </div>
 
-        <div class="about-focus">
-            <span class="focus-chip">AI/ML</span>
-            <span class="focus-chip">Web Development</span>
-            <span class="focus-chip">Electronics</span>
-            <span class="focus-chip">Aerospace</span>
+            <span class="focus-label">Areas of Interest</span>
+            <div class="about-focus">
+                <span class="focus-chip">🤖 AI / ML</span>
+                <span class="focus-chip">🌐 Web Development</span>
+                <span class="focus-chip">🔌 Electronics</span>
+                <span class="focus-chip">🚀 Aerospace</span>
+            </div>
         </div>
-
-        <div class="divider"></div>
     </section>
+    <div class="divider"></div>
 
 
     <script>
@@ -1102,23 +1124,61 @@
         updateClock();
         setInterval(updateClock, 30000);
 
-
-        const logoWrap = document.getElementById('logoWrap');
         
+        const letters = logoWrap.querySelectorAll('.letter');
+        const logowrap = document.getElementById('logoWrap');
+
         logoWrap.addEventListener('mouseenter', () => {
             logoWrap.classList.add('displaced');
-            letters.forEach((el,i) => {
+            letters.forEach((letter, i)=>{
                 const x = (Math.random()*8 - 4).toFixed(1);
                 const y = (Math.random()*8 - 4).toFixed(1);
                 const r = (Math.random()*8 - 4).toFixed(1);
-                el.style.transitionDelay = (i * 0.03) + 's';
-                el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg)`;
-            })
+                el.style.trasnitionDelay = (i * .03) + 's';
+                letter.style.transform = `translate(${x}px,${y}px) rotate(${r}deg)`;
+            });
         });
 
         logoWrap.addEventListener('mouseleave', () => {
             logoWrap.classList.remove('displaced');
+            letters.forEach((letter, i) => {
+                letter.style.transitionDelay = ((letters.length - i) * 0.02) + 's';
+                letter.style.tranform = '';
+            });
         });
+
+
+
+        // twinkling stars scattered across the About section's cosmic background
+        const cosmicStarLayer = document.getElementById('cosmicStars');
+        const COSMIC_STAR_COUNT = 55;
+        for(let i=0;i<COSMIC_STAR_COUNT;i++){
+            const s = document.createElement('span');
+            s.className = 'cosmic-star';
+            const size = (Math.random()*1.6 + 0.6).toFixed(1);
+            s.style.width = size + 'px';
+            s.style.height = size + 'px';
+            s.style.left = Math.random()*100 + '%';
+            s.style.top = Math.random()*100 + '%';
+            s.style.animationDuration = (2 + Math.random()*3) + 's';
+            s.style.animationDelay = (Math.random()*4) + 's';
+            cosmicStarLayer.appendChild(s);
+        }
+
+        // shooting stars with trails, streaking across the About section on a loop
+        const shootingLayer = document.getElementById('shootingLayer');
+        const SHOOTING_STAR_COUNT = 4;
+        for(let i=0;i<SHOOTING_STAR_COUNT;i++){
+            const s = document.createElement('span');
+            s.className = 'shooting-star';
+            s.style.top = Math.random()*55 + '%';
+            s.style.left = Math.random()*70 + 15 + '%';
+            const angle = -(20 + Math.random()*25);
+            s.style.setProperty('--ang', angle + 'deg');
+            s.style.animationDuration = (2.8 + Math.random()*2.4) + 's';
+            s.style.animationDelay = (Math.random()*8) + 's';
+            shootingLayer.appendChild(s);
+        }       
 
 
         //star scattering
@@ -1133,25 +1193,7 @@
             starLayer.appendChild(s);
         }
         //letters ripple-displace like nudged planets on hover, ease back on leave
-    const letters = logoWrap.querySelectorAll('.letter');
-    const logowrap = document.getElementById('logoWrap');
 
-    logoWrap.addEventListener('mouseenter', () => {
-        logoWrap.classList.add('displaced');
-        letters.forEach((letter)=>{
-            const x = (Math.random()*16 - 8).toFixed(1);
-            const y = (Math.random()*16 - 8).toFixed(1);
-            const r = (Math.random()*14 - 7).toFixed(1);
-            letter.style.transform = `translate(${x}px,${y}px) rotate(${r}deg)`;
-        });
-    });
-
-    logoWrap.addEventListener('mouseleave', () => {
-        logoWrap.classList.remove('displaced');
-        letters.forEach(el => {
-            el.style.tranform = '';
-        });
-    });
     </script>
 </body>
 </html>
