@@ -412,7 +412,7 @@
         position:relative;
         overflow:hidden;
         padding:110px 64px 120px;
-        max-width:1200px;
+        max-width:1400px;
         margin:0 auto;
         scroll-margin-top:100px;
     }
@@ -531,7 +531,7 @@
     .about-content{
         position:relative;
         z-index:1;
-        max-width:1200px;
+        max-width:1400px;
         margin:0 auto;
     }
 
@@ -601,9 +601,16 @@
         display:block;
         margin-top:16px;
         color:#64748b;
-        font-size:.85;
+        font-size:.85rem;
     }
 
+    .about-row{
+        display:flex;
+        gap:24px;
+        flex-wrap:wrap;
+        align-items:center;
+        justify-content:space-between;
+    }
 
 
     /*stat card*/
@@ -614,9 +621,7 @@
         gap:16px;
         max-width:900px;
         margin-bottom:52px;
-        position: absolute;
-        right: -90px;
-        top: 50px;
+        margin-top:20px;
     }
 
     .stat-card{
@@ -683,7 +688,7 @@
         font-size:.82rem;
         font-weight:500;
         letter-spacing:.04em;
-        transition:tranform .3s ease, background ,3s ease, box-shadow ,3s ease;
+        transition:transform .3s ease, background 3s ease, box-shadow 3s ease;
     }
     .focus-chip:hover{
         background:rgba(56,189,248,.22);
@@ -760,7 +765,7 @@
         padding-left:34px;
         margin-top:20px;
     }
-    .timline::before{
+    .timeline::before{
         content:'';
         position:absolute;
         left:5px;
@@ -878,7 +883,7 @@
         border-bottom:1px solid rgba(148,163,184,.15);
     }
     .terminal-dot{ width:11px; height:11px; border-radius:50%; }
-    .terminal-dot,red{ background:#ff5f56; }
+    .terminal-dot.red{ background:#ff5f56; }
     .terminal-dot.yellow{ background:#ffbd2e; }
     .terminal-dot.green{ background:#27c93f; }
     .terminal-title{
@@ -895,9 +900,11 @@
 
     .skills{
         padding:70px 64px 30px;
-        max-width:1200px;
+        max-width:1400px;
         margin:0 auto;
         scroll-margin-top:100px;
+        position:relative;
+        overflow:hidden;
     }
     .skills-grid{
         display:grid;
@@ -920,6 +927,19 @@
         flex-wrap:wrap;
         gap:10px;
     }
+    .skills-circuit-bg{
+        position:absolute;
+        inset:0;
+        z-index:0;
+        pointer-events:none;
+    }
+    .skills-content{
+        position:relative;
+        z-index:1;
+    }
+    .skill-group + .skill-group{
+        margin-top:32px;
+    }
 
     /*github*/
 
@@ -936,7 +956,7 @@
     .github-note{
         margin-top:16px;
         font-family:'JetBrains Mono', monospace;
-        font-size:.78;
+        font-size: 0.78rem;;
         color:var(--muted);
     }
 
@@ -1078,32 +1098,36 @@
             <span class="section-eyebrow">About</span>
             <h2 class="about-heading"><strong>Turning curiosity into</strong> <span class="accent">code</span></h2>
         
-            <div class="about-bio-card">
-                <p class="about-bio">
-                    <strong>I'm Shaurya</strong>, currently studying Computer Science with a specialization in AI/ML. I'm drawn to problems that mix code with something tangible — whether that's a machine learning model, a piece of electronics, or a system inspired by aerospace engineering. When I'm not building something, I'm usually learning a new tool, solving problems on LeetCode, or reading about how things work under the hood.
-                    <br><br>
-                    Beyond academics, I’m focused on growing into someone who can create meaningful, impactful technology. This portfolio is a reflection of that journey — a collection of my work, my learning process, and my continuous push to improve.
-                    <br><br>
-                    I’m not just learning to code or build — I’m learning how to think, solve, and create.
-                </p>
-            </div>
+            
+            <div class="about-row">
+                <div class="about-bio-card">
+                    <p class="about-bio">
+                        <strong>I'm Shaurya</strong>, currently studying Computer Science with a specialization in AI/ML. I'm drawn to problems that mix code with something tangible — whether that's a machine learning model, a piece of electronics, or a system inspired by aerospace engineering. When I'm not building something, I'm usually learning a new tool, solving problems on LeetCode, or reading about how things work under the hood.
+                        <br><br>
+                        Beyond academics, I’m focused on growing into someone who can create meaningful, impactful technology. This portfolio is a reflection of that journey — a collection of my work, my learning process, and my continuous push to improve.
+                        <br><br>
+                        I’m not just learning to code or build — I’m learning how to think, solve, and create.
+                    </p>
+                </div>
+            
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-num">__</span>
-                    <span class="stat-label">Projects Built</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-num">100+</span>
-                    <span class="stat-label">Probelems Solved</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-num">2+</span>
-                    <span class="stat-label">Years Coding</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-num">3+</span>
-                    <span class="stat-label">Tools &amp; Frameworks</span>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-num">__</span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">100+</span>
+                        <span class="stat-label">Probelems Solved</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">2+</span>
+                        <span class="stat-label">Years Coding</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Tools &amp; Frameworks</span>
+                    </div>
                 </div>
             </div>
 
@@ -1114,6 +1138,141 @@
                 <span class="focus-chip">🔌 Electronics</span>
                 <span class="focus-chip">🚀 Aerospace</span>
             </div>
+        </div>
+    </section>
+    <div class="divider"></div>
+
+
+    <section class="skills" id="skills">
+        <div class="skills-circuit-bg">
+            <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+                <defs>
+                    <linearGradient id="circuitLine" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="var(--sky-400)"/>
+                        <stop offset="100%" stop-color="var(--violet-400)"/>
+                    </linearGradient>
+                    <filter id="nodeGlow" x="-60%" y="-60%" width="220%" height="220%">
+                        <feGaussianBlur stdDeviation="2.4" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <g stroke="url(#circuitLine)" strike-width="1" opacity=".35" fill="none">
+                    <line x1="80" y1="90" x2="220" y2="180"/>
+                    <line x1="220" y1="180" x2="150" y2="320"/>
+                    <line x1="220" y1="180" x2="340" y2="60"/>
+                    <line x1="340" y1="60" x2="560" y2="150"/>
+                    <line x1="150" y1="320" x2="420" y2="260"/>
+                    <line x1="420" y1="260" x2="560" y2="150"/>
+                    <line x1="420" y1="260" x2="300" y2="420"/>
+                    <line x1="560" y1="150" x2="650" y2="340"/>
+                    <line x1="560" y1="150" x2="760" y2="80"/>
+                    <line x1="650" y1="340" x2="840" y2="230"/>
+                    <line x1="760" y1="80" x2="840" y2="230"/>
+                    <line x1="760" y1="80" x2="950" y2="120"/>
+                    <line x1="840" y1="230" x2="1020" y2="300"/>
+                    <line x1="950" y1="120" x2="1110" y2="60"/>
+                    <line x1="840" y1="230" x2="950" y2="400"/>
+                    <line x1="650" y1="340" x2="700" y2="430"/>
+                    <line x1="300" y1="420" x2="480" y2="420"/>
+                    <line x1="480" y1="420" x2="700" y2="430"/>
+                    <line x1="150" y1="320" x2="300" y2="420"/>
+                    <line x1="950" y1="120" x2="1020" y2="300"/>
+                </g>   
+            
+                <g fill="var(--sky-300)" filter="url(#nodeGlow)">
+                    <circle cx="80" cy="90" r="2.5"/>
+                    <circle cx="220" cy="180" r="2.5"/>
+                    <circle cx="150" cy="320" r="2.5"/>
+                    <circle cx="340" cy="60" r="2.5"/>
+                    <circle cx="420" cy="260" r="2.5"/>
+                    <circle cx="560" cy="150" r="2.5"/>
+                    <circle cx="650" cy="340" r="2.5"/>
+                    <circle cx="760" cy="80" r="2.5"/>
+                    <circle cx="840" cy="230" r="2.5"/>
+                    <circle cx="950" cy="120" r="2.5"/>
+                    <circle cx="1020" cy="300" r="2.5"/>
+                    <circle cx="1110" cy="60" r="2.5"/>
+                    <circle cx="480" cy="420" r="2.5"/>
+                    <circle cx="700" cy="430" r="2.5"/>
+                    <circle cx="300" cy="420" r="2.5"/>
+                    <circle cx="950" cy="400" r="2.5"/>       
+                </g>
+
+                <circle r="3.5" fill="var(--sky-200)" filter="url(#nodeGlow)">
+                    <animateMotion dur="9s" repeatCount="indefinite"
+                    path="M80,90 L220,180 L340,60 L560,150 L760,80 L950,120 L1110,60"/>
+                </circle>
+                <circle r="3.5" fill="var(--voilet-300)" filter="url(#nodeGlow)">
+                    <animateMotion dur="11s" repeatCount="indefinite"
+                        path="M150,320 L420,260 L650,340 L840,230 L1020,300"/>
+                </circle>
+            </svg>
+        </div>
+
+        <div class="skills-content">
+            <span clss="section-eyebrow">Skills</span>
+            <h2 class="about-heading">What I <span class="accent">Work</span> With</h2>
+            <p class="about-subtext">A mix of software and hardware - I like between writing code and wirinf circuits.</p>
+
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <span class="skill-group-title">Languages</span>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <img src="https://cdn.simpleicons.org/python" alt="Python" class="tech-icon">
+                            <span class="tech-label">Python</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="https://cdn.simpleicons.org/cplusplus" alt="C++" class="tech-icon">
+                            <span class="tech-label">C++</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="tech-icon">
+                            <span class="tech-label">JavaScript</span>
+                        </div> 
+                    </div>
+                </div>
+
+            <div class="skill-group">
+                <span class="skill-group-title">Frameworks &amp; Tools</span>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <img src="https://cdn.simpleicons.org/react" alt="React" class="tech-icon">
+                        <span class="tech-label">React</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" class="tech-icon">
+                        <span class="tech-label">Node.js</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.simpleicons.org/git" alt="Git" class="tech-icon">
+                        <span class="tech-label">Git</span>
+                    </div>
+                    <div class="tech-card">
+                        <img src="https://cdn.simpleicons.org/pytorch" alt="PyTorch" class="tech-icon">
+                        <span class="tech-label">PyTorch</span>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="skill-group">
+                    <span class="skill-group-title">Hardware</span>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <img src="https://cdn.simpleicons.org/arduino" alt="Arduino" class="tech-icon">
+                            <span class="tech-label">Arduino</span>
+                        </div>
+                        <div class="tech-card">
+                            <img src="https://cdn.simpleicons.org/raspberrypi" alt="Raspberry Pi" class="tech-icon">
+                            <span class="tech-label">Raspberry Pi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="skills-note"><span>&</span> Also exploring: NLP · Computer Vision · Embedded Systems · PCB Design</p>
         </div>
     </section>
     <div class="divider"></div>
@@ -1145,7 +1304,7 @@
                 const x = (Math.random()*8 - 4).toFixed(1);
                 const y = (Math.random()*8 - 4).toFixed(1);
                 const r = (Math.random()*8 - 4).toFixed(1);
-                el.style.transitionDelay = (i * .03) + 's';
+                letter.style.transitionDelay = (i * .03) + 's';
                 letter.style.transform = `translate(${x}px,${y}px) rotate(${r}deg)`;
             });
         });
@@ -1154,7 +1313,7 @@
             logoWrap.classList.remove('displaced');
             letters.forEach((letter, i) => {
                 letter.style.transitionDelay = ((letters.length - i) * 0.02) + 's';
-                letter.style.tranform = '';
+                letter.style.transform = '';
             });
         });
 
