@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<script>document.documentElement.classList.add('js');</script>
 <style>
     :root{
       /* palette */
@@ -68,13 +69,14 @@
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
     }
-
+    body{
+        overflow-x: clip;
+    }
     ::selection{
         background:rgba(56,189,248,.35);
         color:var(--ink);
     }
 
-    /* slim, techy scrollbar */
     ::-webkit-scrollbar{ width:10px; }
     ::-webkit-scrollbar-track{ background:#07080d; }
     ::-webkit-scrollbar-thumb{
@@ -83,9 +85,7 @@
         border:2px solid #07080d;
     }
 
-    body{
-        position:relative;
-    }
+
 
     /* ============ COSMIC BACKGROUND STACK ============ */
     .bg-canvas{
@@ -162,7 +162,6 @@
         z-index:2;
     }
 
-    /* ============ TYPOGRAPHY SCALE ============ */
     h1,h2,h3{ margin:0; }
 
     .section{
@@ -200,7 +199,7 @@
     .section-title{
         font-family:var(--font-display);
         font-weight:700;
-        font-size:clamp(2rem, 4.6vw, 3.4rem);
+        font-size:clamp(2.1rem, 5vw, 3.6rem);
         line-height:1.08;
         letter-spacing:-0.01em;
         color:var(--ink);
@@ -213,33 +212,33 @@
         color:transparent;
     }
     .section-sub{
-        margin:18px 0 0;
+        margin:16px 0 0;
         max-width:560px;
-        font-size:1.05rem;
-        line-height:1.75;
+        font-size:1rem;
+        line-height:1.7;
         color:var(--muted);
     }
 
     .divider{
         height:1px;
-        max-width:1260px;
+        max-width:1160px;
         margin:0 auto;
         background:linear-gradient(90deg, transparent, rgba(56,189,248,.28), rgba(129,140,248,.28), transparent);
         border:none;
     }
 
-    /* ============ NAVBAR ============ */
+
     .navbar{
         position:sticky;
-        top:18px;
+        top:16px;
         z-index:100;
-        width:min(1180px, 94vw);
+        width:min(1080px, 94vw);
         margin:18px auto 0;
         display:flex;
         align-items:center;
         justify-content:space-between;
-        height:62px;
-        padding:0 22px;
+        height:58px;
+        padding:0 20px;
         border-radius:var(--r-full);
         background:var(--glass);
         backdrop-filter: blur(18px);
