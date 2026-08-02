@@ -1263,6 +1263,54 @@
         gap:16px;
         transition:transform .3s ease, border-color .3s ease;
     }
+    .quote-card:hover{
+        transform:translateY(-4px);
+        border-color:rgba(56,189,248,.35);
+    }
+    .quote-mark{
+        font-family:var(--font-display);
+        font-size:2.4rem;
+        line-height:.6;
+        color:var(--sky-400);
+        opacity:.6;
+    }
+    .quote-text{
+        margin:0;
+        color:var(--ink-dim);
+        font-size:.92rem;
+        line-height:1.7;
+        font-style:italic;
+    }
+    .quote-who{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        margin-top:auto;
+    }
+    .quote-ava{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-family:var(--font-accent);
+        font-size:.9rem;
+        color:#0f172a;
+        background:linear-gradient(135deg, var(--sky-300), var(--violet-400));
+        flex-shrink:0;
+    }
+    .quote-name{
+        font-family:var(--font-accent);
+        font-weight:600;
+        font-size:.9rem;
+        color:var(--ink);
+    }
+    .quote-role{
+        font-family:var(--font-mono);
+        font-size:.66rem;
+        color:var(--muted-dim);
+    }
 
     /* ============ CONTACT ============ */
     .contact-body{
