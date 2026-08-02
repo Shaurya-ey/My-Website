@@ -1248,6 +1248,22 @@
         height:100%;
     }
 
+    .quotes-grid{
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:20px;
+    }
+    .quote-card{
+        border-radius:var(--r-lg);
+        background:linear-gradient(170deg, rgba(23,26,32,.9), rgba(10,12,16,.95));
+        border:1px solid rgba(148,163,184,.14);
+        padding:26px 24px;
+        display:flex;
+        flex-direction:column;
+        gap:16px;
+        transition:transform .3s ease, border-color .3s ease;
+    }
+
     /* ============ CONTACT ============ */
     .contact-body{
         display:grid;
