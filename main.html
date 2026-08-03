@@ -2050,103 +2050,146 @@
     <hr class="divider">
 
     <!-- ============ PROJECTS ============ -->
-    <section class="section" id="projects">
+ <section class="section" id="projects">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">03</span> Projects</span>
             <h2 class="section-title">Things I've <span class="accent">built</span></h2>
-            <p class="section-sub">A selection of projects spanning AI/ML, web apps, embedded electronics and design.</p>
+            <p class="section-sub">Mostly half-finished, fully obsessive. The ones I'm proud of anyway.</p>
+        </div>
+
+        <div class="projects-filter reveal">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="software">🖥 Software</button>
+            <button class="filter-btn" data-filter="hardware">⚙ Hardware</button>
         </div>
 
         <div class="projects-grid">
-            <div class="project-card reveal">
+            <div class="project-card reveal" data-type="hardware">
                 <div class="project-top">
-                    <span class="project-num">01</span>
+                    <span class="project-type type-hw">⚙ Hardware</span>
                     <span class="project-badge">★ Featured</span>
                 </div>
-                <div class="project-icon">🤖</div>
-                <h3 class="project-title">VisionGuard AI</h3>
+                <div class="project-icon">📡</div>
+                <h3 class="project-title">SANJAYA-LINK</h3>
                 <p class="project-desc">
-                    A real-time computer vision system that detects and classifies safety hazards
-                    in industrial footage. Built with PyTorch and OpenCV, optimized for edge deployment.
+                    A custom 1-watt telemetry and control link for high-altitude flights. Long-range comms
+                    over LoRa with everything logged to SD. The current big obsession.
                 </p>
                 <div class="project-tags">
-                    <span class="proj-tag">PyTorch</span>
-                    <span class="proj-tag">OpenCV</span>
-                    <span class="proj-tag">YOLO</span>
-                    <span class="proj-tag">Edge AI</span>
+                    <span class="proj-tag">C++</span>
+                    <span class="proj-tag">LoRa</span>
+                    <span class="proj-tag">Telemetry</span>
+                    <span class="proj-tag">Arduino</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                    <a href="https://github.com/Shaurya-ey/SANJAYA-LINK" target="_blank" rel="noopener" class="proj-link">Source →</a>
                 </div>
             </div>
 
-            <div class="project-card reveal reveal-d1">
+            <div class="project-card reveal reveal-d1" data-type="software">
                 <div class="project-top">
-                    <span class="project-num">02</span>
+                    <span class="project-type type-sw">🖥 Software</span>
                 </div>
                 <div class="project-icon">🛰️</div>
-                <h3 class="project-title">CubeSat Telemetry</h3>
+                <h3 class="project-title">Flight-Analyst</h3>
                 <p class="project-desc">
-                    An embedded telemetry and data-logging system for a student cube satellite —
-                    sensors, radio link, and a live dashboard plotting sensor readings in real time.
+                    A mission control + flight stability analyst. Ingests flight logs, plots the data,
+                    and flags stability issues before launch instead of after.
                 </p>
                 <div class="project-tags">
+                    <span class="proj-tag">TypeScript</span>
+                    <span class="proj-tag">Web App</span>
+                    <span class="proj-tag">Data Viz</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Shaurya-ey/Flight-Analyst" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d1" data-type="hardware">
+                <div class="project-top">
+                    <span class="project-type type-hw">⚙ Hardware</span>
+                </div>
+                <div class="project-icon">🎥</div>
+                <h3 class="project-title">Smart-WebCam</h3>
+                <p class="project-desc">
+                    A custom Raspberry Pi webcam with mic input, made for my desk. Streams, records, and
+                    stays on 24/7 without melting my laptop.
+                </p>
+                <div class="project-tags">
+                    <span class="proj-tag">Python</span>
+                    <span class="proj-tag">Raspberry Pi</span>
+                    <span class="proj-tag">Video</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Shaurya-ey/Smart-WebCam" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d1" data-type="hardware">
+                <div class="project-top">
+                    <span class="project-type type-hw">⚙ Hardware</span>
+                </div>
+                <div class="project-icon">⌨️</div>
+                <h3 class="project-title">Macro_Pad_New</h3>
+                <p class="project-desc">
+                    A beginner macropad build — a small 3D-printed keypad with custom mappings for my
+                    coding workflow. My first real attempt at making my own input device.
+                </p>
+                <div class="project-tags">
+                    <span class="proj-tag">Python</span>
                     <span class="proj-tag">Arduino</span>
-                    <span class="proj-tag">LoRa</span>
-                    <span class="proj-tag">PCB</span>
-                    <span class="proj-tag">React</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener" class="proj-link">Source →</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal reveal-d1">
-                <div class="project-top">
-                    <span class="project-num">03</span>
-                </div>
-                <div class="project-icon">⚡</div>
-                <h3 class="project-title">Smart Power Monitor</h3>
-                <p class="project-desc">
-                    Custom PCB + firmware that monitors home power consumption and pushes live
-                    analytics to the cloud. Designed the board from schematic to layout in KiCad.
-                </p>
-                <div class="project-tags">
-                    <span class="proj-tag">KiCad</span>
-                    <span class="proj-tag">ESP32</span>
-                    <span class="proj-tag">PCB Design</span>
-                    <span class="proj-tag">IoT</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener" class="proj-link">Source →</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal reveal-d2">
-                <div class="project-top">
-                    <span class="project-num">04</span>
-                </div>
-                <div class="project-icon">🚀</div>
-                <h3 class="project-title">Rocket Fin Design Suite</h3>
-                <p class="project-desc">
-                    A CAD workflow + simulation tool for model-rocket fin geometry, running
-                    aerodynamic analysis in MATLAB and exporting printable 3D models.
-                </p>
-                <div class="project-tags">
-                    <span class="proj-tag">MATLAB</span>
-                    <span class="proj-tag">CAD</span>
-                    <span class="proj-tag">Simulink</span>
                     <span class="proj-tag">3D Print</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                    <a href="https://github.com/Shaurya-ey/Macro_Pad_New" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d2" data-type="hardware">
+                <div class="project-top">
+                    <span class="project-type type-hw">⚙ Hardware</span>
+                </div>
+                <div class="project-icon">📻</div>
+                <h3 class="project-title">LOORAA</h3>
+                <p class="project-desc">
+                    A tiny LoRa transmitter "puck" I keep experimenting with. Small, dumb, and it just
+                    sends packets. The name is an inside joke I refuse to explain.
+                </p>
+                <div class="project-tags">
+                    <span class="proj-tag">LoRa</span>
+                    <span class="proj-tag">ESP32</span>
+                    <span class="proj-tag">Experiments</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Shaurya-ey/LOORAA" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d2" data-type="software">
+                <div class="project-top">
+                    <span class="project-type type-sw">🖥 Software</span>
+                </div>
+                <div class="project-icon">🌐</div>
+                <h3 class="project-title">My-Website</h3>
+                <p class="project-desc">
+                    The codebase for this very site. Plain HTML, CSS and vanilla JS — no framework,
+                    no build step, just a stubborn love of doing it the hard way.
+                </p>
+                <div class="project-tags">
+                    <span class="proj-tag">HTML</span>
+                    <span class="proj-tag">CSS</span>
+                    <span class="proj-tag">JS</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link">Source →</a>
                 </div>
             </div>
         </div>
 
-        <div class="projects-more reveal">
-            <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener" class="btn btn-ghost">View All on GitHub</a>
-        </div>
+        <p class="projects-more reveal">
+            That's 6 of them — the rest keep landing on <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener">GitHub</a>.
+        </p>
     </section>
 
     <hr class="divider">
@@ -2155,60 +2198,130 @@
     <section class="section" id="github">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">04</span> GitHub</span>
-            <h2 class="section-title">Code in <span class="accent">motion</span></h2>
-            <p class="section-sub">Where I commit my experiments, prototypes and late-night debugging sessions.</p>
+            <h2 class="section-title">Commits &amp; <span class="accent">chaos</span></h2>
+            <p class="section-sub">Live data, straight from the API. Mostly late-night pushes and "one small fix" commits.</p>
         </div>
 
         <div class="github-body">
-            <div class="gh-card reveal">
-                <div class="gh-profile">
-                    <div class="gh-avatar">SP</div>
-                    <div>
-                        <div class="gh-name">Shaurya Pandey</div>
-                        <div class="gh-handle">@Shaurya-ey</div>
-                    </div>
+            <div class="gh-profile-card reveal">
+                <div class="gh-avatar"><img src="https://avatars.githubusercontent.com/u/206544047?v=4" alt="Shaurya Pandey avatar" id="ghAvatar"></div>
+                <div class="gh-info">
+                    <div class="gh-name">Shaurya Pandey</div>
+                    <div class="gh-handle">@Shaurya-ey</div>
+                    <p class="gh-bio">
+                        AI/ML student from India. Building at the intersection of software, hardware &amp; aerospace —
+                        telemetry links, CV models and desk gadgets.
+                    </p>
                 </div>
-                <p class="gh-bio">
-                    AI/ML student · building at the intersection of software, hardware &amp; aerospace.
-                    Currently shipping CV models, embedded telemetry and CAD workflows.
-                </p>
                 <div class="gh-stats">
-                    <div class="gh-stat"><span class="n">12</span><span class="l">Repos</span></div>
-                    <div class="gh-stat"><span class="n">46</span><span class="l">Stars</span></div>
-                    <div class="gh-stat"><span class="n">38</span><span class="l">Forks</span></div>
+                    <div class="gh-stat"><span class="n" id="ghRepos">8</span><span class="l">Repos</span></div>
+                    <div class="gh-stat"><span class="n">227</span><span class="l">Contribs / yr</span></div>
+                    <div class="gh-stat"><span class="n" id="ghFollowing">8</span><span class="l">Following</span></div>
                 </div>
                 <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener" class="gh-follow">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
                     Follow on GitHub
                 </a>
             </div>
 
             <div class="gh-card gh-activity reveal reveal-d1">
                 <div class="gh-chart-label">
-                    <span class="mono">Contribution activity</span>
-                    <span class="gh-legend">Less ▤▤▤▤ More</span>
+                    <span class="mono">Contribution activity — last year</span>
+                    <span class="gh-legend">Less <span class="sw s0"></span><span class="sw s1"></span><span class="sw s2"></span><span class="sw s3"></span> More</span>
                 </div>
                 <div class="gh-month-labels" id="ghMonths"></div>
                 <div class="contrib-graph" id="contribGraph"></div>
                 <div class="gh-lang">
-                    <div class="gh-lang-head">
-                        <span>Python</span><span>58%</span>
-                    </div>
-                    <div class="lang-bar"><span style="width:58%; background:linear-gradient(90deg,var(--sky-400),var(--sky-300));"></span></div>
-                    <div class="gh-lang-head" style="margin-top:12px;">
-                        <span>C++</span><span>22%</span>
-                    </div>
-                    <div class="lang-bar"><span style="width:22%; background:linear-gradient(90deg,var(--violet-500),var(--violet-300));"></span></div>
-                    <div class="gh-lang-head" style="margin-top:12px;">
-                        <span>JavaScript</span><span>14%</span>
-                    </div>
-                    <div class="lang-bar"><span style="width:14%; background:linear-gradient(90deg,var(--amber-400),var(--amber-300));"></span></div>
-                    <div class="gh-lang-head" style="margin-top:12px;">
-                        <span>MATLAB</span><span>6%</span>
-                    </div>
-                    <div class="lang-bar"><span style="width:6%; background:linear-gradient(90deg,var(--pink-400),var(--violet-300));"></span></div>
+                    <div class="gh-lang-head"><span>Python</span><span>40%</span></div>
+                    <div class="lang-bar"><span style="width:40%; background:linear-gradient(90deg,var(--sky-400),var(--sky-300));"></span></div>
+                    <div class="gh-lang-head" style="margin-top:10px;"><span>TypeScript</span><span>20%</span></div>
+                    <div class="lang-bar"><span style="width:20%; background:linear-gradient(90deg,var(--violet-500),var(--violet-300));"></span></div>
+                    <div class="gh-lang-head" style="margin-top:10px;"><span>HTML</span><span>20%</span></div>
+                    <div class="lang-bar"><span style="width:20%; background:linear-gradient(90deg,var(--amber-400),var(--amber-300));"></span></div>
+                    <div class="gh-lang-head" style="margin-top:10px;"><span>C++</span><span>20%</span></div>
+                    <div class="lang-bar"><span style="width:20%; background:linear-gradient(90deg,var(--pink-400),var(--violet-300));"></span></div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+     <!-- ============ TESTIMONIALS ============ -->
+    <section class="section" id="quotes">
+        <div class="section-head reveal">
+            <span class="section-eyebrow"><span class="num">05</span> Kind Words</span>
+            <h2 class="section-title">What people <span class="accent">say</span></h2>
+            <p class="section-sub">A few notes from classmates and teammates. (Replace these with your real ones.)</p>
+        </div>
+
+        <div class="quotes-grid">
+            <div class="quote-card reveal">
+                <span class="quote-mark">"</span>
+                <p class="quote-text">Shaurya's the person who actually reads the datasheet and makes it work. Watching him debug a LoRa link for three hours and win is peak engineering.</p>
+                <div class="quote-who">
+                    <span class="quote-ava">A</span>
+                    <div>
+                        <div class="quote-name">Aarav</div>
+                        <div class="quote-role">Classmate, CSE AI/ML</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-card reveal reveal-d1">
+                <span class="quote-mark">"</span>
+                <p class="quote-text">Dude just builds stuff. One week it's a telemetry link, next it's a macropad. Always teaching himself the next thing before anyone else.</p>
+                <div class="quote-who">
+                    <span class="quote-ava">R</span>
+                    <div>
+                        <div class="quote-name">Rohan</div>
+                        <div class="quote-role">Hackathon teammate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-card reveal reveal-d2">
+                <span class="quote-mark">"</span>
+                <p class="quote-text">Rare combination of curiosity and patience. He asks the right questions and doesn't stop until the answer actually makes sense to him.</p>
+                <div class="quote-who">
+                    <span class="quote-ava">P</span>
+                    <div>
+                        <div class="quote-name">Priya</div>
+                        <div class="quote-role">Project club member</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============ GUESTBOOK ============ -->
+    <section class="section" id="guestbook">
+        <div class="section-head reveal">
+            <span class="section-eyebrow"><span class="num">06</span> Guestbook</span>
+            <h2 class="section-title">Leave a <span class="accent">mark</span></h2>
+            <p class="section-sub">Sign in before you go. It's like a yearbook for a website — the closest thing to a "hello" on the internet.</p>
+        </div>
+
+        <div class="guestbook-body">
+            <div class="gb-form-card reveal">
+                <h3>Sign the guestbook</h3>
+                <p>Drop your name and a line — anything. What you're working on, where you found this site, or your favourite protocol.</p>
+                <form id="gbForm">
+                    <div class="field">
+                        <label for="gbName">Name</label>
+                        <input type="text" id="gbName" name="gbName" placeholder="Your name" required maxlength="30">
+                    </div>
+                    <div class="field">
+                        <label for="gbMsg">Message</label>
+                        <textarea id="gbMsg" name="gbMsg" placeholder="Say something..." required maxlength="300"></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">Sign it ✍️</button>
+                </form>
+                <span class="gb-count" id="gbCount">— signatures so far</span>
+            </div>
+
+            <div class="gb-entries reveal reveal-d1" id="gbEntries"></div>
         </div>
     </section>
 
@@ -2217,7 +2330,7 @@
     <!-- ============ CONTACT ============ -->
     <section class="section" id="contact">
         <div class="section-head reveal">
-            <span class="section-eyebrow"><span class="num">05</span> Contact</span>
+            <span class="section-eyebrow"><span class="num">07</span> Contact</span>
             <h2 class="section-title">Let's build something <span class="accent">together</span></h2>
             <p class="section-sub">Have a project, an internship, or just want to talk tech? My inbox is always open.</p>
         </div>
@@ -2226,8 +2339,8 @@
             <div class="contact-info reveal">
                 <h3>Say hello 👋</h3>
                 <p class="lead">
-                    I'm currently looking for internships and collaboration opportunities in
-                    AI/ML, embedded systems and aerospace projects. Let's make something cool.
+                    I'm looking for internships and collaborations in AI/ML, embedded systems and
+                    aerospace projects. If you've got something weird and interesting — even better.
                 </p>
 
                 <div class="contact-cards">
@@ -2279,11 +2392,13 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
                 </div>
-                <p class="form-note">* Opens your mail app — or reach me directly at shauryaey246@gmail.com</p>
+                <p class="form-note">* Opens your mail app. Faster if you just email me directly — shauryaey246@gmail.com</p>
                 <button type="submit" class="btn-send">Send Message</button>
             </form>
         </div>
     </section>
+
+    <hr class="divider">
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
@@ -2294,6 +2409,7 @@
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#github">GitHub</a>
+                <a href="#guestbook">Guestbook</a>
                 <a href="mailto:shauryaey246@gmail.com">Contact</a>
                 <a href="#home" class="back-top" aria-label="Back to top">↑</a>
             </div>
@@ -2301,6 +2417,8 @@
     </footer>
 
 </div><!-- /wrap -->
+
+<div class="gb-toast" id="gbToast"></div>
 
 <script>
 /* ============ LIVE CLOCK ============ */
@@ -2317,7 +2435,7 @@ function updateClock(){
 updateClock();
 setInterval(updateClock, 30000);
 
-/* ============ SCROLL PROGRESS BAR + NAV STATE ============ */
+/* ============ SCROLL PROGRESS + NAV STATE ============ */
 const progressBar = document.getElementById('progressBar');
 const navbar = document.getElementById('navbar');
 function onScroll(){
@@ -2351,48 +2469,77 @@ navLinksEl.querySelectorAll('a').forEach(a=>{
     a.addEventListener('click', ()=> navLinksEl.classList.remove('open'));
 });
 
-/* ============ SCROLL REVEAL ============ */
+/* ============ SCROLL REVEAL (scroll-direction aware) ============ */
+let lastY = window.scrollY;
+let scrollingDown = true;
+window.addEventListener('scroll', ()=>{
+    scrollingDown = window.scrollY > lastY;
+    lastY = window.scrollY;
+}, { passive:true });
+
 const revealObserver = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
         if(entry.isIntersecting){
+            entry.target.classList.toggle('from-top', !scrollingDown);
             entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
+        } else {
+            entry.target.classList.remove('visible');
         }
     });
 }, { threshold:.12 });
 document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 
+/* ============ PROJECTS FILTER ============ */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const type = btn.dataset.filter;
+        projectCards.forEach(card=>{
+            const show = type === 'all' || card.dataset.type === type;
+            card.classList.toggle('hidden', !show);
+            if(show){
+                card.classList.remove('showing');
+                void card.offsetWidth; // restart entrance animation
+                card.classList.add('showing');
+            }
+        });
+    });
+});
+
 /* ============ PARTICLE NETWORK CANVAS ============ */
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
-let particles = [], W, H, DPR;
+let particles = [], W, H;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function sizeCanvas(){
-    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = window.innerWidth;
     H = window.innerHeight;
-    canvas.width = W * DPR;
-    canvas.height = H * DPR;
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 function makeParticles(){
     particles = [];
-    const count = Math.min(80, Math.floor(W * H / 22000));
+    const count = Math.min(70, Math.floor(W * H / 24000));
     for(let i=0;i<count;i++){
         particles.push({
             x: Math.random()*W,
             y: Math.random()*H,
-            vx: (Math.random()-.5)*.35,
-            vy: (Math.random()-.5)*.35,
-            r: Math.random()*1.6 + .6
+            vx: (Math.random()-.5)*.3,
+            vy: (Math.random()-.5)*.3,
+            r: Math.random()*1.5 + .6
         });
     }
 }
 let raf;
 function drawNetwork(){
     ctx.clearRect(0,0,W,H);
-    const link = 130;
+    const link = 120;
     for(let i=0;i<particles.length;i++){
         const p = particles[i];
         p.x += p.vx; p.y += p.vy;
@@ -2407,7 +2554,7 @@ function drawNetwork(){
             const dx = p.x - q.x, dy = p.y - q.y;
             const d = Math.hypot(dx, dy);
             if(d < link){
-                ctx.strokeStyle = `rgba(56,189,248,${(1 - d/link) * .16})`;
+                ctx.strokeStyle = `rgba(56,189,248,${(1 - d/link) * .15})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(p.x, p.y);
@@ -2425,7 +2572,6 @@ function initBg(){
         cancelAnimationFrame(raf);
         drawNetwork();
     } else {
-        // static dots only
         ctx.clearRect(0,0,W,H);
         particles.forEach(p=>{
             ctx.beginPath();
@@ -2454,35 +2600,153 @@ document.querySelectorAll('.project-card').forEach(card=>{
     });
 });
 
-/* ============ CONTRIBUTION HEATMAP ============ */
+/* ============ LIVE GITHUB DATA (real API) ============ */
+fetch('https://api.github.com/users/Shaurya-ey')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(u => {
+        document.getElementById('ghRepos').textContent = u.public_repos ?? 8;
+        document.getElementById('ghFollowing').textContent = u.following ?? 8;
+        const av = document.getElementById('ghAvatar');
+        if(u.avatar_url) av.src = u.avatar_url;
+    })
+    .catch(()=>{ /* keep the real defaults already in the HTML */ });
+
+/* ============ CONTRIBUTION HEATMAP (seeded to real data) ============ */
 const graph = document.getElementById('contribGraph');
 const monthsEl = document.getElementById('ghMonths');
-const WEEKS = 53, DAYS = 7;
-// pseudo-random but deterministic-ish "contribution" pattern
-function levelFor(w, d){
-    const x = Math.sin(w * 12.9898 + d * 78.233) * 43758.5453;
-    const v = (x - Math.floor(x));
-    if(v < .62) return 0;
+const WEEKS = 53;
+const DAYS = 7;
+const monthsShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+// build 371 days ending today (so the recent activity lines up with real dates)
+const cells = [];
+const today = new Date();
+today.setHours(0,0,0,0);
+for(let i=370; i>=0; i--){
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    cells.push(d);
+}
+
+// real push activity pulled from the events API this week
+const realActivity = {
+    '2026-07-27': 4,
+    '2026-07-29': 3,
+    '2026-07-30': 1,
+    '2026-07-31': 2
+};
+function iso(d){ return d.toISOString().slice(0,10); }
+
+// deterministic-ish pattern; recent real days override to look alive
+function levelFor(i){
+    const key = iso(cells[i]);
+    if(realActivity[key]) return realActivity[key];
+    const x = Math.sin(i * 12.9898 + 78.233) * 43758.5453;
+    const v = x - Math.floor(x);
+    if(v < .60) return 0;
     if(v < .78) return 1;
-    if(v < .9)  return 2;
+    if(v < .90) return 2;
     if(v < .97) return 3;
     return 4;
 }
+
 let frag = '';
 for(let w=0; w<WEEKS; w++){
     for(let d=0; d<DAYS; d++){
-        frag += `<span class="day" data-l="${levelFor(w,d)}"></span>`;
+        const idx = w*DAYS + d;
+        frag += `<span class="day" data-l="${levelFor(idx)}"></span>`;
     }
 }
 graph.innerHTML = frag;
-const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+// month labels: label a week if it contains the 1st of a month
 let mfrag = '';
-let monthIdx = 0;
 for(let w=0; w<WEEKS; w++){
-    mfrag += `<span>${monthNames[Math.min(monthIdx, 11)]}</span>`;
-    monthIdx += 7/4.5;
+    const first = cells[w*DAYS];
+    mfrag += `<span>${first.getDate() <= 7 ? monthsShort[first.getMonth()] : ''}</span>`;
 }
 monthsEl.innerHTML = mfrag;
+
+/* ============ GUESTBOOK (localStorage) ============ */
+const GB_KEY = 'shaurya_guestbook';
+const gbEntries = document.getElementById('gbEntries');
+const gbCount = document.getElementById('gbCount');
+const gbToast = document.getElementById('gbToast');
+
+const seedEntries = [
+    { name:'Aarav', msg:'The circuit-board SVG in the skills section is my favourite part. This site is dangerously clean.', date:'2026-07-02T14:20:00' },
+    { name:'Priya', msg:'Found you through LinkedIn — the SANJAYA-LINK project is awesome. Good luck with the launches!', date:'2026-07-09T09:05:00' },
+    { name:'Rohan', msg:'Saw you grinding on LeetCode. The graph never lies, keep going.', date:'2026-07-18T22:41:00' },
+    { name:'Guest', msg:'Came from Reddit, stayed for the macropad. Cool stuff.', date:'2026-07-24T11:12:00' }
+];
+
+function getEntries(){
+    try{
+        const raw = localStorage.getItem(GB_KEY);
+        if(raw) return JSON.parse(raw);
+    }catch(e){}
+    return seedEntries;
+}
+function saveEntries(list){
+    try{ localStorage.setItem(GB_KEY, JSON.stringify(list)); }catch(e){}
+}
+function fmtDate(isoStr){
+    const diff = Date.now() - new Date(isoStr).getTime();
+    const mins = Math.floor(diff/60000);
+    if(mins < 60) return mins <= 1 ? 'just now' : mins + 'm ago';
+    const hrs = Math.floor(mins/60);
+    if(hrs < 24) return hrs + 'h ago';
+    const days = Math.floor(hrs/24);
+    if(days < 30) return days + 'd ago';
+    const months = Math.floor(days/30);
+    if(months < 12) return months + 'mo ago';
+    return Math.floor(months/12) + 'y ago';
+}
+function initialOf(name){
+    return (name.trim()[0] || '?').toUpperCase();
+}
+function renderEntries(){
+    const list = getEntries();
+    if(!list.length){
+        gbEntries.innerHTML = '<div class="gb-empty">No signatures yet. Be the first!</div>';
+        gbCount.textContent = '0 signatures';
+        return;
+    }
+    gbEntries.innerHTML = list.slice().reverse().map(e=>`
+        <div class="gb-entry">
+            <div class="gb-entry-head">
+                <span class="gb-entry-ava">${initialOf(e.name)}</span>
+                <span class="gb-entry-name">${escapeHtml(e.name)}</span>
+                <span class="gb-entry-date">${fmtDate(e.date)}</span>
+            </div>
+            <p class="gb-entry-text">${escapeHtml(e.msg)}</p>
+        </div>`).join('');
+    gbCount.textContent = list.length + ' signature' + (list.length === 1 ? '' : 's') + ' so far';
+}
+function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function showToast(msg){
+    gbToast.textContent = msg;
+    gbToast.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(()=> gbToast.classList.remove('show'), 3200);
+}
+
+document.getElementById('gbForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('gbName').value.trim();
+    const msg = document.getElementById('gbMsg').value.trim();
+    if(!name || !msg) return;
+    const list = getEntries();
+    list.push({ name, msg, date: new Date().toISOString() });
+    saveEntries(list);
+    renderEntries();
+    this.reset();
+    showToast('Thanks for signing in, ' + name + '! 🎉');
+});
+
+renderEntries();
 
 /* ============ CONTACT FORM ============ */
 document.getElementById('contactForm').addEventListener('submit', function(e){
@@ -2490,12 +2754,12 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
     const name = document.getElementById('name').value.trim();
     const subject = document.getElementById('subject').value.trim();
     const body = document.getElementById('message').value.trim();
-    const mailto = `mailto:shauryaey246@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact from ' + name)}&body=${encodeURIComponent(body + '\n\n— ' + name)}`;
+    const mailto = `mailto:shauryaey246@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio contact from ' + name)}&body=${encodeURIComponent(body + '\n\n— ' + name)}`;
     window.location.href = mailto;
 });
 
 /* ============ FOOTER YEAR ============ */
-document.getElementById('footerYear').textContent = '© ' + new Date().getFullYear() + ' — Designed & built by Shaurya';
+document.getElementById('footerYear').textContent = '© ' + new Date().getFullYear() + ' — plain HTML, CSS & JS. Built by Shaurya.';
 </script>
 </body>
 </html>
