@@ -12,7 +12,6 @@
 <script>document.documentElement.classList.add('js');</script>
 <style>
     :root{
-      /* palette */
       --bg: #05060a;
       --sky-500: #0ea5e9;
       --sky-400: #38bdf8;
@@ -23,19 +22,16 @@
       --violet-500: #6366f1;
       --amber-400: #fbbf24;
       --amber-300: #fcd34d;
-      --pink-400: #f472b6;
       --ink: #f8fafc;
       --ink-dim: #cbd5e1;
       --muted: #94a3b8;
       --muted-dim: #64748b;
 
-      /* type */
       --font-display: 'Syne', sans-serif;
       --font-body: 'Inter', sans-serif;
       --font-accent: 'Space Grotesk', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
 
-      /* spacing scale */
       --space-1: 4px;
       --space-2: 8px;
       --space-3: 16px;
@@ -44,7 +40,6 @@
       --space-6: 64px;
       --space-7: 96px;
 
-      /* radius */
       --r-sm: 10px;
       --r-md: 16px;
       --r-lg: 24px;
@@ -58,6 +53,7 @@
 
     html{
         scroll-behavior: smooth;
+        overflow-x: clip;
     }
     html,body{
         margin:0;
@@ -72,6 +68,7 @@
     body{
         overflow-x: clip;
     }
+
     ::selection{
         background:rgba(56,189,248,.35);
         color:var(--ink);
@@ -85,9 +82,7 @@
         border:2px solid #07080d;
     }
 
-
-
-    /* ============ COSMIC BACKGROUND STACK ============ */
+    /* ============ BACKGROUND STACK ============ */
     .bg-canvas{
         position:fixed;
         inset:0;
@@ -102,8 +97,7 @@
         background:
             radial-gradient(800px 420px at 50% -12%, rgba(56,189,248,.14), transparent 70%),
             radial-gradient(900px 560px at 10% 38%, rgba(99,102,241,.10), transparent 70%),
-            radial-gradient(800px 560px at 92% 72%, rgba(251,191,36,.06), transparent 70%),
-            radial-gradient(700px 500px at 70% 10%, rgba(244,114,182,.05), transparent 70%);
+            radial-gradient(800px 560px at 92% 72%, rgba(251,191,36,.06), transparent 70%);
     }
     .bg-grid{
         position:fixed;
@@ -125,7 +119,6 @@
         opacity:.05;
         background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
     }
-    /* a drifting aurora band behind the hero */
     .aurora{
         position:fixed;
         top:-30%;
@@ -162,17 +155,18 @@
         z-index:2;
     }
 
+    /* ============ TYPOGRAPHY ============ */
     h1,h2,h3{ margin:0; }
 
     .section{
-        max-width:1180px;
+        max-width:1080px;
         margin:0 auto;
         padding:var(--space-7) 40px;
         scroll-margin-top:110px;
     }
 
     .section-head{
-        margin-bottom:56px;
+        margin-bottom:52px;
         max-width:680px;
     }
     .section-eyebrow{
@@ -180,16 +174,16 @@
         align-items:center;
         gap:10px;
         font-family:var(--font-mono);
-        font-size:.78rem;
+        font-size:.76rem;
         font-weight:500;
         letter-spacing:.14em;
         text-transform:uppercase;
         color:var(--sky-300);
-        margin-bottom:16px;
+        margin-bottom:14px;
     }
     .section-eyebrow::before{
         content:'';
-        width:34px;
+        width:30px;
         height:1px;
         background:linear-gradient(90deg, var(--sky-400), transparent);
     }
@@ -227,13 +221,13 @@
         border:none;
     }
 
-
+    /* ============ NAVBAR ============ */
     .navbar{
         position:sticky;
         top:16px;
         z-index:100;
         width:min(1080px, 94vw);
-        margin:18px auto 0;
+        margin:16px auto 0;
         display:flex;
         align-items:center;
         justify-content:space-between;
@@ -258,10 +252,9 @@
     }
 
     .logo-wrap{
-        position:relative;
         display:flex;
         align-items:center;
-        height:100%;
+        text-decoration:none;
         cursor:default;
     }
     .logo{
@@ -280,9 +273,8 @@
     .logo-wrap:hover .letter{
         transform:translateY(-2px);
         color:var(--sky-200);
-        text-shadow:0 0 16px rgba(129,140,248,.9);
+        text-shadow:0 0 14px rgba(129,140,248,.9);
     }
-    
     .logo-dot{
         width:7px;
         height:7px;
@@ -350,16 +342,17 @@
         transition:transform .3s ease, opacity .3s ease;
     }
 
+    /* ============ HERO ============ */
     .hero{
         display:flex;
         align-items:flex-end;
         justify-content:space-between;
         gap:44px;
         flex-wrap:wrap;
-        padding:28px 40px 24px;
+        padding:2px 40px 24px;
         max-width:1080px;
         margin:0 auto;
-        min-height:calc(100vh - 96px);
+        min-height:calc(100vh - 120px);
         scroll-margin-top:100px;
     }
 
@@ -424,8 +417,10 @@
         line-height:.95;
         letter-spacing:-0.015em;
         font-size:clamp(2.4rem, 8vw, 6.2rem);
+        max-width:100%;
+        text-wrap: balance;
         color:var(--ink);
-        text-shadow:0 0 40px rgba(56,189,248,.16);
+        text-shadow:0 0 40px rgba(56,189,248,.14);
     }
     .hero-line{ display:block; }
     .hero-line .glow{
@@ -433,7 +428,7 @@
         -webkit-background-clip:text;
         background-clip:text;
         color:transparent;
-        filter:drop-shadow(0 0 20px rgba(56,189,248,.25));
+        filter:drop-shadow(0 0 20px rgba(56,189,248,.2));
     }
 
     .hero-role{
@@ -547,6 +542,7 @@
         font-weight:700;
     }
 
+    /* hero visual — static, no float animation */
     .hero-visual{
         position:relative;
         flex:0 0 auto;
@@ -560,15 +556,14 @@
             linear-gradient(145deg, rgba(56,189,248,.28), rgba(129,140,248,.14), rgba(251,191,36,.10));
         border:1px solid rgba(56,189,248,.4);
         box-shadow:
-            0 0 60px -10px rgba(56,189,248,.4),
-            inset 0 0 40px rgba(56,189,248,.08);
+            0 0 60px -10px rgba(56,189,248,.35),
+            inset 0 0 40px rgba(56,189,248,.06);
     }
     .hero-photo{
         width:100%;
         display:block;
         border-radius:22px;
     }
-
     .corner{
         position:absolute;
         width:20px;
@@ -577,10 +572,10 @@
         pointer-events:none;
         filter:drop-shadow(0 0 6px rgba(56,189,248,.8));
     }
-    .corner-tl{ top:10px; left:10px; border-top:2px solid; border-left:2px solid; border-top-left-radius:12px; }
-    .corner-tr{ top:10px; right:10px; border-top:2px solid; border-right:2px solid; border-top-right-radius:12px; }
-    .corner-bl{ bottom:10px; left:10px; border-bottom:2px solid; border-left:2px solid; border-bottom-left-radius:12px; }
-    .corner-br{ bottom:10px; right:10px; border-bottom:2px solid; border-right:2px solid; border-bottom-right-radius:12px; }
+    .corner-tl{ top:9px; left:9px; border-top:2px solid; border-left:2px solid; border-top-left-radius:12px; }
+    .corner-tr{ top:9px; right:9px; border-top:2px solid; border-right:2px solid; border-top-right-radius:12px; }
+    .corner-bl{ bottom:9px; left:9px; border-bottom:2px solid; border-left:2px solid; border-bottom-left-radius:12px; }
+    .corner-br{ bottom:9px; right:9px; border-bottom:2px solid; border-right:2px solid; border-bottom-right-radius:12px; }
 
     .orbit-chip{
         position:absolute;
@@ -589,13 +584,13 @@
         justify-content:center;
         width:46px;
         height:46px;
-        font-size:1.2em;
+        font-size:1.2rem;
         border-radius:50%;
         background:rgba(6,8,12,.7);
         border:1px solid rgba(56,189,248,.3);
         backdrop-filter:blur(8px);
         -webkit-backdrop-filter:blur(8px);
-        box-shadow:0 0 20px rgba(56,189,248,.28);
+        box-shadow:0 0 20px rgba(56,189,248,.25);
         animation: chip-float 5s ease-in-out infinite;
         z-index:2;
     }
@@ -604,13 +599,14 @@
         50%{ transform:translateY(-10px) rotate(7deg); }
     }
 
-
+    /* ============ ABOUT ============ */
     .about .section-body{
         display:grid;
         grid-template-columns: 1.2fr .8fr;
         gap:44px;
         align-items:start;
     }
+
     .bio-card{
         padding:30px 32px;
         border-radius:var(--r-lg);
@@ -635,10 +631,7 @@
         line-height:1.8;
     }
     .about-bio strong{ color:var(--ink); font-weight:600; }
-    .about-bio .hl{
-        color:var(--sky-300);
-        font-weight:600;
-    }
+    .about-bio .hl{ color:var(--sky-300); font-weight:600; }
     .about-bio em{
         display:block;
         margin-top:18px;
@@ -673,8 +666,8 @@
     }
     .stats-grid{
         display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:16px;
+        grid-template-columns:repeat(2, minmax(176px, auto));
+        gap:12px;
         justify-content:end;
         width:fit-content;
     }
@@ -739,7 +732,7 @@
         color:var(--sky-200);
         font-size:.82rem;
         font-weight:500;
-        transition:transform .3s ease, background .3s ease, box-shadow .3s ease;
+        transition:transform .3s ease, background .3s ease;
     }
     .focus-chip:hover{
         background:rgba(56,189,248,.2);
@@ -856,16 +849,15 @@
         color:var(--muted);
     }
     .skills-note .spark{ color:var(--sky-300); }
-    .skills-note .tag{
-        color:var(--amber-300);
-    }
+    .skills-note .tag{ color:var(--amber-300); }
 
+    /* ============ PROJECTS ============ */
     .projects-filter{
         display:inline-flex;
         gap:5px;
         padding:5px;
         background:rgba(148,163,184,.07);
-        border:1px solid rgba(148,163,184,.12);
+        border:1px solid rgba(148,163,184,.14);
         border-radius:var(--r-full);
         margin-bottom:32px;
     }
@@ -913,15 +905,234 @@
     }
     .project-card.hidden{ display:none; }
     @keyframes card-in{
-        from{ opacity:0; transform:translateY(18px) scale(.98); }
+        from{ opacity:0; transform:translateY(18px) scale(.97); }
         to{ opacity:1; transform:none; }
-
     }
     .project-card.showing{ animation:card-in .45s ease both; }
+
+    /* image banner on each project card — real image if present, pretty placeholder otherwise */
+    .project-media{
+        position:relative;
+        height:210px;
+        border-radius:var(--r-md);
+        overflow:hidden;
+        background:
+            linear-gradient(160deg, rgba(56,189,248,.16), rgba(99,102,241,.12), rgba(251,191,36,.08)),
+            repeating-linear-gradient(45deg, rgba(56,189,248,.05) 0 10px, transparent 10px 20px);
+        border:1px solid rgba(148,163,184,.16);
+        margin-bottom:22px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+    .project-media-fallback{
+        position:absolute;
+        inset:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:3.2rem;
+        opacity:.9;
+        filter:drop-shadow(0 0 26px rgba(56,189,248,.55));
+    }
+    .project-media img{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        z-index:2;
+    }
+    /* auto-building slideshow layers */
+    .pm-layers{
+        position:absolute;
+        inset:0;
+        border-radius:var(--r-md);
+        overflow:hidden;
+        z-index:2;
+    }
+    .pm-slide{
+        position:absolute;
+        inset:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        opacity:0;
+        transition:opacity .9s ease;
+    }
+    .pm-slide.on{
+        opacity:1;
+        z-index:2;
+    }
+    .pm-dots{
+        position:absolute;
+        bottom:10px;
+        left:0;
+        right:0;
+        display:flex;
+        justify-content:center;
+        gap:6px;
+        z-index:5;
+        pointer-events:none;
+    }
+    .pm-dot{
+        width:6px;
+        height:6px;
+        border-radius:50%;
+        background:rgba(255,255,255,.4);
+        transition:background .3s ease, transform .3s ease, box-shadow .3s ease;
+    }
+    .pm-dot.on{
+        background:var(--sky-300);
+        transform:scale(1.4);
+        box-shadow:0 0 8px rgba(56,189,248,.9);
+    }
+    .pm-caption{
+        position:absolute;
+        bottom:8px;
+        right:10px;
+        z-index:5;
+        font-family:var(--font-mono);
+        font-size:.6rem;
+        letter-spacing:.04em;
+        color:var(--sky-200);
+        background:rgba(4,6,10,.65);
+        padding:3px 9px;
+        border-radius:var(--r-full);
+        backdrop-filter:blur(4px);
+        pointer-events:none;
+    }
+    .project-card .project-badge{
+        position:absolute;
+        top:12px;
+        right:12px;
+        z-index:3;
+    }
+    .project-body{
+        display:flex;
+        flex-direction:column;
+        flex:1;
+    }
+    .proj-link.link-in{
+        color:var(--violet-300);
+        border-color:rgba(167,139,250,.4);
+        background:rgba(167,139,250,.08);
+    }
+    .proj-link.link-in:hover{
+        color:#c4b5fd;
+        background:rgba(167,139,250,.16);
+        border-color:var(--violet-300);
+        box-shadow:0 10px 24px -10px rgba(139,92,246,.55);
+    }
     .projects-grid{
         display:grid;
         grid-template-columns:repeat(2, 1fr);
-        gap:24px;
+        gap:26px;
+    }
+
+    /* the shot thumbnails stay in the DOM as the hidden data source for the
+       auto-building hover slideshow, so keep them visually hidden */
+    .project-shots{
+        display:none;
+    }
+    .shot{
+        position:relative;
+        width:92px;
+        height:64px;
+        border-radius:10px;
+        overflow:hidden;
+        border:1px solid rgba(148,163,184,.22);
+        flex-shrink:0;
+        cursor:pointer;
+        background:linear-gradient(160deg, rgba(56,189,248,.16), rgba(99,102,241,.12));
+    }
+    .shot img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block;
+    }
+    .shot-fallback{
+        position:absolute;
+        inset:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:1.3rem;
+    }
+    .shot figcaption{
+        position:absolute;
+        left:0; right:0; bottom:0;
+        padding:2px 5px 3px;
+        font-family:var(--font-mono);
+        font-size:.58rem;
+        text-align:center;
+        color:var(--sky-200);
+        background:rgba(4,6,10,.72);
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+
+    /* no-js / reduced ground: gallery visible on reduced-motion handled in media query */
+
+    /* ============ HOBBIES (about) ============ */
+    .hobbies-block{
+        margin-top:42px;
+        padding-top:30px;
+        border-top:1px solid rgba(148,163,184,.12);
+    }
+    .hobbies-lead{
+        margin:0 0 20px;
+        max-width:560px;
+        color:var(--muted);
+        font-size:.98rem;
+        line-height:1.65;
+    }
+    .hobbies-lead strong{ color:var(--sky-200); font-weight:600; }
+    .hobby-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fill, minmax(232px, 1fr));
+        gap:14px;
+    }
+    .hobby-card{
+        display:flex;
+        align-items:center;
+        gap:14px;
+        padding:16px 18px;
+        border-radius:var(--r-md);
+        background:linear-gradient(160deg, rgba(20,23,28,.9), rgba(12,14,18,.97));
+        border:1px solid rgba(148,163,184,.14);
+        transition:transform .3s cubic-bezier(.34,1.2,.64,1), border-color .3s ease, box-shadow .3s ease;
+    }
+    .hobby-card:hover{
+        transform:translateY(-4px);
+        border-color:rgba(56,189,248,.45);
+        box-shadow:0 16px 34px -18px rgba(14,165,233,.5);
+    }
+    .hobby-ico{
+        width:46px; height:46px; flex-shrink:0;
+        display:flex; align-items:center; justify-content:center;
+        font-size:1.35rem; border-radius:13px;
+        background:linear-gradient(160deg, rgba(56,189,248,.18), rgba(99,102,241,.14));
+        border:1px solid rgba(56,189,248,.25);
+        box-shadow:0 0 18px -6px rgba(56,189,248,.45);
+    }
+    .hobby-meta{
+        min-width:0;
+    }
+    .hobby-name{
+        font-family:var(--font-accent);
+        font-weight:600;
+        font-size:1rem;
+        color:var(--ink);
+        line-height:1.2;
+    }
+    .hobby-tag{
+        display:block;
+        margin-top:4px;
+        font-size:.76rem;
+        color:var(--muted);
     }
     .project-card{
         position:relative;
@@ -1014,25 +1225,34 @@
     }
     .project-links{
         display:flex;
+        flex-wrap:wrap;
         gap:10px;
-        margin-top:20px;
+        margin-top:22px;
+        padding-top:16px;
+        border-top:1px solid rgba(148,163,184,.12);
     }
     .proj-link{
         display:inline-flex;
         align-items:center;
-        gap:7px;
+        gap:8px;
+        padding:10px 20px;
+        border-radius:var(--r-full);
         font-family:var(--font-accent);
-        font-size:.76rem;
+        font-size:.74rem;
         font-weight:600;
-        letter-spacing:.06em;
+        letter-spacing:.07em;
         text-transform:uppercase;
-        color:var(--sky-300);
+        color:var(--sky-200);
+        border:1px solid rgba(56,189,248,.35);
+        background:rgba(56,189,248,.06);
         text-decoration:none;
-        transition:color .3s ease, gap .3s ease;
+        transition:transform .3s cubic-bezier(.34,1.2,.64,1), background .3s ease, border-color .3s ease, box-shadow .3s ease;
     }
     .proj-link:hover{
-        color:var(--sky-200);
-        gap:11px;
+        background:rgba(56,189,248,.14);
+        border-color:var(--sky-400);
+        transform:translateY(-2px);
+        box-shadow:0 10px 24px -10px rgba(56,189,248,.55);
     }
     .projects-more{
         margin-top:36px;
@@ -1047,11 +1267,10 @@
     }
     .projects-more a:hover{ color:var(--sky-200); }
 
-
-
+    /* ============ GITHUB (compact) ============ */
     .github-body{
         display:flex;
-       flex-direction:column;
+        flex-direction:column;
         gap:24px;
     }
     .gh-card{
@@ -1082,7 +1301,13 @@
     }
     .gh-avatar img{
         width:100%;
+        height:100%;
+        object-fit:cover;
         display:block;
+    }
+    .gh-info{
+        flex:1 1 240px;
+        min-width:200px;
     }
     .gh-name{
         font-family:var(--font-accent);
@@ -1132,7 +1357,7 @@
     }
     .gh-follow{
         flex-shrink:0;
-        padding:13px;
+        padding:13px 24px;
         border-radius:var(--r-full);
         background:linear-gradient(120deg, var(--sky-500), var(--violet-500));
         color:#fff;
@@ -1179,15 +1404,12 @@
         color:var(--muted-dim);
     }
     .gh-legend .sw{
-        width:9px;
-        height:9px;
-        border-radius:2.5px;
+        width:9px; height:9px; border-radius:2.5px;
     }
-    .gh-legend .sw.s0{ background:rgba(148,163,184,.12) }
-    .gh-legend .sw.s1{ background:rgba(14,165,233,.35) }
-    .gh-legend .sw.s2{ background:rgba(14,165,233,.6) }
-    .gh-legend .sw.s3{ background:rgba(56,189,248,.85) }
-    .gh-legend .sw.s4{ background:rgba(125,211,252,1) }
+    .gh-legend .sw.s0{ background:rgba(148,163,184,.12); }
+    .gh-legend .sw.s1{ background:rgba(14,165,233,.35); }
+    .gh-legend .sw.s2{ background:rgba(56,189,248,.7); }
+    .gh-legend .sw.s3{ background:rgba(125,211,252,1); }
     .contrib-graph{
         display:grid;
         grid-template-columns:repeat(53, 1fr);
@@ -1241,13 +1463,13 @@
         border-radius:var(--r-full);
         background:rgba(148,163,184,.1);
         overflow:hidden;
-        display:flex;
     }
     .lang-bar span{
         display:block;
         height:100%;
     }
 
+    /* ============ TESTIMONIALS ============ */
     .quotes-grid{
         display:grid;
         grid-template-columns:repeat(3, 1fr);
@@ -1295,9 +1517,10 @@
         align-items:center;
         justify-content:center;
         font-family:var(--font-accent);
+        font-weight:700;
         font-size:.9rem;
         color:#0f172a;
-        background:linear-gradient(135deg, var(--sky-300), var(--violet-400));
+        background:linear-gradient(135deg, var(--sky-300), var(--violet-300));
         flex-shrink:0;
     }
     .quote-name{
@@ -1312,8 +1535,7 @@
         color:var(--muted-dim);
     }
 
-
-
+    /* ============ CONTACT ============ */
     .contact-body{
         display:grid;
         grid-template-columns:1fr 1fr;
@@ -1348,7 +1570,7 @@
         background:linear-gradient(160deg, rgba(23,26,32,.85), rgba(10,12,16,.95));
         border:1px solid rgba(148,163,184,.14);
         text-decoration:none;
-        transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+        transition:transform .3s ease, border-color .3s ease;
     }
     .contact-card:hover{
         transform:translateX(5px);
@@ -1479,8 +1701,7 @@
         box-shadow:0 16px 40px -10px rgba(56,189,248,.6);
     }
 
-
-
+    /* ============ GUESTBOOK ============ */
     .guestbook-body{
         display:grid;
         grid-template-columns:.85fr 1.15fr;
@@ -1666,8 +1887,6 @@
         box-shadow:0 10px 26px -8px rgba(56,189,248,.6);
     }
 
-
-
     /* ============ REVEAL ============ */
     /* hidden state only applies once JS is confirmed working, so a script
        failure can never blank the page */
@@ -1832,9 +2051,9 @@
                 <span class="hero-line"><span class="glow">PANDEY</span></span>
             </h1>
 
-            <p class="hero-role" id="typewriter">AI / ML Engineer</p>
+            <p class="hero-role">AI / ML Engineer</p>
             <p class="hero-intro">
-                Engineering student specializing in <strong>CSE (AI/ML)</strong> — building things at the
+                Engineering student in <strong>CSE (AI/ML)</strong> — I like building things that sit at the
                 intersection of <strong>hardware</strong>, <strong>software</strong> and <strong>intelligence</strong>.
             </p>
 
@@ -1868,13 +2087,12 @@
                 <span class="corner corner-bl"></span>
                 <span class="corner corner-br"></span>
             </div>
-            <span class="orbit-chip" style="top:18px; left:24px; animation-delay:0s;">💻</span>
-            <span class="orbit-chip" style="top:12%; right:18px; animation-delay:.7s;">✈️</span>
-            <span class="orbit-chip" style="bottom:22%; left:30px; animation-delay:1.4s;">🧠</span>
+            <span class="orbit-chip" style="top:14px; left:18px;">💻</span>
+            <span class="orbit-chip" style="top:10%; right:16px; animation-delay:.7s;">🧠</span>
+            <span class="orbit-chip" style="bottom:12%; left:26px; animation-delay:1.4s;">🚀</span>
         </div>
     </header>
 
-    
     <hr class="divider">
 
     <!-- ============ ABOUT ============ -->
@@ -1887,45 +2105,58 @@
         <div class="section-body">
             <div class="bio-card reveal">
                 <p class="about-bio">
-                    <strong>I'm Shaurya</strong>, an engineering student studying Computer Science with a specialization
-                    in <span class="hl">AI/ML</span>. I'm drawn to problems that mix code with something tangible — whether
-                    that's a machine learning model, a piece of electronics, or a system inspired by aerospace engineering.
-                    When I'm not building something, I'm usually learning a new tool, solving problems on LeetCode, or
-                    reading about how things work under the hood.
+                    <strong>I'm Shaurya</strong>, an engineering student from India studying Computer Science with a
+                    specialisation in <span class="hl">AI/ML</span>. I got into programming a couple of years ago, and
+                    somewhere along the way I got completely hooked on the intersection of software and hardware —
+                    training a model, then putting it on a microcontroller, wiring up a PCB, that sort of thing.
                     <br><br>
-                    Beyond academics, I'm focused on growing into someone who can create <span class="hl">meaningful,
-                    impactful technology</span>. This portfolio is a reflection of that journey — a collection of my work,
-                    my learning process, and my continuous push to improve.
+                    Right now I spend most of my time on <span class="hl">computer vision</span>, embedded telemetry
+                    and building small tools that make my desk smarter. When I'm not building, I'm usually grinding
+                    LeetCode, taking electronics apart to see how they work, or reading about how things fly.
                     <br><br>
-                    I'm not just learning to code or build — I'm learning how to <strong>think, solve, and create</strong>.
-                    <em>— constantly shipping, constantly iterating.</em>
+                    I'm not just learning to code — I'm learning how to <strong>think, solve and create</strong>.
+                    <em>Also, this site is plain HTML, CSS and JS. No framework. It runs because browsers are stubborn.</em>
                 </p>
                 <div class="bio-tags">
                     <span class="bio-tag">#LifelongLearner</span>
                     <span class="bio-tag">#ML</span>
-                    <span class="bio-tag">#Hardware</span>
+                    <span class="bio-tag">#Electronics</span>
                     <span class="bio-tag">#Aerospace</span>
                 </div>
             </div>
 
             <div class="about-side">
                 <div class="stats-grid">
-                    <div class="stat-card reveal reveal-d1"><span class="stat-icon">🚀</span><span class="stat-num">6+</span><span class="stat-label">Projects Built</span></div>
-                    <div class="stat-card reveal reveal-d1"><span class="stat-icon">💡</span><span class="stat-num">100+</span><span class="stat-label">Problems Solved</span></div>
-                    <div class="stat-card reveal reveal-d2"><span class="stat-icon">🛠️</span><span class="stat-num">2+</span><span class="stat-label">Years Coding</span></div>
-                    <div class="stat-card reveal reveal-d2"><span class="stat-icon">🧰</span><span class="stat-num">15+</span><span class="stat-label">Tools &amp; Frameworks</span></div>
+                    <div class="stat-card reveal"><span class="stat-num">8+</span><span class="stat-label">Projects</span></div>
+                    <div class="stat-card reveal reveal-d1"><span class="stat-num">100+</span><span class="stat-label">LeetCode</span></div>
+                    <div class="stat-card reveal reveal-d1"><span class="stat-num">2+</span><span class="stat-label">Yrs Coding</span></div>
+                    <div class="stat-card reveal reveal-d2"><span class="stat-num">15+</span><span class="stat-label">Tools</span></div>
                 </div>
 
-                <div class="focus-card reveal reveal-d3">
+                <div class="focus-card reveal reveal-d2">
                     <span class="focus-label">Areas of Interest</span>
                     <div class="about-focus">
                         <span class="focus-chip">🤖 AI / ML</span>
-                        <span class="focus-chip">🌐 Web Development</span>
+                        <span class="focus-chip">🌐 Web Dev</span>
                         <span class="focus-chip">🔌 Electronics</span>
                         <span class="focus-chip">🚀 Aerospace</span>
-                        <span class="focus-chip">📐 CAD / Design</span>
+                        <span class="focus-chip">📐 CAD</span>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="hobbies-block reveal">
+            <span class="focus-label">Off the clock</span>
+            <p class="hobbies-lead">When I'm not buried in code, you'll usually find me doing one of these.</p>
+            <div class="hobby-grid">
+                <div class="hobby-card"><span class="hobby-ico">🧩</span><div class="hobby-meta"><span class="hobby-name">The Coder</span><span class="hobby-tag">side projects, scripts &amp; rabbit holes</span></div></div>
+                <div class="hobby-card"><span class="hobby-ico">📐</span><div class="hobby-meta"><span class="hobby-name">CAD Wrangler</span><span class="hobby-tag">modelling parts before they exist</span></div></div>
+                <div class="hobby-card"><span class="hobby-ico">🔌</span><div class="hobby-meta"><span class="hobby-name">Electronics Tinkerer</span><span class="hobby-tag">wiring, sensors &amp; the smell of solder</span></div></div>
+                <div class="hobby-card"><span class="hobby-ico">🤖</span><div class="hobby-meta"><span class="hobby-name">Robot Builder</span><span class="hobby-tag">making things that actually move</span></div></div>
+                <div class="hobby-card"><span class="hobby-ico">⚛️</span><div class="hobby-meta"><span class="hobby-name">Physics Nerd</span><span class="hobby-tag">asking why the universe has rules</span></div></div>
+                <div class="hobby-card"><span class="hobby-ico">🏃</span><div class="hobby-meta"><span class="hobby-name">The Runner</span><span class="hobby-tag">headphones on, thoughts off</span></div></div>
+                <div class="hobby-card"><span class="hobby-ico">🏀</span><div class="hobby-meta"><span class="hobby-name">Pickup Basketball</span><span class="hobby-tag">ball first, deadlines second</span></div></div>
             </div>
         </div>
     </section>
@@ -1998,15 +2229,15 @@
                 <div class="skill-card-head">
                     <span class="icon">⌨️</span>
                     <span class="skill-group-title">Languages</span>
-                    <span class="skill-count">05</span>
+                    <span class="skill-count">06</span>
                 </div>
                 <div class="tech-grid">
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/python" alt="Python" class="tech-icon"><span class="tech-label">Python</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/cplusplus" alt="C++" class="tech-icon"><span class="tech-label">C++</span></div>
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" class="tech-icon"><span class="tech-label">TypeScript</span></div>
+                    <div class="tech-card"><span class="tech-icon custom">📊</span><span class="tech-label">MATLAB</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="tech-icon"><span class="tech-label">JavaScript</span></div>
-                    <div class="tech-card"><img src="https://cdn.simpleicons.org/matlab" alt="MATLAB" class="tech-icon"><span class="tech-label">MATLAB</span></div>
-                    <div class="tech-card"><img src="https://cdn.simpleicons.org/css3" alt="CSS" class="tech-icon"><span class="tech-label">CSS</span></div>
-                    <div class="tech-card"><img src="https://cdn.simpleicons.org/html5" alt="HTML" class="tech-icon"><span class="tech-label">HTML</span></div>
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/html5" alt="HTML" class="tech-icon"><span class="tech-label">HTML/CSS</span></div>
                 </div>
             </div>
 
@@ -2017,12 +2248,12 @@
                     <span class="skill-count">06</span>
                 </div>
                 <div class="tech-grid">
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/pytorch" alt="PyTorch" class="tech-icon"><span class="tech-label">PyTorch</span></div>
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/tensorflow" alt="TensorFlow" class="tech-icon"><span class="tech-label">TensorFlow</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/react" alt="React" class="tech-icon"><span class="tech-label">React</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" class="tech-icon"><span class="tech-label">Node.js</span></div>
-                    <div class="tech-card"><img src="https://cdn.simpleicons.org/pytorch" alt="PyTorch" class="tech-icon"><span class="tech-label">PyTorch</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/git" alt="Git" class="tech-icon"><span class="tech-label">Git</span></div>
-                    <div class="tech-card"><img src="https://cdn.simpleicons.org/numpy" alt="NumPy" class="tech-icon"><span class="tech-label">NumPy</span></div>
-                    <div class="tech-card"><img src="https://cdn.simpleicons.org/pandas" alt="Pandas" class="tech-icon"><span class="tech-label">Pandas</span></div>
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/opencv" alt="OpenCV" class="tech-icon"><span class="tech-label">OpenCV</span></div>
                 </div>
             </div>
 
@@ -2035,22 +2266,22 @@
                 <div class="tech-grid">
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/arduino" alt="Arduino" class="tech-icon"><span class="tech-label">Arduino</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/raspberrypi" alt="Raspberry Pi" class="tech-icon"><span class="tech-label">Raspberry Pi</span></div>
-                    <div class="tech-card"><span class="tech-icon" style="display:flex;align-items:center;justify-content:center;font-size:1.2rem;">⚡</span><span class="tech-label">PCB Design</span></div>
-                    <div class="tech-card"><span class="tech-icon" style="display:flex;align-items:center;justify-content:center;font-size:1.2rem;">📐</span><span class="tech-label">CAD Modelling</span></div>
+                    <div class="tech-card"><span class="tech-icon custom">⚡</span><span class="tech-label">PCB Design</span></div>
+                    <div class="tech-card"><span class="tech-icon custom">📐</span><span class="tech-label">CAD Modelling</span></div>
                 </div>
             </div>
         </div>
 
         <p class="skills-note reveal">
             <span class="spark">&gt;</span> Also exploring: <span class="tag">NLP</span> · <span class="tag">Computer Vision</span> ·
-            <span class="tag">Embedded Systems</span> · <span class="tag">PCB Design</span> · <span class="tag">3D / CAD</span>
+            <span class="tag">Embedded Systems</span> · <span class="tag">LoRa</span> · <span class="tag">3D Printing</span>
         </p>
     </section>
 
     <hr class="divider">
 
     <!-- ============ PROJECTS ============ -->
- <section class="section" id="projects">
+    <section class="section" id="projects">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">03</span> Projects</span>
             <h2 class="section-title">Things I've <span class="accent">built</span></h2>
@@ -2064,125 +2295,191 @@
         </div>
 
         <div class="projects-grid">
-            <div class="project-card reveal" data-type="hardware">
-                <div class="project-top">
-                    <span class="project-type type-hw">⚙ Hardware</span>
+<div class="project-card reveal" data-type="hardware">
+                <div class="project-media">
+                    <img src="images/projects/sanjaya-1.jpg" alt="SANJAYA-LINK — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">📡</div>
                     <span class="project-badge">★ Featured</span>
                 </div>
-                <div class="project-icon">📡</div>
-                <h3 class="project-title">SANJAYA-LINK</h3>
-                <p class="project-desc">
-                    A custom 1-watt telemetry and control link for high-altitude flights. Long-range comms
-                    over LoRa with everything logged to SD. The current big obsession.
-                </p>
-                <div class="project-tags">
-                    <span class="proj-tag">C++</span>
-                    <span class="proj-tag">LoRa</span>
-                    <span class="proj-tag">Telemetry</span>
-                    <span class="proj-tag">Arduino</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey/SANJAYA-LINK" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-hw">⚙ Hardware</span>
+                    </div>
+                    <h3 class="project-title">SANJAYA-LINK</h3>
+                    <p class="project-desc">
+                        A custom 1-watt telemetry and control link for high-altitude flights. Long-range comms
+                        over LoRa with everything logged to SD. The current big obsession.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/sanjaya-2.jpg" alt="Schematic" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📐</div><figcaption>Schematic</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/sanjaya-3.jpg" alt="Assembled" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔩</div><figcaption>Assembled</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/sanjaya-4.jpg" alt="In the field" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📡</div><figcaption>Field test</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">C++</span>
+                        <span class="proj-tag">LoRa</span>
+                        <span class="proj-tag">Telemetry</span>
+                        <span class="proj-tag">Arduino</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/SANJAYA-LINK" target="_blank" rel="noopener" class="proj-link">Code →</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal reveal-d1" data-type="software">
-                <div class="project-top">
-                    <span class="project-type type-sw">🖥 Software</span>
+                <div class="project-media">
+                    <img src="images/projects/flight-analyst-1.jpg" alt="Flight-Analyst — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">🛰️</div>
                 </div>
-                <div class="project-icon">🛰️</div>
-                <h3 class="project-title">Flight-Analyst</h3>
-                <p class="project-desc">
-                    A mission control + flight stability analyst. Ingests flight logs, plots the data,
-                    and flags stability issues before launch instead of after.
-                </p>
-                <div class="project-tags">
-                    <span class="proj-tag">TypeScript</span>
-                    <span class="proj-tag">Web App</span>
-                    <span class="proj-tag">Data Viz</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey/Flight-Analyst" target="_blank" rel="noopener" class="proj-link">Source →</a>
-                </div>
-            </div>
-
-            <div class="project-card reveal reveal-d1" data-type="hardware">
-                <div class="project-top">
-                    <span class="project-type type-hw">⚙ Hardware</span>
-                </div>
-                <div class="project-icon">🎥</div>
-                <h3 class="project-title">Smart-WebCam</h3>
-                <p class="project-desc">
-                    A custom Raspberry Pi webcam with mic input, made for my desk. Streams, records, and
-                    stays on 24/7 without melting my laptop.
-                </p>
-                <div class="project-tags">
-                    <span class="proj-tag">Python</span>
-                    <span class="proj-tag">Raspberry Pi</span>
-                    <span class="proj-tag">Video</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey/Smart-WebCam" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-sw">🖥 Software</span>
+                    </div>
+                    <h3 class="project-title">Flight-Analyst</h3>
+                    <p class="project-desc">
+                        A mission control + flight stability analyst. Ingests flight logs, plots the data,
+                        and flags stability issues before launch instead of after.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/flight-analyst-2.jpg" alt="Dashboard" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🖥️</div><figcaption>Dashboard</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/flight-analyst-3.jpg" alt="Plots" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📊</div><figcaption>Plots</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/flight-analyst-4.jpg" alt="Analysis" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📈</div><figcaption>Analysis</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">TypeScript</span>
+                        <span class="proj-tag">Web App</span>
+                        <span class="proj-tag">Data Viz</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/Flight-Analyst" target="_blank" rel="noopener" class="proj-link">Code →</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal reveal-d1" data-type="hardware">
-                <div class="project-top">
-                    <span class="project-type type-hw">⚙ Hardware</span>
+                <div class="project-media">
+                    <img src="images/projects/smart-webcam-1.jpg" alt="Smart-WebCam — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">🎥</div>
                 </div>
-                <div class="project-icon">⌨️</div>
-                <h3 class="project-title">Macro_Pad_New</h3>
-                <p class="project-desc">
-                    A beginner macropad build — a small 3D-printed keypad with custom mappings for my
-                    coding workflow. My first real attempt at making my own input device.
-                </p>
-                <div class="project-tags">
-                    <span class="proj-tag">Python</span>
-                    <span class="proj-tag">Arduino</span>
-                    <span class="proj-tag">3D Print</span>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-hw">⚙ Hardware</span>
+                    </div>
+                    <h3 class="project-title">Smart-WebCam</h3>
+                    <p class="project-desc">
+                        A custom Raspberry Pi webcam with mic input, made for my desk. Streams, records, and
+                        stays on 24/7 without melting my laptop.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/smart-webcam-2.jpg" alt="Build" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔨</div><figcaption>Build</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/smart-webcam-3.jpg" alt="Wiring" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔌</div><figcaption>Wiring</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/smart-webcam-4.jpg" alt="On the desk" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🛠️</div><figcaption>On the desk</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">Python</span>
+                        <span class="proj-tag">Raspberry Pi</span>
+                        <span class="proj-tag">Video</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/Smart-WebCam" target="_blank" rel="noopener" class="proj-link">Code →</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                    </div>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey/Macro_Pad_New" target="_blank" rel="noopener" class="proj-link">Source →</a>
+            </div>
+
+            <div class="project-card reveal reveal-d1" data-type="hardware">
+                <div class="project-media">
+                    <img src="images/projects/macro-pad-1.jpg" alt="Macro_Pad_New — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">⌨️</div>
+                </div>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-hw">⚙ Hardware</span>
+                    </div>
+                    <h3 class="project-title">Macro_Pad_New</h3>
+                    <p class="project-desc">
+                        A beginner macropad build — a small 3D-printed keypad with custom mappings for my
+                        coding workflow. My first real attempt at making my own input device.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/macro-pad-2.jpg" alt="Case" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧩</div><figcaption>3D case</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/macro-pad-3.jpg" alt="PCB" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">⚡</div><figcaption>PCB</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/macro-pad-4.jpg" alt="Assembly" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔩</div><figcaption>Assembly</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">Python</span>
+                        <span class="proj-tag">Arduino</span>
+                        <span class="proj-tag">3D Print</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/Macro_Pad_New" target="_blank" rel="noopener" class="proj-link">Code →</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal reveal-d2" data-type="hardware">
-                <div class="project-top">
-                    <span class="project-type type-hw">⚙ Hardware</span>
+                <div class="project-media">
+                    <img src="images/projects/looraa-1.jpg" alt="LOORAA — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">📱</div>
                 </div>
-                <div class="project-icon">📻</div>
-                <h3 class="project-title">LOORAA</h3>
-                <p class="project-desc">
-                    A tiny LoRa transmitter "puck" I keep experimenting with. Small, dumb, and it just
-                    sends packets. The name is an inside joke I refuse to explain.
-                </p>
-                <div class="project-tags">
-                    <span class="proj-tag">LoRa</span>
-                    <span class="proj-tag">ESP32</span>
-                    <span class="proj-tag">Experiments</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey/LOORAA" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-hw">⚙ Hardware</span>
+                    </div>
+                    <h3 class="project-title">LOORAA</h3>
+                    <p class="project-desc">
+                        A tiny LoRa "puck" I keep experimenting with. Small, dumb, and it just sends
+                        packets. The name is an inside joke I refuse to explain.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/looraa-2.jpg" alt="Puck" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧪</div><figcaption>Prototype</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/looraa-3.jpg" alt="Bench test" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📶</div><figcaption>Range test</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/looraa-4.jpg" alt="On the desk" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🛠️</div><figcaption>On the bench</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">LoRa</span>
+                        <span class="proj-tag">ESP32</span>
+                        <span class="proj-tag">Experiments</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/LOORAA" target="_blank" rel="noopener" class="proj-link">Code →</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card reveal reveal-d2" data-type="software">
-                <div class="project-top">
-                    <span class="project-type type-sw">🖥 Software</span>
+                <div class="project-media">
+                    <img src="images/projects/my-website-1.jpg" alt="My-Website — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">🌐</div>
                 </div>
-                <div class="project-icon">🌐</div>
-                <h3 class="project-title">My-Website</h3>
-                <p class="project-desc">
-                    The codebase for this very site. Plain HTML, CSS and vanilla JS — no framework,
-                    no build step, just a stubborn love of doing it the hard way.
-                </p>
-                <div class="project-tags">
-                    <span class="proj-tag">HTML</span>
-                    <span class="proj-tag">CSS</span>
-                    <span class="proj-tag">JS</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link">Source →</a>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-sw">🖥 Software</span>
+                    </div>
+                    <h3 class="project-title">My-Website</h3>
+                    <p class="project-desc">
+                        The codebase for this very site. Plain HTML, CSS and vanilla JS — no framework,
+                        no build step, just a stubborn love of doing it the hard way.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/my-website-2.jpg" alt="Hero" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🖥️</div><figcaption>Hero</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/my-website-3.jpg" alt="Sections" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧱</div><figcaption>Sections</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/my-website-4.jpg" alt="Mobile" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📱</div><figcaption>Mobile</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">HTML</span>
+                        <span class="proj-tag">CSS</span>
+                        <span class="proj-tag">JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link">Code →</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2246,7 +2543,8 @@
     </section>
 
     <hr class="divider">
-     <!-- ============ TESTIMONIALS ============ -->
+
+    <!-- ============ TESTIMONIALS ============ -->
     <section class="section" id="quotes">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">05</span> Kind Words</span>
