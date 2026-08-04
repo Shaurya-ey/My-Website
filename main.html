@@ -1843,6 +1843,23 @@
         font-size:.7rem;
         color:var(--muted-dim);
     }
+    .footer-visits{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        font-family:var(--font-mono);
+        font-size:.72rem;
+        color:var(--muted-dim);
+        padding:7px 14px;
+        border-radius:var(--r-full);
+        border:1px solid rgba(148,163,184,.15);
+        background:rgba(148,163,184,.06);
+    }
+    .footer-visits .visits-n{
+        color:var(--sky-300);
+        font-weight:600;
+        font-variant-numeric:tabular-nums;
+    }
     .footer-links{
         display:flex;
         gap:16px;
@@ -2037,7 +2054,7 @@
                 <span class="hero-line"><span class="glow">PANDEY</span></span>
             </h1>
 
-            <p class="hero-role">AI / ML Engineer</p>
+            <p class="hero-role">AI / ML Engineering Student</p>
             <p class="hero-intro">
                 Engineering student in <strong>CSE (AI/ML)</strong> — I like building things that sit at the
                 intersection of <strong>hardware</strong>, <strong>software</strong> and <strong>intelligence</strong>.
@@ -2107,7 +2124,7 @@
 
             <div class="about-side">
                 <div class="stats-grid">
-                    <div class="stat-card reveal"><span class="stat-num">__</span><span class="stat-label">Projects</span></div>
+                    <div class="stat-card reveal"><span class="stat-num">5</span><span class="stat-label">Projects</span></div>
                     <div class="stat-card reveal reveal-d1"><span class="stat-num">__</span><span class="stat-label">LeetCode</span></div>
                     <div class="stat-card reveal reveal-d1"><span class="stat-num">2+</span><span class="stat-label">Yrs Coding</span></div>
                     <div class="stat-card reveal reveal-d2"><span class="stat-num">3+</span><span class="stat-label">Tools</span></div>
@@ -2618,6 +2635,11 @@
         <div class="footer-inner">
             <div class="footer-brand">Shaurya<span class="dot">.</span>Pandey</div>
             <div class="footer-copy" id="footerYear"></div>
+            <div class="footer-visits" title="Visits recorded on this site">
+                <span>👀</span>
+                <span class="visits-n" id="visitCount">—</span>
+                <span>visits</span>
+            </div>
             <div class="footer-links">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
@@ -2957,6 +2979,15 @@ fetch('https://api.github.com/users/Shaurya-ey/events/public?per_page=100')
 const SUPABASE_URL = 'https://hyvswxalxzxodqoexzvm.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5dnN3eGFseHp4b2Rxb2V4enZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4NTM2NTMsImV4cCI6MjEwMTQyOTY1M30.FokfaAhBwJhVg8cP7a9T4Aj1jeh0MLT1TchU9A58PUI';
 const GB_ENDPOINT = SUPABASE_URL + '/rest/v1/guestbook';
+const VISITS_ENDPOINT = SUPABASE_URL + '/rest/v1/visits';
+
+// one random session id per browser session, so a visitor who signs the
+// guestbook can have their name attached to their visit record
+const siteSid = (() => {
+    let s = sessionStorage.getItem('site_sid');
+    if(!s){ s = Math.random().toString(36).slice(2, 12); sessionStorage.setItem('site_sid', s); }
+    return s;
+})();
 
 const gbEntries = document.getElementById('gbEntries');
 const gbCount = document.getElementById('gbCount');
@@ -3045,6 +3076,11 @@ document.getElementById('gbForm').addEventListener('submit', async function(e){
         this.reset();
         showToast('Thanks for signing in, ' + name + '! 🎉');
         await loadEntries();
+        fetch(VISITS_ENDPOINT + '?session_id=eq.' + encodeURIComponent(siteSid), {
+            method: 'PATCH',
+            headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+            body: JSON.stringify({ name })
+        }).catch(()=>{});
     }catch(err){
         showToast('Couldn\'t save your entry — try again.');
     }
@@ -3064,6 +3100,38 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
 });
 
 document.getElementById('footerYear').textContent = '© ' + new Date().getFullYear() + ' — plain HTML, CSS & JS. Built by Shaurya.';
+
+const visitEl = document.getElementById('visitCount');
+
+function vHeaders(prefer){
+    const h = {
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Content-Type': 'application/json'
+    };
+    if(prefer) h['Prefer'] = prefer;
+    return h;
+}
+
+if(!sessionStorage.getItem('site_visited')){
+    fetch(VISITS_ENDPOINT, {
+        method: 'POST',
+        headers: vHeaders('return=minimal'),
+        body: JSON.stringify({ session_id: siteSid })    }).catch(()=>{});
+    sessionStorage.setItem('site_visited', '1');
+}
+
+fetch(VISITS_ENDPOINT + '?select=id', {
+    headers: Object.assign(vHeaders('count=exact'), { 'Range': '0-0' })
+})
+    .then(r => {
+        const cr = r.headers.get('Content-Range');
+        if(cr && cr.includes('/')){
+            const total = parseInt(cr.split('/')[1], 10);
+            if(!isNaN(total) && visitEl) visitEl.textContent = total.toLocaleString();
+        }
+    })
+    .catch(()=>{});
 </script>
 </body>
 </html>
