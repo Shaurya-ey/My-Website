@@ -20,6 +20,7 @@
       --violet-400: #818cf8;
       --violet-300: #a78bfa;
       --violet-500: #6366f1;
+      --pink-400: #f472b6;
       --amber-400: #fbbf24;
       --amber-300: #fcd34d;
       --ink: #f8fafc;
@@ -668,6 +669,7 @@
         gap:12px;
         justify-content:end;
         width:fit-content;
+        margin-top:150px;
     }
     .stat-card{
         padding:22px 24px;
@@ -2123,7 +2125,7 @@
                 <div class="hobby-card"><span class="hobby-ico">🤖</span><div class="hobby-meta"><span class="hobby-name">Robot Builder</span><span class="hobby-tag">making things that actually move</span></div></div>
                 <div class="hobby-card"><span class="hobby-ico">⚛️</span><div class="hobby-meta"><span class="hobby-name">Physics Nerd</span><span class="hobby-tag">asking why the universe has rules</span></div></div>
                 <div class="hobby-card"><span class="hobby-ico">🏃</span><div class="hobby-meta"><span class="hobby-name">The Runner</span><span class="hobby-tag">headphones on, thoughts off</span></div></div>
-                <div class="hobby-card"><span class="hobby-ico">🏀</span><div class="hobby-meta"><span class="hobby-name">Pickup Basketball</span><span class="hobby-tag">ball first, deadlines second</span></div></div>
+                <div class="hobby-card"><span class="hobby-ico">🏀</span><div class="hobby-meta"><span class="hobby-name">Basketball</span><span class="hobby-tag">ball first, deadlines second</span></div></div>
             </div>
         </div>
     </section>
@@ -2260,7 +2262,7 @@
         <div class="projects-grid">
 <div class="project-card reveal" data-type="hardware">
                 <div class="project-media">
-                    <img src="images/projects/sanjaya-1.jpg" alt="SANJAYA-LINK — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <img src="simg/PCBimg.PNG" alt="SANJAYA-LINK — project preview" loading="lazy" onerror="this.style.display='none'">
                     <div class="project-media-fallback">📡</div>
                     <span class="project-badge">★ Featured</span>
                 </div>
@@ -2274,9 +2276,8 @@
                         over LoRa with everything logged to SD. The current big obsession.
                     </p>
                     <div class="project-shots">
-                        <figure class="shot"><img src="images/projects/sanjaya-2.jpg" alt="Schematic" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📐</div><figcaption>Schematic</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/sanjaya-3.jpg" alt="Assembled" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔩</div><figcaption>Assembled</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/sanjaya-4.jpg" alt="In the field" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📡</div><figcaption>Field test</figcaption></figure>
+                        <figure class="shot"><img src="simg/PCBrouted.PNG" alt="Schematic" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📐</div><figcaption>Routed</figcaption></figure>
+                        <figure class="shot"><img src="simg/cad.PNG" alt="Assembled" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔩</div><figcaption>Assembled</figcaption></figure>
                     </div>
                     <div class="project-tags">
                         <span class="proj-tag">C++</span>
@@ -2286,6 +2287,32 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/Shaurya-ey/SANJAYA-LINK" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d2" data-type="software">
+                <div class="project-media">
+                    <img src="simg/website.png" alt="My-Website — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">🌐</div>
+                </div>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-sw">🖥 Software</span>
+                    </div>
+                    <h3 class="project-title">My-Website</h3>
+                    <p class="project-desc">
+                        The codebase for this very site. Plain HTML, CSS and vanilla JS — no framework,
+                        no build step, just a stubborn love of doing it the hard way.
+                    </p>
+                    <div class="project-tags">
+                        <span class="proj-tag">HTML</span>
+                        <span class="proj-tag">CSS</span>
+                        <span class="proj-tag">JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
                         <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
@@ -2305,11 +2332,6 @@
                         A mission control + flight stability analyst. Ingests flight logs, plots the data,
                         and flags stability issues before launch instead of after.
                     </p>
-                    <div class="project-shots">
-                        <figure class="shot"><img src="images/projects/flight-analyst-2.jpg" alt="Dashboard" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🖥️</div><figcaption>Dashboard</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/flight-analyst-3.jpg" alt="Plots" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📊</div><figcaption>Plots</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/flight-analyst-4.jpg" alt="Analysis" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📈</div><figcaption>Analysis</figcaption></figure>
-                    </div>
                     <div class="project-tags">
                         <span class="proj-tag">TypeScript</span>
                         <span class="proj-tag">Web App</span>
@@ -2324,38 +2346,7 @@
 
             <div class="project-card reveal reveal-d1" data-type="hardware">
                 <div class="project-media">
-                    <img src="images/projects/smart-webcam-1.jpg" alt="Smart-WebCam — project preview" loading="lazy" onerror="this.style.display='none'">
-                    <div class="project-media-fallback">🎥</div>
-                </div>
-                <div class="project-body">
-                    <div class="project-top">
-                        <span class="project-type type-hw">⚙ Hardware</span>
-                    </div>
-                    <h3 class="project-title">Smart-WebCam</h3>
-                    <p class="project-desc">
-                        A custom Raspberry Pi webcam with mic input, made for my desk. Streams, records, and
-                        stays on 24/7 without melting my laptop.
-                    </p>
-                    <div class="project-shots">
-                        <figure class="shot"><img src="images/projects/smart-webcam-2.jpg" alt="Build" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔨</div><figcaption>Build</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/smart-webcam-3.jpg" alt="Wiring" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔌</div><figcaption>Wiring</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/smart-webcam-4.jpg" alt="On the desk" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🛠️</div><figcaption>On the desk</figcaption></figure>
-                    </div>
-                    <div class="project-tags">
-                        <span class="proj-tag">Python</span>
-                        <span class="proj-tag">Raspberry Pi</span>
-                        <span class="proj-tag">Video</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/Smart-WebCam" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card reveal reveal-d1" data-type="hardware">
-                <div class="project-media">
-                    <img src="images/projects/macro-pad-1.jpg" alt="Macro_Pad_New — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <img src="simg/Macropad Assembly - 2.PNG" alt="Macro_Pad_New — project preview" loading="lazy" onerror="this.style.display='none'">
                     <div class="project-media-fallback">⌨️</div>
                 </div>
                 <div class="project-body">
@@ -2368,10 +2359,8 @@
                         coding workflow. My first real attempt at making my own input device.
                     </p>
                     <div class="project-shots">
-                        <figure class="shot"><img src="images/projects/macro-pad-2.jpg" alt="Case" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧩</div><figcaption>3D case</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/macro-pad-3.jpg" alt="PCB" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">⚡</div><figcaption>PCB</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/macro-pad-4.jpg" alt="Assembly" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔩</div><figcaption>Assembly</figcaption></figure>
-                    </div>
+                        <figure class="shot"><img src="simg/PCB Schematic.PNG" alt="Case" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧩</div><figcaption>Schematics</figcaption></figure>
+                        <figure class="shot"><img src="simg/PCB Layout.PNG" alt="PCB" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">⚡</div><figcaption>PCB</figcaption></figure>                    </div>
                     <div class="project-tags">
                         <span class="proj-tag">Python</span>
                         <span class="proj-tag">Arduino</span>
@@ -2384,63 +2373,31 @@
                 </div>
             </div>
 
-            <div class="project-card reveal reveal-d2" data-type="hardware">
+            <div class="project-card reveal reveal-d1" data-type="hardware">
                 <div class="project-media">
-                    <img src="images/projects/looraa-1.jpg" alt="LOORAA — project preview" loading="lazy" onerror="this.style.display='none'">
-                    <div class="project-media-fallback">📱</div>
+                    <img src="simg/Full case asse..PNG" alt="Smart-WebCam — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">🎥</div>
                 </div>
                 <div class="project-body">
                     <div class="project-top">
                         <span class="project-type type-hw">⚙ Hardware</span>
                     </div>
-                    <h3 class="project-title">LOORAA</h3>
+                    <h3 class="project-title">Smart-WebCam</h3>
                     <p class="project-desc">
-                        A tiny LoRa "puck" I keep experimenting with. Small, dumb, and it just sends
-                        packets. The name is an inside joke I refuse to explain.
+                        A custom Raspberry Pi webcam with mic input, made for my desk. Streams, records, and
+                        stays on 24/7 without melting my laptop.
                     </p>
                     <div class="project-shots">
-                        <figure class="shot"><img src="images/projects/looraa-2.jpg" alt="Puck" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧪</div><figcaption>Prototype</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/looraa-3.jpg" alt="Bench test" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📶</div><figcaption>Range test</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/looraa-4.jpg" alt="On the desk" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🛠️</div><figcaption>On the bench</figcaption></figure>
+                        
+                        <figure class="shot"><img src="simg/Schematics.PNG" alt="On the desk" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🛠️</div><figcaption>Schematics</figcaption></figure>
                     </div>
                     <div class="project-tags">
-                        <span class="proj-tag">LoRa</span>
-                        <span class="proj-tag">ESP32</span>
-                        <span class="proj-tag">Experiments</span>
+                        <span class="proj-tag">Python</span>
+                        <span class="proj-tag">Raspberry Pi</span>
+                        <span class="proj-tag">Video</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/LOORAA" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card reveal reveal-d2" data-type="software">
-                <div class="project-media">
-                    <img src="images/projects/my-website-1.jpg" alt="My-Website — project preview" loading="lazy" onerror="this.style.display='none'">
-                    <div class="project-media-fallback">🌐</div>
-                </div>
-                <div class="project-body">
-                    <div class="project-top">
-                        <span class="project-type type-sw">🖥 Software</span>
-                    </div>
-                    <h3 class="project-title">My-Website</h3>
-                    <p class="project-desc">
-                        The codebase for this very site. Plain HTML, CSS and vanilla JS — no framework,
-                        no build step, just a stubborn love of doing it the hard way.
-                    </p>
-                    <div class="project-shots">
-                        <figure class="shot"><img src="images/projects/my-website-2.jpg" alt="Hero" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🖥️</div><figcaption>Hero</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/my-website-3.jpg" alt="Sections" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧱</div><figcaption>Sections</figcaption></figure>
-                        <figure class="shot"><img src="images/projects/my-website-4.jpg" alt="Mobile" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📱</div><figcaption>Mobile</figcaption></figure>
-                    </div>
-                    <div class="project-tags">
-                        <span class="proj-tag">HTML</span>
-                        <span class="proj-tag">CSS</span>
-                        <span class="proj-tag">JS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://github.com/Shaurya-ey/Smart-WebCam" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
                         <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
@@ -2448,7 +2405,7 @@
         </div>
 
         <p class="projects-more reveal">
-            That's 6 of them — the rest keep landing on <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener">GitHub</a>.
+            That's 5 of them — the rest keep landing on <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener">GitHub</a>.
         </p>
     </section>
 
@@ -2485,7 +2442,7 @@
 
             <div class="gh-card gh-activity reveal reveal-d1">
                 <div class="gh-chart-label">
-                    <span class="mono">Contribution activity — synced from GitHub</span>
+                    <span class="mono">Contribution activity — </span>
                     <span class="gh-legend">Less <span class="sw s0"></span><span class="sw s1"></span><span class="sw s2"></span><span class="sw s3"></span> More</span>
                 </div>
                 <div class="gh-month-labels" id="ghMonths"></div>
@@ -2510,7 +2467,7 @@
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">05</span> Kind Words</span>
             <h2 class="section-title">What people <span class="accent">say</span></h2>
-            <p class="section-sub">A few notes from classmates and teammates. (Replace these with your real ones.)</p>
+            <p class="section-sub">A few notes from classmates and teammates. </p>
         </div>
 
         <div class="quotes-grid">
