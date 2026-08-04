@@ -82,7 +82,6 @@
         border:2px solid #07080d;
     }
 
-    /* ============ BACKGROUND STACK ============ */
     .bg-canvas{
         position:fixed;
         inset:0;
@@ -155,7 +154,7 @@
         z-index:2;
     }
 
-    /* ============ TYPOGRAPHY ============ */
+
     h1,h2,h3{ margin:0; }
 
     .section{
@@ -221,7 +220,7 @@
         border:none;
     }
 
-    /* ============ NAVBAR ============ */
+
     .navbar{
         position:sticky;
         top:16px;
@@ -342,7 +341,6 @@
         transition:transform .3s ease, opacity .3s ease;
     }
 
-    /* ============ HERO ============ */
     .hero{
         display:flex;
         align-items:flex-end;
@@ -542,7 +540,7 @@
         font-weight:700;
     }
 
-    /* hero visual — static, no float animation */
+
     .hero-visual{
         position:relative;
         flex:0 0 auto;
@@ -599,7 +597,7 @@
         50%{ transform:translateY(-10px) rotate(7deg); }
     }
 
-    /* ============ ABOUT ============ */
+
     .about .section-body{
         display:grid;
         grid-template-columns: 1.2fr .8fr;
@@ -739,7 +737,6 @@
         transform:translateY(-2px);
     }
 
-    /* ============ SKILLS ============ */
     .skills-section{
         position:relative;
         overflow:hidden;
@@ -851,7 +848,6 @@
     .skills-note .spark{ color:var(--sky-300); }
     .skills-note .tag{ color:var(--amber-300); }
 
-    /* ============ PROJECTS ============ */
     .projects-filter{
         display:inline-flex;
         gap:5px;
@@ -910,7 +906,6 @@
     }
     .project-card.showing{ animation:card-in .45s ease both; }
 
-    /* image banner on each project card — real image if present, pretty placeholder otherwise */
     .project-media{
         position:relative;
         height:210px;
@@ -943,7 +938,6 @@
         object-fit:cover;
         z-index:2;
     }
-    /* auto-building slideshow layers */
     .pm-layers{
         position:absolute;
         inset:0;
@@ -1029,9 +1023,6 @@
         grid-template-columns:repeat(2, 1fr);
         gap:26px;
     }
-
-    /* the shot thumbnails stay in the DOM as the hidden data source for the
-       auto-building hover slideshow, so keep them visually hidden */
     .project-shots{
         display:none;
     }
@@ -1074,9 +1065,7 @@
         text-overflow:ellipsis;
     }
 
-    /* no-js / reduced ground: gallery visible on reduced-motion handled in media query */
-
-    /* ============ HOBBIES (about) ============ */
+    
     .hobbies-block{
         margin-top:42px;
         padding-top:30px;
@@ -1267,7 +1256,6 @@
     }
     .projects-more a:hover{ color:var(--sky-200); }
 
-    /* ============ GITHUB (compact) ============ */
     .github-body{
         display:flex;
         flex-direction:column;
@@ -1469,7 +1457,7 @@
         height:100%;
     }
 
-    /* ============ TESTIMONIALS ============ */
+
     .quotes-grid{
         display:grid;
         grid-template-columns:repeat(3, 1fr);
@@ -1535,7 +1523,6 @@
         color:var(--muted-dim);
     }
 
-    /* ============ CONTACT ============ */
     .contact-body{
         display:grid;
         grid-template-columns:1fr 1fr;
@@ -1701,7 +1688,7 @@
         box-shadow:0 16px 40px -10px rgba(56,189,248,.6);
     }
 
-    /* ============ GUESTBOOK ============ */
+    
     .guestbook-body{
         display:grid;
         grid-template-columns:.85fr 1.15fr;
@@ -1823,7 +1810,6 @@
         transform:translateX(-50%) translateY(0);
     }
 
-    /* ============ FOOTER ============ */
     .footer{
         position:relative;
         z-index:2;
@@ -1887,9 +1873,7 @@
         box-shadow:0 10px 26px -8px rgba(56,189,248,.6);
     }
 
-    /* ============ REVEAL ============ */
-    /* hidden state only applies once JS is confirmed working, so a script
-       failure can never blank the page */
+   
     .js .reveal{
         opacity:0;
         transform:translateY(28px);
@@ -1906,7 +1890,7 @@
     .reveal-d2{ transition-delay:.16s; }
     .reveal-d3{ transition-delay:.24s; }
 
-    /* ============ RESPONSIVE ============ */
+
     @media (max-width:1024px){
         .about .section-body,
         .contact-body,
@@ -2003,7 +1987,7 @@
 </head>
 <body>
 
-<!-- background stack -->
+
 <canvas class="bg-canvas" id="bgCanvas"></canvas>
 <div class="bg-gradient"></div>
 <div class="bg-grid"></div>
@@ -2013,7 +1997,7 @@
 
 <div class="wrap">
 
-    <!-- ============ NAVBAR ============ -->
+   
     <nav class="navbar" id="navbar">
         <a class="logo-wrap" href="#home" aria-label="Back to top">
             <span class="logo">
@@ -2035,7 +2019,7 @@
         </button>
     </nav>
 
-    <!-- ============ HERO ============ -->
+
     <header class="hero" id="home">
         <div class="hero-content">
             <div class="hero-status"><span class="pulse"></span> Open to internships</div>
@@ -2095,7 +2079,7 @@
 
     <hr class="divider">
 
-    <!-- ============ ABOUT ============ -->
+
     <section class="section about" id="about">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">01</span> About</span>
@@ -2115,14 +2099,8 @@
                     LeetCode, taking electronics apart to see how they work, or reading about how things fly.
                     <br><br>
                     I'm not just learning to code — I'm learning how to <strong>think, solve and create</strong>.
-                    <em>Also, this site is plain HTML, CSS and JS. No framework. It runs because browsers are stubborn.</em>
                 </p>
-                <div class="bio-tags">
-                    <span class="bio-tag">#LifelongLearner</span>
-                    <span class="bio-tag">#ML</span>
-                    <span class="bio-tag">#Electronics</span>
-                    <span class="bio-tag">#Aerospace</span>
-                </div>
+                
             </div>
 
             <div class="about-side">
@@ -2152,7 +2130,6 @@
 
     <hr class="divider">
 
-    <!-- ============ SKILLS ============ -->
     <section class="section skills-section" id="skills">
         <div class="skills-bg-svg">
             <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
@@ -2266,7 +2243,7 @@
 
     <hr class="divider">
 
-    <!-- ============ PROJECTS ============ -->
+
     <section class="section" id="projects">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">03</span> Projects</span>
@@ -2308,8 +2285,8 @@
                         <span class="proj-tag">Arduino</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/SANJAYA-LINK" target="_blank" rel="noopener" class="proj-link">Code →</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                        <a href="https://github.com/Shaurya-ey/SANJAYA-LINK" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -2339,8 +2316,8 @@
                         <span class="proj-tag">Data Viz</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/Flight-Analyst" target="_blank" rel="noopener" class="proj-link">Code →</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                        <a href="https://github.com/Shaurya-ey/Flight-Analyst" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -2370,8 +2347,8 @@
                         <span class="proj-tag">Video</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/Smart-WebCam" target="_blank" rel="noopener" class="proj-link">Code →</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                        <a href="https://github.com/Shaurya-ey/Smart-WebCam" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -2401,8 +2378,8 @@
                         <span class="proj-tag">3D Print</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/Macro_Pad_New" target="_blank" rel="noopener" class="proj-link">Code →</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                        <a href="https://github.com/Shaurya-ey/Macro_Pad_New" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -2432,8 +2409,8 @@
                         <span class="proj-tag">Experiments</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/LOORAA" target="_blank" rel="noopener" class="proj-link">Code →</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                        <a href="https://github.com/Shaurya-ey/LOORAA" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -2463,8 +2440,8 @@
                         <span class="proj-tag">JS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link">Code →</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in">LinkedIn →</a>
+                        <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -2477,7 +2454,6 @@
 
     <hr class="divider">
 
-    <!-- ============ GITHUB ============ -->
     <section class="section" id="github">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">04</span> GitHub</span>
@@ -2530,18 +2506,17 @@
 
     <hr class="divider">
 
-    <!-- ============ TESTIMONIALS ============ -->
     <section class="section" id="quotes">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">05</span> Kind Words</span>
             <h2 class="section-title">What people <span class="accent">say</span></h2>
-            <p class="section-sub">A few notes from classmates and teammates. </p>
+            <p class="section-sub">A few notes from classmates and teammates. (Replace these with your real ones.)</p>
         </div>
 
         <div class="quotes-grid">
             <div class="quote-card reveal">
                 <span class="quote-mark">"</span>
-                <p class="quote-text">SOON...</p>
+                <p class="quote-text">Soon...</p>
                 <div class="quote-who">
                     <span class="quote-ava"></span>
                     <div>
@@ -2553,33 +2528,32 @@
             <!--
             <div class="quote-card reveal reveal-d1">
                 <span class="quote-mark">"</span>
-                <p class="quote-text"></p>
+                <p class="quote-text">Dude just builds stuff. One week it's a telemetry link, next it's a macropad. Always teaching himself the next thing before anyone else.</p>
                 <div class="quote-who">
-                    <span class="quote-ava"></span>
+                    <span class="quote-ava">R</span>
                     <div>
-                        <div class="quote-name"></div>
-                        <div class="quote-role"></div>
+                        <div class="quote-name">Rohan</div>
+                        <div class="quote-role">Hackathon teammate</div>
                     </div>
                 </div>
             </div>
-
+            
             <div class="quote-card reveal reveal-d2">
-                <span class="quote-mark"></span>
-                <p class="quote-text"></p>
+                <span class="quote-mark">"</span>
+                <p class="quote-text">Rare combination of curiosity and patience. He asks the right questions and doesn't stop until the answer actually makes sense to him.</p>
                 <div class="quote-who">
-                    <span class="quote-ava"></span>
+                    <span class="quote-ava">P</span>
                     <div>
-                        <div class="quote-name"></div>
-                        <div class="quote-role"></div>
+                        <div class="quote-name">Priya</div>
+                        <div class="quote-role">Project club member</div>
                     </div>
                 </div>
-            </div> -->
+            </div>-->
         </div>
     </section>
 
     <hr class="divider">
 
-    <!-- ============ GUESTBOOK ============ -->
     <section class="section" id="guestbook">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">06</span> Guestbook</span>
@@ -2611,7 +2585,6 @@
 
     <hr class="divider">
 
-    <!-- ============ CONTACT ============ -->
     <section class="section" id="contact">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">07</span> Contact</span>
@@ -2684,7 +2657,6 @@
 
     <hr class="divider">
 
-    <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">Shaurya<span class="dot">.</span>Pandey</div>
@@ -2705,7 +2677,6 @@
 <div class="gb-toast" id="gbToast"></div>
 
 <script>
-/* ============ LIVE CLOCK ============ */
 function updateClock(){
     const el = document.getElementById('tzTime');
     if(!el) return;
@@ -2719,7 +2690,6 @@ function updateClock(){
 updateClock();
 setInterval(updateClock, 30000);
 
-/* ============ SCROLL PROGRESS + NAV STATE ============ */
 const progressBar = document.getElementById('progressBar');
 const navbar = document.getElementById('navbar');
 function onScroll(){
@@ -2730,7 +2700,6 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, { passive:true });
 onScroll();
 
-/* ============ ACTIVE NAV LINK ============ */
 const sections = document.querySelectorAll('section[id], header[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 const sectionObserver = new IntersectionObserver((entries)=>{
@@ -2742,7 +2711,6 @@ const sectionObserver = new IntersectionObserver((entries)=>{
 }, { rootMargin:'-45% 0px -50% 0px' });
 sections.forEach(s=>sectionObserver.observe(s));
 
-/* ============ MOBILE MENU ============ */
 const hamburger = document.getElementById('hamburger');
 const navLinksEl = document.getElementById('navLinks');
 hamburger.addEventListener('click', ()=>{
@@ -2753,7 +2721,6 @@ navLinksEl.querySelectorAll('a').forEach(a=>{
     a.addEventListener('click', ()=> navLinksEl.classList.remove('open'));
 });
 
-/* ============ SCROLL REVEAL (scroll-direction aware) ============ */
 let lastY = window.scrollY;
 let scrollingDown = true;
 window.addEventListener('scroll', ()=>{
@@ -2773,7 +2740,6 @@ const revealObserver = new IntersectionObserver((entries)=>{
 }, { threshold:.12 });
 document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 
-/* ============ PROJECTS FILTER ============ */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 filterBtns.forEach(btn=>{
@@ -2786,14 +2752,13 @@ filterBtns.forEach(btn=>{
             card.classList.toggle('hidden', !show);
             if(show){
                 card.classList.remove('showing');
-                void card.offsetWidth; // restart entrance animation
+                void card.offsetWidth; 
                 card.classList.add('showing');
             }
         });
     });
 });
 
-/* ============ PARTICLE NETWORK CANVAS ============ */
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 let particles = [], W, H;
@@ -2875,7 +2840,6 @@ document.addEventListener('visibilitychange', ()=>{
 });
 initBg();
 
-/* ============ MOUSE TRACKING ON PROJECT CARDS ============ */
 document.querySelectorAll('.project-card').forEach(card=>{
     card.addEventListener('mousemove', e=>{
         const r = card.getBoundingClientRect();
@@ -2884,7 +2848,69 @@ document.querySelectorAll('.project-card').forEach(card=>{
     });
 });
 
-/* ============ LIVE GITHUB DATA (real API) ============ */
+const reduceMotionSlide = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.project-card').forEach(card=>{
+    const media = card.querySelector('.project-media');
+    if(!media) return;
+    const fallback = media.querySelector('.project-media-fallback');
+    const mainImg = media.querySelector(':scope > img');
+    const shots = card.querySelectorAll('.project-shots .shot');
+
+    const slides = [];
+    if(mainImg && mainImg.src) slides.push({ src: mainImg.src, label: 'Overview' });
+    shots.forEach(s => {
+        const im = s.querySelector('img');
+        const cap = s.querySelector('figcaption');
+        if(im && im.src) slides.push({ src: im.src, label: cap ? cap.textContent.trim() : '' });
+    });
+    if(slides.length < 2) return;
+
+    if(mainImg) mainImg.remove();
+
+    const layers = document.createElement('div');
+    layers.className = 'pm-layers';
+    slides.forEach((sl, i) => {
+        const img = document.createElement('img');
+        img.className = 'pm-slide' + (i === 0 ? ' on' : '');
+        img.src = sl.src;
+        img.alt = '';
+        img.loading = 'lazy';
+        img.onerror = () => { img.style.display = 'none'; };
+        layers.appendChild(img);
+    });
+    media.insertBefore(layers, fallback.nextSibling);
+
+    const dots = document.createElement('div');
+    dots.className = 'pm-dots';
+    slides.forEach((_, i) => {
+        const d = document.createElement('span');
+        d.className = 'pm-dot' + (i === 0 ? ' on' : '');
+        dots.appendChild(d);
+    });
+    media.appendChild(dots);
+
+    const cap = document.createElement('span');
+    cap.className = 'pm-caption';
+    cap.textContent = slides[0].label;
+    media.appendChild(cap);
+
+    const slideEls = layers.querySelectorAll('.pm-slide');
+    const dotEls = dots.querySelectorAll('.pm-dot');
+    let idx = 0, timer = null;
+
+    function show(n){
+        idx = (n + slides.length) % slides.length;
+        slideEls.forEach((im, i) => im.classList.toggle('on', i === idx));
+        dotEls.forEach((d, i) => d.classList.toggle('on', i === idx));
+        cap.textContent = slides[idx].label;
+    }
+    function start(){ if(reduceMotionSlide) return; timer = setInterval(() => show(idx + 1), 2600); }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } show(0); }
+
+    card.addEventListener('mouseenter', start);
+    card.addEventListener('mouseleave', stop);
+});
+
 fetch('https://api.github.com/users/Shaurya-ey')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(u => {
@@ -2895,14 +2921,12 @@ fetch('https://api.github.com/users/Shaurya-ey')
     })
     .catch(()=>{ /* keep the real defaults already in the HTML */ });
 
-/* ============ CONTRIBUTION HEATMAP (seeded to real data) ============ */
 const graph = document.getElementById('contribGraph');
 const monthsEl = document.getElementById('ghMonths');
 const WEEKS = 53;
 const DAYS = 7;
 const monthsShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-// build 371 days ending today (so the recent activity lines up with real dates)
 const cells = [];
 const today = new Date();
 today.setHours(0,0,0,0);
@@ -2912,7 +2936,6 @@ for(let i=370; i>=0; i--){
     cells.push(d);
 }
 
-// real push activity pulled from the events API this week
 const realActivity = {
     '2026-07-27': 4,
     '2026-07-29': 3,
@@ -2921,7 +2944,6 @@ const realActivity = {
 };
 function iso(d){ return d.toISOString().slice(0,10); }
 
-// deterministic-ish pattern; recent real days override to look alive
 function levelFor(i){
     const key = iso(cells[i]);
     if(realActivity[key]) return realActivity[key];
@@ -2934,16 +2956,18 @@ function levelFor(i){
     return 4;
 }
 
-let frag = '';
-for(let w=0; w<WEEKS; w++){
-    for(let d=0; d<DAYS; d++){
-        const idx = w*DAYS + d;
-        frag += `<span class="day" data-l="${levelFor(idx)}"></span>`;
+const levels = cells.map((_, i) => levelFor(i));
+function renderGraph(){
+    let frag = '';
+    for(let w=0; w<WEEKS; w++){
+        for(let d=0; d<DAYS; d++){
+            frag += `<span class="day" data-l="${levels[w*DAYS+d]}"></span>`;
+        }
     }
+    graph.innerHTML = frag;
 }
-graph.innerHTML = frag;
+renderGraph();
 
-// month labels: label a week if it contains the 1st of a month
 let mfrag = '';
 for(let w=0; w<WEEKS; w++){
     const first = cells[w*DAYS];
@@ -2951,26 +2975,76 @@ for(let w=0; w<WEEKS; w++){
 }
 monthsEl.innerHTML = mfrag;
 
-/* ============ GUESTBOOK (localStorage) ============ */
-const GB_KEY = 'shaurya_guestbook';
+
+fetch('https://api.github.com/users/Shaurya-ey/events/public?per_page=100')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(events => {
+        const counts = {};
+        events.forEach(e => {
+            if(e.type !== 'PushEvent' || !e.created_at) return;
+            const key = e.created_at.slice(0, 10);
+            counts[key] = (counts[key] || 0) + 1;
+        });
+
+        Object.keys(counts).forEach(key => {
+            const idx = cells.findIndex(c => iso(c) === key);
+            if(idx < 0) return;
+            const n = counts[key];
+            levels[idx] = n >= 4 ? 4 : n >= 2 ? 3 : 2;
+        });
+        renderGraph();
+    })
+    .catch(()=>{ /* keep the seeded graph if the request fails */ });
+
+
+const SUPABASE_URL = 'https://hyvswxalxzxodqoexzvm.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5dnN3eGFseHp4b2Rxb2V4enZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4NTM2NTMsImV4cCI6MjEwMTQyOTY1M30.FokfaAhBwJhVg8cP7a9T4Aj1jeh0MLT1TchU9A58PUI';
+const GB_ENDPOINT = SUPABASE_URL + '/rest/v1/guestbook';
+
 const gbEntries = document.getElementById('gbEntries');
 const gbCount = document.getElementById('gbCount');
 const gbToast = document.getElementById('gbToast');
 
-const seedEntries = [
+function gbHeaders(json){
+    const h = {
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Content-Type': 'application/json'
+    };
+    if(json) h['Prefer'] = 'return=representation';
+    return h;
+}
 
-];
-
-function getEntries(){
+async function loadEntries(){
     try{
-        const raw = localStorage.getItem(GB_KEY);
-        if(raw) return JSON.parse(raw);
-    }catch(e){}
-    return seedEntries;
+        const res = await fetch(GB_ENDPOINT + '?select=*&order=created_at.desc&limit=100', { headers: gbHeaders() });
+        if(!res.ok) throw new Error();
+        const list = await res.json();
+        renderEntries(list);
+    }catch(e){
+        gbEntries.innerHTML = '<div class="gb-empty">Couldn\'t reach the guestbook right now.</div>';
+        gbCount.textContent = '— signatures';
+    }
 }
-function saveEntries(list){
-    try{ localStorage.setItem(GB_KEY, JSON.stringify(list)); }catch(e){}
+
+function renderEntries(list){
+    if(!list || !list.length){
+        gbEntries.innerHTML = '<div class="gb-empty">No signatures yet — be the first! ✍️</div>';
+        gbCount.textContent = '0 signatures';
+        return;
+    }
+    gbEntries.innerHTML = list.map(e=>`
+        <div class="gb-entry">
+            <div class="gb-entry-head">
+                <span class="gb-entry-ava">${initialOf(e.name)}</span>
+                <span class="gb-entry-name">${escapeHtml(e.name)}</span>
+                <span class="gb-entry-date">${fmtDate(e.created_at)}</span>
+            </div>
+            <p class="gb-entry-text">${escapeHtml(e.msg)}</p>
+        </div>`).join('');
+    gbCount.textContent = list.length + ' signature' + (list.length === 1 ? '' : 's');
 }
+
 function fmtDate(isoStr){
     const diff = Date.now() - new Date(isoStr).getTime();
     const mins = Math.floor(diff/60000);
@@ -2986,24 +3060,6 @@ function fmtDate(isoStr){
 function initialOf(name){
     return (name.trim()[0] || '?').toUpperCase();
 }
-function renderEntries(){
-    const list = getEntries();
-    if(!list.length){
-        gbEntries.innerHTML = '<div class="gb-empty">No signatures yet. Be the first!</div>';
-        gbCount.textContent = '0 signatures';
-        return;
-    }
-    gbEntries.innerHTML = list.slice().reverse().map(e=>`
-        <div class="gb-entry">
-            <div class="gb-entry-head">
-                <span class="gb-entry-ava">${initialOf(e.name)}</span>
-                <span class="gb-entry-name">${escapeHtml(e.name)}</span>
-                <span class="gb-entry-date">${fmtDate(e.date)}</span>
-            </div>
-            <p class="gb-entry-text">${escapeHtml(e.msg)}</p>
-        </div>`).join('');
-    gbCount.textContent = list.length + ' signature' + (list.length === 1 ? '' : 's') + ' so far';
-}
 function escapeHtml(s){
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
@@ -3014,22 +3070,34 @@ function showToast(msg){
     showToast._t = setTimeout(()=> gbToast.classList.remove('show'), 3200);
 }
 
-document.getElementById('gbForm').addEventListener('submit', function(e){
+document.getElementById('gbForm').addEventListener('submit', async function(e){
     e.preventDefault();
     const name = document.getElementById('gbName').value.trim();
     const msg = document.getElementById('gbMsg').value.trim();
     if(!name || !msg) return;
-    const list = getEntries();
-    list.push({ name, msg, date: new Date().toISOString() });
-    saveEntries(list);
-    renderEntries();
-    this.reset();
-    showToast('Thanks for signing in, ' + name + '! 🎉');
+    const btn = document.getElementById('gbSendBtn');
+    btn.disabled = true;
+    btn.textContent = 'Saving…';
+    try{
+        const res = await fetch(GB_ENDPOINT, {
+            method: 'POST',
+            headers: gbHeaders(true),
+            body: JSON.stringify({ name, msg })
+        });
+        if(!res.ok) throw new Error();
+        this.reset();
+        showToast('Thanks for signing in, ' + name + '! 🎉');
+        await loadEntries();
+    }catch(err){
+        showToast('Couldn\'t save your entry — try again.');
+    }
+    btn.disabled = false;
+    btn.innerHTML = 'Sign it ✍️';
 });
 
-renderEntries();
+loadEntries();
 
-/* ============ CONTACT FORM ============ */
+
 document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
@@ -3039,7 +3107,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
     window.location.href = mailto;
 });
 
-/* ============ FOOTER YEAR ============ */
+
 document.getElementById('footerYear').textContent = '© ' + new Date().getFullYear() + ' — plain HTML, CSS & JS. Built by Shaurya.';
 </script>
 </body>
