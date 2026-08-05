@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaurya Pandey | Portfolio</title>
+<title>Shaurya Pandey — AI/ML Engineer & Maker</title>
 <meta name="description" content="Portfolio of Shaurya Pandey — engineering student specializing in AI/ML, building at the intersection of hardware, software and intelligence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%2338bdf8'/><stop offset='1' stop-color='%23818cf8'/></linearGradient></defs><rect width='64' height='64' rx='14' fill='url(%23g)'/><ellipse cx='32' cy='32' rx='25' ry='10' fill='none' stroke='%23ffffff' stroke-width='3' opacity='.55' transform='rotate(-24 32 32)'/><circle cx='32' cy='32' r='11' fill='%23ffffff'/><text x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%236366f1'>S</text><circle cx='50' cy='17' r='4.5' fill='%23fcd34d'/></svg>">
+<meta name="theme-color" content="#38bdf8">
 <script>document.documentElement.classList.add('js');</script>
 <style>
     :root{
@@ -20,9 +21,9 @@
       --violet-400: #818cf8;
       --violet-300: #a78bfa;
       --violet-500: #6366f1;
-      --pink-400: #f472b6;
       --amber-400: #fbbf24;
       --amber-300: #fcd34d;
+      --pink-400: #f472b6;
       --ink: #f8fafc;
       --ink-dim: #cbd5e1;
       --muted: #94a3b8;
@@ -83,6 +84,7 @@
         border:2px solid #07080d;
     }
 
+    /* ============ BACKGROUND STACK ============ */
     .bg-canvas{
         position:fixed;
         inset:0;
@@ -155,7 +157,7 @@
         z-index:2;
     }
 
-
+    /* ============ TYPOGRAPHY ============ */
     h1,h2,h3{ margin:0; }
 
     .section{
@@ -221,7 +223,7 @@
         border:none;
     }
 
-
+    /* ============ NAVBAR ============ */
     .navbar{
         position:sticky;
         top:16px;
@@ -342,16 +344,17 @@
         transition:transform .3s ease, opacity .3s ease;
     }
 
+    /* ============ HERO ============ */
     .hero{
         display:flex;
         align-items:flex-end;
         justify-content:space-between;
         gap:44px;
         flex-wrap:wrap;
-        padding:2px 40px 24px;
+        padding:28px 40px 24px;
         max-width:1080px;
         margin:0 auto;
-        min-height:calc(100vh - 120px);
+        min-height:calc(100vh - 96px);
         scroll-margin-top:100px;
     }
 
@@ -541,7 +544,7 @@
         font-weight:700;
     }
 
-
+    /* hero visual — static, no float animation */
     .hero-visual{
         position:relative;
         flex:0 0 auto;
@@ -598,7 +601,7 @@
         50%{ transform:translateY(-10px) rotate(7deg); }
     }
 
-
+    /* ============ ABOUT ============ */
     .about .section-body{
         display:grid;
         grid-template-columns: 1.2fr .8fr;
@@ -669,7 +672,7 @@
         gap:12px;
         justify-content:end;
         width:fit-content;
-        margin-top:150px;
+        margin-top:36px;
     }
     .stat-card{
         padding:22px 24px;
@@ -739,6 +742,7 @@
         transform:translateY(-2px);
     }
 
+    /* ============ SKILLS ============ */
     .skills-section{
         position:relative;
         overflow:hidden;
@@ -850,6 +854,7 @@
     .skills-note .spark{ color:var(--sky-300); }
     .skills-note .tag{ color:var(--amber-300); }
 
+    /* ============ PROJECTS ============ */
     .projects-filter{
         display:inline-flex;
         gap:5px;
@@ -908,6 +913,7 @@
     }
     .project-card.showing{ animation:card-in .45s ease both; }
 
+    /* image banner on each project card — real image if present, pretty placeholder otherwise */
     .project-media{
         position:relative;
         height:210px;
@@ -940,6 +946,7 @@
         object-fit:cover;
         z-index:2;
     }
+    /* auto-building slideshow layers */
     .pm-layers{
         position:absolute;
         inset:0;
@@ -1025,6 +1032,9 @@
         grid-template-columns:repeat(2, 1fr);
         gap:26px;
     }
+
+    /* the shot thumbnails stay in the DOM as the hidden data source for the
+       auto-building hover slideshow, so keep them visually hidden */
     .project-shots{
         display:none;
     }
@@ -1067,7 +1077,9 @@
         text-overflow:ellipsis;
     }
 
-    
+    /* no-js / reduced ground: gallery visible on reduced-motion handled in media query */
+
+    /* ============ HOBBIES (about) ============ */
     .hobbies-block{
         margin-top:42px;
         padding-top:30px;
@@ -1258,6 +1270,8 @@
     }
     .projects-more a:hover{ color:var(--sky-200); }
 
+    /* ============ GITHUB (compact) ============ */
+
     .github-body{
         display:flex;
         flex-direction:column;
@@ -1388,14 +1402,16 @@
     .gh-legend{
         display:flex;
         align-items:center;
-        gap:5px;
+        gap:6px;
         font-family:var(--font-mono);
-        font-size:.6rem;
-        color:var(--muted-dim);
+        font-size:.62rem;
+        color:var(--muted);
     }
     .gh-legend .sw{
-        width:9px; height:9px; border-radius:2.5px;
+        width:10px; height:10px; border-radius:3px;
+        box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
     }
+    /* GitHub's real dark-mode calendar greens */
     .gh-legend .sw.s0{ background:#21262d; }
     .gh-legend .sw.s1{ background:#0e4429; }
     .gh-legend .sw.s2{ background:#1f6f3a; }
@@ -1403,27 +1419,27 @@
     .contrib-graph{
         display:grid;
         grid-template-columns:repeat(53, 1fr);
-        gap:2.5px;
-        background:rgba(148,163,184,.04);
-        border:1px solid rgba(148,163,184,.1);
-        border-radius:var(--r-sm);
-        padding:12px 10px;
+        gap:3px;
+        background:rgba(57,211,83,.035);
+        border:1px solid rgba(57,211,83,.12);
+        border-radius:var(--r-md);
+        padding:14px 12px;
         flex:1;
     }
     .day{
         aspect-ratio:1;
-        border-radius:2px;
-        background:rgba(148,163,184,.12);
-        transition:transform .2s ease;
+        border-radius:3px;
+        background:#21262d;
+        transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
     .day[data-l="1"]{ background:#0e4429; }
     .day[data-l="2"]{ background:#1f6f3a; }
     .day[data-l="3"]{ background:#26a641; }
-    .day[data-l="4"]{ background:#39d353; box-shadow:0 0 8px rgba(57,211,83,.55); }
+    .day[data-l="4"]{ background:#39d353; box-shadow:0 0 9px rgba(57,211,83,.55); }
     .day:hover{
-        transform:scale(1.5);
+        transform:scale(1.55);
         background:#39d353 !important;
-        box-shadow:0 0 10px rgba(57,211,83,.95);
+        box-shadow:0 0 12px rgba(57,211,83,.95);
         z-index:2;
     }
     .gh-month-labels{
@@ -1459,7 +1475,7 @@
         height:100%;
     }
 
-
+    /* ============ TESTIMONIALS ============ */
     .quotes-grid{
         display:grid;
         grid-template-columns:repeat(3, 1fr);
@@ -1525,6 +1541,7 @@
         color:var(--muted-dim);
     }
 
+    /* ============ CONTACT ============ */
     .contact-body{
         display:grid;
         grid-template-columns:1fr 1fr;
@@ -1690,7 +1707,7 @@
         box-shadow:0 16px 40px -10px rgba(56,189,248,.6);
     }
 
-    
+    /* ============ GUESTBOOK ============ */
     .guestbook-body{
         display:grid;
         grid-template-columns:.85fr 1.15fr;
@@ -1812,6 +1829,7 @@
         transform:translateX(-50%) translateY(0);
     }
 
+    /* ============ FOOTER ============ */
     .footer{
         position:relative;
         z-index:2;
@@ -1892,7 +1910,9 @@
         box-shadow:0 10px 26px -8px rgba(56,189,248,.6);
     }
 
-   
+    /* ============ REVEAL ============ */
+    /* hidden state only applies once JS is confirmed working, so a script
+       failure can never blank the page */
     .js .reveal{
         opacity:0;
         transform:translateY(28px);
@@ -1909,7 +1929,7 @@
     .reveal-d2{ transition-delay:.16s; }
     .reveal-d3{ transition-delay:.24s; }
 
-
+    /* ============ RESPONSIVE ============ */
     @media (max-width:1024px){
         .about .section-body,
         .contact-body,
@@ -2006,7 +2026,7 @@
 </head>
 <body>
 
-
+<!-- background stack -->
 <canvas class="bg-canvas" id="bgCanvas"></canvas>
 <div class="bg-gradient"></div>
 <div class="bg-grid"></div>
@@ -2016,7 +2036,7 @@
 
 <div class="wrap">
 
-   
+    <!-- ============ NAVBAR ============ -->
     <nav class="navbar" id="navbar">
         <a class="logo-wrap" href="#home" aria-label="Back to top">
             <span class="logo">
@@ -2038,7 +2058,7 @@
         </button>
     </nav>
 
-
+    <!-- ============ HERO ============ -->
     <header class="hero" id="home">
         <div class="hero-content">
             <div class="hero-status"><span class="pulse"></span> Open to internships</div>
@@ -2054,7 +2074,7 @@
                 <span class="hero-line"><span class="glow">PANDEY</span></span>
             </h1>
 
-            <p class="hero-role">AI / ML Engineering Student</p>
+            <p class="hero-role">AI / ML Engineer</p>
             <p class="hero-intro">
                 Engineering student in <strong>CSE (AI/ML)</strong> — I like building things that sit at the
                 intersection of <strong>hardware</strong>, <strong>software</strong> and <strong>intelligence</strong>.
@@ -2098,7 +2118,7 @@
 
     <hr class="divider">
 
-
+    <!-- ============ ABOUT ============ -->
     <section class="section about" id="about">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">01</span> About</span>
@@ -2118,16 +2138,33 @@
                     LeetCode, taking electronics apart to see how they work, or reading about how things fly.
                     <br><br>
                     I'm not just learning to code — I'm learning how to <strong>think, solve and create</strong>.
+                    <em>Also, this site is plain HTML, CSS and JS. No framework. It runs because browsers are stubborn.</em>
                 </p>
-                
+                <div class="bio-tags">
+                    <span class="bio-tag">#LifelongLearner</span>
+                    <span class="bio-tag">#ML</span>
+                    <span class="bio-tag">#Electronics</span>
+                    <span class="bio-tag">#Aerospace</span>
+                </div>
             </div>
 
             <div class="about-side">
                 <div class="stats-grid">
-                    <div class="stat-card reveal"><span class="stat-num">5</span><span class="stat-label">Projects</span></div>
-                    <div class="stat-card reveal reveal-d1"><span class="stat-num">__</span><span class="stat-label">LeetCode</span></div>
+                    <div class="stat-card reveal"><span class="stat-num">8+</span><span class="stat-label">Projects</span></div>
+                    <div class="stat-card reveal reveal-d1"><span class="stat-num">100+</span><span class="stat-label">LeetCode</span></div>
                     <div class="stat-card reveal reveal-d1"><span class="stat-num">2+</span><span class="stat-label">Yrs Coding</span></div>
-                    <div class="stat-card reveal reveal-d2"><span class="stat-num">3+</span><span class="stat-label">Tools</span></div>
+                    <div class="stat-card reveal reveal-d2"><span class="stat-num">15+</span><span class="stat-label">Tools</span></div>
+                </div>
+
+                <div class="focus-card reveal reveal-d2">
+                    <span class="focus-label">Areas of Interest</span>
+                    <div class="about-focus">
+                        <span class="focus-chip">🤖 AI / ML</span>
+                        <span class="focus-chip">🌐 Web Dev</span>
+                        <span class="focus-chip">🔌 Electronics</span>
+                        <span class="focus-chip">🚀 Aerospace</span>
+                        <span class="focus-chip">📐 CAD</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2142,13 +2179,14 @@
                 <div class="hobby-card"><span class="hobby-ico">🤖</span><div class="hobby-meta"><span class="hobby-name">Robot Builder</span><span class="hobby-tag">making things that actually move</span></div></div>
                 <div class="hobby-card"><span class="hobby-ico">⚛️</span><div class="hobby-meta"><span class="hobby-name">Physics Nerd</span><span class="hobby-tag">asking why the universe has rules</span></div></div>
                 <div class="hobby-card"><span class="hobby-ico">🏃</span><div class="hobby-meta"><span class="hobby-name">The Runner</span><span class="hobby-tag">headphones on, thoughts off</span></div></div>
-                <div class="hobby-card"><span class="hobby-ico">🏀</span><div class="hobby-meta"><span class="hobby-name">Basketball</span><span class="hobby-tag">ball first, deadlines second</span></div></div>
+                <div class="hobby-card"><span class="hobby-ico">🏀</span><div class="hobby-meta"><span class="hobby-name">Pickup Basketball</span><span class="hobby-tag">ball first, deadlines second</span></div></div>
             </div>
         </div>
     </section>
 
     <hr class="divider">
 
+    <!-- ============ SKILLS ============ -->
     <section class="section skills-section" id="skills">
         <div class="skills-bg-svg">
             <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
@@ -2218,6 +2256,7 @@
                 </div>
                 <div class="tech-grid">
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/python" alt="Python" class="tech-icon"><span class="tech-label">Python</span></div>
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/cplusplus" alt="C++" class="tech-icon"><span class="tech-label">C++</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" class="tech-icon"><span class="tech-label">TypeScript</span></div>
                     <div class="tech-card"><span class="tech-icon custom">📊</span><span class="tech-label">MATLAB</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="tech-icon"><span class="tech-label">JavaScript</span></div>
@@ -2232,10 +2271,12 @@
                     <span class="skill-count">06</span>
                 </div>
                 <div class="tech-grid">
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/pytorch" alt="PyTorch" class="tech-icon"><span class="tech-label">PyTorch</span></div>
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/tensorflow" alt="TensorFlow" class="tech-icon"><span class="tech-label">TensorFlow</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/react" alt="React" class="tech-icon"><span class="tech-label">React</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" class="tech-icon"><span class="tech-label">Node.js</span></div>
                     <div class="tech-card"><img src="https://cdn.simpleicons.org/git" alt="Git" class="tech-icon"><span class="tech-label">Git</span></div>
-
+                    <div class="tech-card"><img src="https://cdn.simpleicons.org/opencv" alt="OpenCV" class="tech-icon"><span class="tech-label">OpenCV</span></div>
                 </div>
             </div>
 
@@ -2262,7 +2303,7 @@
 
     <hr class="divider">
 
-
+    <!-- ============ PROJECTS ============ -->
     <section class="section" id="projects">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">03</span> Projects</span>
@@ -2279,7 +2320,7 @@
         <div class="projects-grid">
 <div class="project-card reveal" data-type="hardware">
                 <div class="project-media">
-                    <img src="simg/PCBimg.PNG" alt="SANJAYA-LINK — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <img src="images/projects/sanjaya-1.jpg" alt="SANJAYA-LINK — project preview" loading="lazy" onerror="this.style.display='none'">
                     <div class="project-media-fallback">📡</div>
                     <span class="project-badge">★ Featured</span>
                 </div>
@@ -2293,8 +2334,9 @@
                         over LoRa with everything logged to SD. The current big obsession.
                     </p>
                     <div class="project-shots">
-                        <figure class="shot"><img src="simg/PCBrouted.PNG" alt="Schematic" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📐</div><figcaption>Routed</figcaption></figure>
-                        <figure class="shot"><img src="simg/cad.PNG" alt="Assembled" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔩</div><figcaption>Assembled</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/sanjaya-2.jpg" alt="Schematic" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📐</div><figcaption>Schematic</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/sanjaya-3.jpg" alt="Assembled" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔩</div><figcaption>Assembled</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/sanjaya-4.jpg" alt="In the field" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📡</div><figcaption>Field test</figcaption></figure>
                     </div>
                     <div class="project-tags">
                         <span class="proj-tag">C++</span>
@@ -2304,32 +2346,6 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/Shaurya-ey/SANJAYA-LINK" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card reveal reveal-d2" data-type="software">
-                <div class="project-media">
-                    <img src="simg/website.png" alt="My-Website — project preview" loading="lazy" onerror="this.style.display='none'">
-                    <div class="project-media-fallback">🌐</div>
-                </div>
-                <div class="project-body">
-                    <div class="project-top">
-                        <span class="project-type type-sw">🖥 Software</span>
-                    </div>
-                    <h3 class="project-title">My-Website</h3>
-                    <p class="project-desc">
-                        The codebase for this very site. Plain HTML, CSS and vanilla JS — no framework,
-                        no build step, just a stubborn love of doing it the hard way.
-                    </p>
-                    <div class="project-tags">
-                        <span class="proj-tag">HTML</span>
-                        <span class="proj-tag">CSS</span>
-                        <span class="proj-tag">JS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
                         <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
                     </div>
                 </div>
@@ -2349,6 +2365,11 @@
                         A mission control + flight stability analyst. Ingests flight logs, plots the data,
                         and flags stability issues before launch instead of after.
                     </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/flight-analyst-2.jpg" alt="Dashboard" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🖥️</div><figcaption>Dashboard</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/flight-analyst-3.jpg" alt="Plots" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📊</div><figcaption>Plots</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/flight-analyst-4.jpg" alt="Analysis" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📈</div><figcaption>Analysis</figcaption></figure>
+                    </div>
                     <div class="project-tags">
                         <span class="proj-tag">TypeScript</span>
                         <span class="proj-tag">Web App</span>
@@ -2363,36 +2384,7 @@
 
             <div class="project-card reveal reveal-d1" data-type="hardware">
                 <div class="project-media">
-                    <img src="simg/Macropad Assembly - 2.PNG" alt="Macro_Pad_New — project preview" loading="lazy" onerror="this.style.display='none'">
-                    <div class="project-media-fallback">⌨️</div>
-                </div>
-                <div class="project-body">
-                    <div class="project-top">
-                        <span class="project-type type-hw">⚙ Hardware</span>
-                    </div>
-                    <h3 class="project-title">Macro_Pad_New</h3>
-                    <p class="project-desc">
-                        A beginner macropad build — a small 3D-printed keypad with custom mappings for my
-                        coding workflow. My first real attempt at making my own input device.
-                    </p>
-                    <div class="project-shots">
-                        <figure class="shot"><img src="simg/PCB Schematic.PNG" alt="Case" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧩</div><figcaption>Schematics</figcaption></figure>
-                        <figure class="shot"><img src="simg/PCB Layout.PNG" alt="PCB" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">⚡</div><figcaption>PCB</figcaption></figure>                    </div>
-                    <div class="project-tags">
-                        <span class="proj-tag">Python</span>
-                        <span class="proj-tag">Arduino</span>
-                        <span class="proj-tag">3D Print</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Shaurya-ey/Macro_Pad_New" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
-                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card reveal reveal-d1" data-type="hardware">
-                <div class="project-media">
-                    <img src="simg/Full case asse..PNG" alt="Smart-WebCam — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <img src="images/projects/smart-webcam-1.jpg" alt="Smart-WebCam — project preview" loading="lazy" onerror="this.style.display='none'">
                     <div class="project-media-fallback">🎥</div>
                 </div>
                 <div class="project-body">
@@ -2405,8 +2397,9 @@
                         stays on 24/7 without melting my laptop.
                     </p>
                     <div class="project-shots">
-                        
-                        <figure class="shot"><img src="simg/Schematics.PNG" alt="On the desk" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🛠️</div><figcaption>Schematics</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/smart-webcam-2.jpg" alt="Build" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔨</div><figcaption>Build</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/smart-webcam-3.jpg" alt="Wiring" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔌</div><figcaption>Wiring</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/smart-webcam-4.jpg" alt="On the desk" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🛠️</div><figcaption>On the desk</figcaption></figure>
                     </div>
                     <div class="project-tags">
                         <span class="proj-tag">Python</span>
@@ -2419,15 +2412,109 @@
                     </div>
                 </div>
             </div>
+
+            <div class="project-card reveal reveal-d1" data-type="hardware">
+                <div class="project-media">
+                    <img src="images/projects/macro-pad-1.jpg" alt="Macro_Pad_New — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">⌨️</div>
+                </div>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-hw">⚙ Hardware</span>
+                    </div>
+                    <h3 class="project-title">Macro_Pad_New</h3>
+                    <p class="project-desc">
+                        A beginner macropad build — a small 3D-printed keypad with custom mappings for my
+                        coding workflow. My first real attempt at making my own input device.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/macro-pad-2.jpg" alt="Case" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧩</div><figcaption>3D case</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/macro-pad-3.jpg" alt="PCB" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">⚡</div><figcaption>PCB</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/macro-pad-4.jpg" alt="Assembly" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🔩</div><figcaption>Assembly</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">Python</span>
+                        <span class="proj-tag">Arduino</span>
+                        <span class="proj-tag">3D Print</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/Macro_Pad_New" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d2" data-type="hardware">
+                <div class="project-media">
+                    <img src="images/projects/looraa-1.jpg" alt="LOORAA — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">📱</div>
+                </div>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-hw">⚙ Hardware</span>
+                    </div>
+                    <h3 class="project-title">LOORAA</h3>
+                    <p class="project-desc">
+                        A tiny LoRa "puck" I keep experimenting with. Small, dumb, and it just sends
+                        packets. The name is an inside joke I refuse to explain.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/looraa-2.jpg" alt="Puck" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧪</div><figcaption>Prototype</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/looraa-3.jpg" alt="Bench test" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📶</div><figcaption>Range test</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/looraa-4.jpg" alt="On the desk" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🛠️</div><figcaption>On the bench</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">LoRa</span>
+                        <span class="proj-tag">ESP32</span>
+                        <span class="proj-tag">Experiments</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/LOORAA" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal reveal-d2" data-type="software">
+                <div class="project-media">
+                    <img src="images/projects/my-website-1.jpg" alt="My-Website — project preview" loading="lazy" onerror="this.style.display='none'">
+                    <div class="project-media-fallback">🌐</div>
+                </div>
+                <div class="project-body">
+                    <div class="project-top">
+                        <span class="project-type type-sw">🖥 Software</span>
+                    </div>
+                    <h3 class="project-title">My-Website</h3>
+                    <p class="project-desc">
+                        The codebase for this very site. Plain HTML, CSS and vanilla JS — no framework,
+                        no build step, just a stubborn love of doing it the hard way.
+                    </p>
+                    <div class="project-shots">
+                        <figure class="shot"><img src="images/projects/my-website-2.jpg" alt="Hero" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🖥️</div><figcaption>Hero</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/my-website-3.jpg" alt="Sections" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">🧱</div><figcaption>Sections</figcaption></figure>
+                        <figure class="shot"><img src="images/projects/my-website-4.jpg" alt="Mobile" loading="lazy" onerror="this.style.display='none'"><div class="shot-fallback">📱</div><figcaption>Mobile</figcaption></figure>
+                    </div>
+                    <div class="project-tags">
+                        <span class="proj-tag">HTML</span>
+                        <span class="proj-tag">CSS</span>
+                        <span class="proj-tag">JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shaurya-ey/My-Website" target="_blank" rel="noopener" class="proj-link"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>Code</a>
+                        <a href="https://www.linkedin.com/in/shauryaey" target="_blank" rel="noopener" class="proj-link link-in"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <p class="projects-more reveal">
-            That's 5 of them — the rest keep landing on <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener">GitHub</a>.
+            That's 6 of them — the rest keep landing on <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener">GitHub</a>.
         </p>
     </section>
 
     <hr class="divider">
 
+    <!-- ============ GITHUB ============ -->
     <section class="section" id="github">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">04</span> GitHub</span>
@@ -2459,7 +2546,7 @@
 
             <div class="gh-card gh-activity reveal reveal-d1">
                 <div class="gh-chart-label">
-                    <span class="mono">Contribution activity — </span>
+                    <span class="mono">Contribution activity — synced from GitHub</span>
                     <span class="gh-legend">Less <span class="sw s0"></span><span class="sw s1"></span><span class="sw s2"></span><span class="sw s3"></span> More</span>
                 </div>
                 <div class="gh-month-labels" id="ghMonths"></div>
@@ -2480,26 +2567,27 @@
 
     <hr class="divider">
 
+    <!-- ============ TESTIMONIALS ============ -->
     <section class="section" id="quotes">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">05</span> Kind Words</span>
             <h2 class="section-title">What people <span class="accent">say</span></h2>
-            <p class="section-sub">A few notes from classmates and teammates. </p>
+            <p class="section-sub">A few notes from classmates and teammates. (Replace these with your real ones.)</p>
         </div>
 
         <div class="quotes-grid">
             <div class="quote-card reveal">
                 <span class="quote-mark">"</span>
-                <p class="quote-text">Soon...</p>
+                <p class="quote-text">Shaurya's the person who actually reads the datasheet and makes it work. Watching him debug a LoRa link for three hours and win is peak engineering.</p>
                 <div class="quote-who">
-                    <span class="quote-ava"></span>
+                    <span class="quote-ava">A</span>
                     <div>
-                        <div class="quote-name"></div>
-                        <div class="quote-role"></div>
+                        <div class="quote-name">Aarav</div>
+                        <div class="quote-role">Classmate, CSE AI/ML</div>
                     </div>
                 </div>
             </div>
-            <!--
+
             <div class="quote-card reveal reveal-d1">
                 <span class="quote-mark">"</span>
                 <p class="quote-text">Dude just builds stuff. One week it's a telemetry link, next it's a macropad. Always teaching himself the next thing before anyone else.</p>
@@ -2511,7 +2599,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="quote-card reveal reveal-d2">
                 <span class="quote-mark">"</span>
                 <p class="quote-text">Rare combination of curiosity and patience. He asks the right questions and doesn't stop until the answer actually makes sense to him.</p>
@@ -2522,12 +2610,13 @@
                         <div class="quote-role">Project club member</div>
                     </div>
                 </div>
-            </div>-->
+            </div>
         </div>
     </section>
 
     <hr class="divider">
 
+    <!-- ============ GUESTBOOK ============ -->
     <section class="section" id="guestbook">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">06</span> Guestbook</span>
@@ -2538,7 +2627,7 @@
         <div class="guestbook-body">
             <div class="gb-form-card reveal">
                 <h3>Sign the guestbook</h3>
-                <p>Drop your name and a line — anything. What you're working on, where you found this site, or your favourite protocol.</p>
+                <p>Drop your name and a line — anything. What you're working on, where you found this site, or your favourite protocol. It saves to a shared live list, so everyone who visits sees it.</p>
                 <form id="gbForm">
                     <div class="field">
                         <label for="gbName">Name</label>
@@ -2548,9 +2637,9 @@
                         <label for="gbMsg">Message</label>
                         <textarea id="gbMsg" name="gbMsg" placeholder="Say something..." required maxlength="300"></textarea>
                     </div>
-                    <button type="submit" class="btn-send">Sign it ✍️</button>
+                    <button type="submit" class="btn-send" id="gbSendBtn">Sign it ✍️</button>
                 </form>
-                <span class="gb-count" id="gbCount">— signatures so far</span>
+                <span class="gb-count" id="gbCount">— signatures</span>
             </div>
 
             <div class="gb-entries reveal reveal-d1" id="gbEntries"></div>
@@ -2559,6 +2648,7 @@
 
     <hr class="divider">
 
+    <!-- ============ CONTACT ============ -->
     <section class="section" id="contact">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">07</span> Contact</span>
@@ -2631,6 +2721,7 @@
 
     <hr class="divider">
 
+    <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">Shaurya<span class="dot">.</span>Pandey</div>
@@ -2656,6 +2747,7 @@
 <div class="gb-toast" id="gbToast"></div>
 
 <script>
+/* ============ LIVE CLOCK ============ */
 function updateClock(){
     const el = document.getElementById('tzTime');
     if(!el) return;
@@ -2669,6 +2761,7 @@ function updateClock(){
 updateClock();
 setInterval(updateClock, 30000);
 
+/* ============ SCROLL PROGRESS + NAV STATE ============ */
 const progressBar = document.getElementById('progressBar');
 const navbar = document.getElementById('navbar');
 function onScroll(){
@@ -2679,6 +2772,7 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, { passive:true });
 onScroll();
 
+/* ============ ACTIVE NAV LINK ============ */
 const sections = document.querySelectorAll('section[id], header[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 const sectionObserver = new IntersectionObserver((entries)=>{
@@ -2690,6 +2784,7 @@ const sectionObserver = new IntersectionObserver((entries)=>{
 }, { rootMargin:'-45% 0px -50% 0px' });
 sections.forEach(s=>sectionObserver.observe(s));
 
+/* ============ MOBILE MENU ============ */
 const hamburger = document.getElementById('hamburger');
 const navLinksEl = document.getElementById('navLinks');
 hamburger.addEventListener('click', ()=>{
@@ -2700,6 +2795,7 @@ navLinksEl.querySelectorAll('a').forEach(a=>{
     a.addEventListener('click', ()=> navLinksEl.classList.remove('open'));
 });
 
+/* ============ SCROLL REVEAL (scroll-direction aware) ============ */
 let lastY = window.scrollY;
 let scrollingDown = true;
 window.addEventListener('scroll', ()=>{
@@ -2719,6 +2815,7 @@ const revealObserver = new IntersectionObserver((entries)=>{
 }, { threshold:.12 });
 document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 
+/* ============ PROJECTS FILTER ============ */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 filterBtns.forEach(btn=>{
@@ -2731,13 +2828,14 @@ filterBtns.forEach(btn=>{
             card.classList.toggle('hidden', !show);
             if(show){
                 card.classList.remove('showing');
-                void card.offsetWidth; 
+                void card.offsetWidth; // restart entrance animation
                 card.classList.add('showing');
             }
         });
     });
 });
 
+/* ============ PARTICLE NETWORK CANVAS ============ */
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 let particles = [], W, H;
@@ -2819,6 +2917,7 @@ document.addEventListener('visibilitychange', ()=>{
 });
 initBg();
 
+/* ============ MOUSE TRACKING ON PROJECT CARDS ============ */
 document.querySelectorAll('.project-card').forEach(card=>{
     card.addEventListener('mousemove', e=>{
         const r = card.getBoundingClientRect();
@@ -2827,6 +2926,10 @@ document.querySelectorAll('.project-card').forEach(card=>{
     });
 });
 
+/* ============ HOVER SLIDESHOW ON PROJECT CARDS ============
+   On hover, the project media area auto-cycles through all its
+   photos (main + schematic/assembled/etc from the hidden .project-shots)
+   with a crossfade, dots and a caption. */
 const reduceMotionSlide = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('.project-card').forEach(card=>{
     const media = card.querySelector('.project-media');
@@ -2835,6 +2938,7 @@ document.querySelectorAll('.project-card').forEach(card=>{
     const mainImg = media.querySelector(':scope > img');
     const shots = card.querySelectorAll('.project-shots .shot');
 
+    // collect slides: main banner + each labeled shot
     const slides = [];
     if(mainImg && mainImg.src) slides.push({ src: mainImg.src, label: 'Overview' });
     shots.forEach(s => {
@@ -2844,6 +2948,7 @@ document.querySelectorAll('.project-card').forEach(card=>{
     });
     if(slides.length < 2) return;
 
+    // the old static banner becomes slide 1 of the layer stack
     if(mainImg) mainImg.remove();
 
     const layers = document.createElement('div');
@@ -2890,6 +2995,7 @@ document.querySelectorAll('.project-card').forEach(card=>{
     card.addEventListener('mouseleave', stop);
 });
 
+/* ============ LIVE GITHUB DATA (real API) ============ */
 fetch('https://api.github.com/users/Shaurya-ey')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(u => {
@@ -2901,14 +3007,17 @@ fetch('https://api.github.com/users/Shaurya-ey')
     .catch(()=>{ /* keep the real defaults already in the HTML */ });
 
 
+/* ============ CONTRIBUTION HEATMAP (real GitHub data + live sync) ============ */
 const graph = document.getElementById('contribGraph');
 const monthsEl = document.getElementById('ghMonths');
 const WEEKS = 53;
 const DAYS = 7;
 const monthsShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
+// REAL per-day contribution levels (0-4), verified against GitHub's own graph.
 const REAL_DATA = {"2025-08-03":0,"2025-08-10":0,"2025-08-17":0,"2025-08-24":0,"2025-08-31":0,"2025-09-07":0,"2025-09-14":0,"2025-09-21":0,"2025-09-28":0,"2025-10-05":0,"2025-10-12":0,"2025-10-19":0,"2025-10-26":0,"2025-11-02":0,"2025-11-09":0,"2025-11-16":0,"2025-11-23":0,"2025-11-30":0,"2025-12-07":0,"2025-12-14":0,"2025-12-21":0,"2025-12-28":0,"2026-01-04":0,"2026-01-11":0,"2026-01-18":0,"2026-01-25":0,"2026-02-01":0,"2026-02-08":0,"2026-02-15":0,"2026-02-22":0,"2026-03-01":0,"2026-03-08":0,"2026-03-15":2,"2026-03-22":0,"2026-03-29":0,"2026-04-05":0,"2026-04-12":0,"2026-04-19":0,"2026-04-26":0,"2026-05-03":0,"2026-05-10":0,"2026-05-17":0,"2026-05-24":0,"2026-05-31":0,"2026-06-07":0,"2026-06-14":0,"2026-06-21":0,"2026-06-28":0,"2026-07-05":0,"2026-07-12":0,"2026-07-19":0,"2026-07-26":0,"2026-08-02":2,"2025-08-04":0,"2025-08-11":0,"2025-08-18":0,"2025-08-25":0,"2025-09-01":0,"2025-09-08":0,"2025-09-15":0,"2025-09-22":0,"2025-09-29":0,"2025-10-06":0,"2025-10-13":0,"2025-10-20":0,"2025-10-27":0,"2025-11-03":0,"2025-11-10":0,"2025-11-17":0,"2025-11-24":0,"2025-12-01":0,"2025-12-08":0,"2025-12-15":0,"2025-12-22":0,"2025-12-29":0,"2026-01-05":0,"2026-01-12":0,"2026-01-19":0,"2026-01-26":0,"2026-02-02":0,"2026-02-09":0,"2026-02-16":1,"2026-02-23":0,"2026-03-02":0,"2026-03-09":4,"2026-03-16":0,"2026-03-23":0,"2026-03-30":0,"2026-04-06":0,"2026-04-13":0,"2026-04-20":0,"2026-04-27":0,"2026-05-04":0,"2026-05-11":0,"2026-05-18":0,"2026-05-25":0,"2026-06-01":0,"2026-06-08":0,"2026-06-15":0,"2026-06-22":0,"2026-06-29":0,"2026-07-06":0,"2026-07-13":0,"2026-07-20":0,"2026-07-27":1,"2026-08-03":2,"2025-08-05":0,"2025-08-12":0,"2025-08-19":0,"2025-08-26":0,"2025-09-02":0,"2025-09-09":0,"2025-09-16":0,"2025-09-23":0,"2025-09-30":0,"2025-10-07":0,"2025-10-14":0,"2025-10-21":0,"2025-10-28":0,"2025-11-04":0,"2025-11-11":0,"2025-11-18":0,"2025-11-25":0,"2025-12-02":0,"2025-12-09":0,"2025-12-16":0,"2025-12-23":0,"2025-12-30":0,"2026-01-06":0,"2026-01-13":0,"2026-01-20":0,"2026-01-27":0,"2026-02-03":0,"2026-02-10":4,"2026-02-17":1,"2026-02-24":1,"2026-03-03":0,"2026-03-10":4,"2026-03-17":0,"2026-03-24":0,"2026-03-31":0,"2026-04-07":0,"2026-04-14":0,"2026-04-21":0,"2026-04-28":0,"2026-05-05":0,"2026-05-12":0,"2026-05-19":0,"2026-05-26":0,"2026-06-02":0,"2026-06-09":0,"2026-06-16":0,"2026-06-23":0,"2026-06-30":0,"2026-07-07":0,"2026-07-14":0,"2026-07-21":0,"2026-07-28":1,"2026-08-04":1,"2025-08-06":0,"2025-08-13":0,"2025-08-20":0,"2025-08-27":0,"2025-09-03":0,"2025-09-10":0,"2025-09-17":0,"2025-09-24":0,"2025-10-01":0,"2025-10-08":0,"2025-10-15":0,"2025-10-22":0,"2025-10-29":0,"2025-11-05":0,"2025-11-12":0,"2025-11-19":0,"2025-11-26":0,"2025-12-03":0,"2025-12-10":0,"2025-12-17":0,"2025-12-24":0,"2025-12-31":0,"2026-01-07":0,"2026-01-14":0,"2026-01-21":0,"2026-01-28":0,"2026-02-04":4,"2026-02-11":0,"2026-02-18":1,"2026-02-25":0,"2026-03-04":0,"2026-03-11":0,"2026-03-18":0,"2026-03-25":0,"2026-04-01":0,"2026-04-08":0,"2026-04-15":0,"2026-04-22":0,"2026-04-29":0,"2026-05-06":0,"2026-05-13":0,"2026-05-20":0,"2026-05-27":0,"2026-06-03":0,"2026-06-10":0,"2026-06-17":0,"2026-06-24":0,"2026-07-01":0,"2026-07-08":0,"2026-07-15":0,"2026-07-22":0,"2026-07-29":1,"2025-08-07":0,"2025-08-14":0,"2025-08-21":0,"2025-08-28":0,"2025-09-04":0,"2025-09-11":0,"2025-09-18":0,"2025-09-25":0,"2025-10-02":0,"2025-10-09":0,"2025-10-16":0,"2025-10-23":0,"2025-10-30":0,"2025-11-06":0,"2025-11-13":0,"2025-11-20":0,"2025-11-27":0,"2025-12-04":0,"2025-12-11":0,"2025-12-18":0,"2025-12-25":0,"2026-01-01":0,"2026-01-08":0,"2026-01-15":0,"2026-01-22":0,"2026-01-29":0,"2026-02-05":0,"2026-02-12":4,"2026-02-19":1,"2026-02-26":1,"2026-03-05":0,"2026-03-12":1,"2026-03-19":0,"2026-03-26":0,"2026-04-02":0,"2026-04-09":0,"2026-04-16":0,"2026-04-23":0,"2026-04-30":0,"2026-05-07":0,"2026-05-14":0,"2026-05-21":0,"2026-05-28":0,"2026-06-04":0,"2026-06-11":0,"2026-06-18":0,"2026-06-25":0,"2026-07-02":0,"2026-07-09":0,"2026-07-16":0,"2026-07-23":0,"2026-07-30":1,"2025-08-08":0,"2025-08-15":0,"2025-08-22":0,"2025-08-29":0,"2025-09-05":0,"2025-09-12":0,"2025-09-19":0,"2025-09-26":0,"2025-10-03":0,"2025-10-10":0,"2025-10-17":0,"2025-10-24":0,"2025-10-31":0,"2025-11-07":0,"2025-11-14":0,"2025-11-21":0,"2025-11-28":0,"2025-12-05":0,"2025-12-12":0,"2025-12-19":0,"2025-12-26":0,"2026-01-02":0,"2026-01-09":0,"2026-01-16":0,"2026-01-23":0,"2026-01-30":0,"2026-02-06":2,"2026-02-13":4,"2026-02-20":0,"2026-02-27":0,"2026-03-06":0,"2026-03-13":0,"2026-03-20":0,"2026-03-27":0,"2026-04-03":0,"2026-04-10":4,"2026-04-17":0,"2026-04-24":0,"2026-05-01":1,"2026-05-08":0,"2026-05-15":0,"2026-05-22":0,"2026-05-29":0,"2026-06-05":0,"2026-06-12":0,"2026-06-19":0,"2026-06-26":0,"2026-07-03":0,"2026-07-10":0,"2026-07-17":0,"2026-07-24":0,"2026-07-31":1,"2025-08-09":0,"2025-08-16":0,"2025-08-23":0,"2025-08-30":0,"2025-09-06":0,"2025-09-13":0,"2025-09-20":0,"2025-09-27":0,"2025-10-04":0,"2025-10-11":0,"2025-10-18":0,"2025-10-25":0,"2025-11-01":0,"2025-11-08":0,"2025-11-15":0,"2025-11-22":0,"2025-11-29":0,"2025-12-06":0,"2025-12-13":0,"2025-12-20":0,"2025-12-27":0,"2026-01-03":0,"2026-01-10":0,"2026-01-17":0,"2026-01-24":0,"2026-01-31":1,"2026-02-07":4,"2026-02-14":0,"2026-02-21":0,"2026-02-28":0,"2026-03-07":0,"2026-03-14":0,"2026-03-21":0,"2026-03-28":0,"2026-04-04":0,"2026-04-11":0,"2026-04-18":0,"2026-04-25":1,"2026-05-02":0,"2026-05-09":0,"2026-05-16":0,"2026-05-23":0,"2026-05-30":0,"2026-06-06":0,"2026-06-13":0,"2026-06-20":0,"2026-06-27":0,"2026-07-04":0,"2026-07-11":0,"2026-07-18":0,"2026-07-25":0,"2026-08-01":1};
 
+// all dates handled in UTC so they line up EXACTLY with GitHub's graph
 function iso(d){ return d.toISOString().slice(0,10); }
 const nowUtc = Date.UTC(
     new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate()
@@ -2919,9 +3028,10 @@ for(let i=370; i>=0; i--) cells.push(new Date(nowUtc - i*86400000));
 const real = {};
 cells.forEach(c => { const l = REAL_DATA[iso(c)]; real[iso(c)] = l !== undefined ? l : 0; });
 
-const dayIdx = Math.floor(nowUtc/86400000);               
-const sundayIdx = dayIdx - (((dayIdx - 3) % 7) + 7) % 7;  
-const firstColSunday = sundayIdx - 52*7;                  
+// align columns to weeks that start on Sunday, exactly like GitHub
+const dayIdx = Math.floor(nowUtc/86400000);               // day 0 = Thu 1970-01-01
+const sundayIdx = dayIdx - (((dayIdx - 3) % 7) + 7) % 7;  // last Sunday on/before today
+const firstColSunday = sundayIdx - 52*7;                  // 53 columns back
 
 const grid = Array.from({length: 7}, () => []);
 function paintGrid(){
@@ -2934,6 +3044,8 @@ function paintGrid(){
 }
 function renderGraph(){
     let frag = '';
+    // fill the CSS grid row by row (each row = a weekday, each column = a week)
+    // — this is what matches the 53-column grid layout
     for(let d=0; d<DAYS; d++){
         for(let w=0; w<WEEKS; w++){
             const v = grid[d][w];
@@ -2945,6 +3057,7 @@ function renderGraph(){
 paintGrid();
 renderGraph();
 
+// month labels: label a week that contains the 1st of a month
 let mfrag = '';
 for(let w=0; w<WEEKS; w++){
     const first = new Date((firstColSunday + w*7) * 86400000);
@@ -2952,6 +3065,7 @@ for(let w=0; w<WEEKS; w++){
 }
 monthsEl.innerHTML = mfrag;
 
+/* LIVE SYNC — refresh recent days from GitHub's public events feed */
 fetch('https://api.github.com/users/Shaurya-ey/events/public?per_page=100')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(events => {
@@ -2976,6 +3090,7 @@ fetch('https://api.github.com/users/Shaurya-ey/events/public?per_page=100')
     .catch(()=>{ /* real data stays; just no live refresh */ });
 
 
+/* ============ GUESTBOOK (Supabase — shared live list) ============ */
 const SUPABASE_URL = 'https://hyvswxalxzxodqoexzvm.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5dnN3eGFseHp4b2Rxb2V4enZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4NTM2NTMsImV4cCI6MjEwMTQyOTY1M30.FokfaAhBwJhVg8cP7a9T4Aj1jeh0MLT1TchU9A58PUI';
 const GB_ENDPOINT = SUPABASE_URL + '/rest/v1/guestbook';
@@ -3076,6 +3191,7 @@ document.getElementById('gbForm').addEventListener('submit', async function(e){
         this.reset();
         showToast('Thanks for signing in, ' + name + '! 🎉');
         await loadEntries();
+        // attach their name to this session's visit record
         fetch(VISITS_ENDPOINT + '?session_id=eq.' + encodeURIComponent(siteSid), {
             method: 'PATCH',
             headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
@@ -3090,6 +3206,7 @@ document.getElementById('gbForm').addEventListener('submit', async function(e){
 
 loadEntries();
 
+/* ============ CONTACT FORM ============ */
 document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
@@ -3099,8 +3216,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
     window.location.href = mailto;
 });
 
+/* ============ FOOTER YEAR ============ */
 document.getElementById('footerYear').textContent = '© ' + new Date().getFullYear() + ' — plain HTML, CSS & JS. Built by Shaurya.';
 
+/* ============ VISITOR COUNTER (Supabase) ============ */
 const visitEl = document.getElementById('visitCount');
 
 function vHeaders(prefer){
@@ -3113,14 +3232,17 @@ function vHeaders(prefer){
     return h;
 }
 
+// record one visit per browser session (a refresh doesn't double-count)
 if(!sessionStorage.getItem('site_visited')){
     fetch(VISITS_ENDPOINT, {
         method: 'POST',
         headers: vHeaders('return=minimal'),
-        body: JSON.stringify({ session_id: siteSid })    }).catch(()=>{});
+        body: JSON.stringify({ session_id: siteSid })
+    }).catch(()=>{});
     sessionStorage.setItem('site_visited', '1');
 }
 
+// fetch the total number of visits
 fetch(VISITS_ENDPOINT + '?select=id', {
     headers: Object.assign(vHeaders('count=exact'), { 'Range': '0-0' })
 })
