@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaurya Pandey | Portfolio</title>
+<title>Shaurya Pandey — AI/ML Engineer & Maker</title>
 <meta name="description" content="Portfolio of Shaurya Pandey — engineering student specializing in AI/ML, building at the intersection of hardware, software and intelligence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +84,7 @@
         border:2px solid #07080d;
     }
 
-    /* ============ BACKGROUND STACK ============ */
+    
     .bg-canvas{
         position:fixed;
         inset:0;
@@ -157,7 +157,7 @@
         z-index:2;
     }
 
-    /* ============ TYPOGRAPHY ============ */
+    
     h1,h2,h3{ margin:0; }
 
     .section{
@@ -223,7 +223,7 @@
         border:none;
     }
 
-    /* ============ NAVBAR ============ */
+    
     .navbar{
         position:sticky;
         top:16px;
@@ -344,7 +344,7 @@
         transition:transform .3s ease, opacity .3s ease;
     }
 
-    /* ============ HERO ============ */
+    
     .hero{
         display:flex;
         align-items:flex-end;
@@ -354,7 +354,7 @@
         padding:28px 40px 24px;
         max-width:1080px;
         margin:0 auto;
-        min-height:calc(100vh - 96px);
+        min-height:calc(100vh - 120px);
         scroll-margin-top:100px;
     }
 
@@ -544,7 +544,7 @@
         font-weight:700;
     }
 
-    /* hero visual — static, no float animation */
+    
     .hero-visual{
         position:relative;
         flex:0 0 auto;
@@ -601,7 +601,7 @@
         50%{ transform:translateY(-10px) rotate(7deg); }
     }
 
-    /* ============ ABOUT ============ */
+    
     .about .section-body{
         display:grid;
         grid-template-columns: 1.2fr .8fr;
@@ -672,7 +672,7 @@
         gap:12px;
         justify-content:end;
         width:fit-content;
-        margin-top:36px;
+        margin-top:150px;
     }
     .stat-card{
         padding:22px 24px;
@@ -742,7 +742,7 @@
         transform:translateY(-2px);
     }
 
-    /* ============ SKILLS ============ */
+    
     .skills-section{
         position:relative;
         overflow:hidden;
@@ -854,7 +854,7 @@
     .skills-note .spark{ color:var(--sky-300); }
     .skills-note .tag{ color:var(--amber-300); }
 
-    /* ============ PROJECTS ============ */
+    
     .projects-filter{
         display:inline-flex;
         gap:5px;
@@ -913,7 +913,7 @@
     }
     .project-card.showing{ animation:card-in .45s ease both; }
 
-    /* image banner on each project card — real image if present, pretty placeholder otherwise */
+    
     .project-media{
         position:relative;
         height:210px;
@@ -946,7 +946,7 @@
         object-fit:cover;
         z-index:2;
     }
-    /* auto-building slideshow layers */
+    
     .pm-layers{
         position:absolute;
         inset:0;
@@ -1033,8 +1033,7 @@
         gap:26px;
     }
 
-    /* the shot thumbnails stay in the DOM as the hidden data source for the
-       auto-building hover slideshow, so keep them visually hidden */
+    
     .project-shots{
         display:none;
     }
@@ -1077,9 +1076,9 @@
         text-overflow:ellipsis;
     }
 
-    /* no-js / reduced ground: gallery visible on reduced-motion handled in media query */
+    
 
-    /* ============ HOBBIES (about) ============ */
+    
     .hobbies-block{
         margin-top:42px;
         padding-top:30px;
@@ -1270,7 +1269,7 @@
     }
     .projects-more a:hover{ color:var(--sky-200); }
 
-    /* ============ GITHUB (compact) ============ */
+    
 
     .github-body{
         display:flex;
@@ -1411,7 +1410,7 @@
         width:10px; height:10px; border-radius:3px;
         box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
     }
-    /* GitHub's real dark-mode calendar greens */
+    
     .gh-legend .sw.s0{ background:#21262d; }
     .gh-legend .sw.s1{ background:#0e4429; }
     .gh-legend .sw.s2{ background:#1f6f3a; }
@@ -1475,7 +1474,7 @@
         height:100%;
     }
 
-    /* ============ TESTIMONIALS ============ */
+    
     .quotes-grid{
         display:grid;
         grid-template-columns:repeat(3, 1fr);
@@ -1541,7 +1540,7 @@
         color:var(--muted-dim);
     }
 
-    /* ============ CONTACT ============ */
+    
     .contact-body{
         display:grid;
         grid-template-columns:1fr 1fr;
@@ -1707,7 +1706,7 @@
         box-shadow:0 16px 40px -10px rgba(56,189,248,.6);
     }
 
-    /* ============ GUESTBOOK ============ */
+    
     .guestbook-body{
         display:grid;
         grid-template-columns:.85fr 1.15fr;
@@ -1829,7 +1828,7 @@
         transform:translateX(-50%) translateY(0);
     }
 
-    /* ============ FOOTER ============ */
+    
     .footer{
         position:relative;
         z-index:2;
@@ -1910,9 +1909,8 @@
         box-shadow:0 10px 26px -8px rgba(56,189,248,.6);
     }
 
-    /* ============ REVEAL ============ */
-    /* hidden state only applies once JS is confirmed working, so a script
-       failure can never blank the page */
+    
+    
     .js .reveal{
         opacity:0;
         transform:translateY(28px);
@@ -1929,7 +1927,7 @@
     .reveal-d2{ transition-delay:.16s; }
     .reveal-d3{ transition-delay:.24s; }
 
-    /* ============ RESPONSIVE ============ */
+    
     @media (max-width:1024px){
         .about .section-body,
         .contact-body,
@@ -2026,7 +2024,7 @@
 </head>
 <body>
 
-<!-- background stack -->
+
 <canvas class="bg-canvas" id="bgCanvas"></canvas>
 <div class="bg-gradient"></div>
 <div class="bg-grid"></div>
@@ -2036,7 +2034,7 @@
 
 <div class="wrap">
 
-    <!-- ============ NAVBAR ============ -->
+    
     <nav class="navbar" id="navbar">
         <a class="logo-wrap" href="#home" aria-label="Back to top">
             <span class="logo">
@@ -2058,7 +2056,7 @@
         </button>
     </nav>
 
-    <!-- ============ HERO ============ -->
+    
     <header class="hero" id="home">
         <div class="hero-content">
             <div class="hero-status"><span class="pulse"></span> Open to internships</div>
@@ -2116,9 +2114,12 @@
         </div>
     </header>
 
+
+
+
     <hr class="divider">
 
-    <!-- ============ ABOUT ============ -->
+    
     <section class="section about" id="about">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">01</span> About</span>
@@ -2138,14 +2139,7 @@
                     LeetCode, taking electronics apart to see how they work, or reading about how things fly.
                     <br><br>
                     I'm not just learning to code — I'm learning how to <strong>think, solve and create</strong>.
-                    <em>Also, this site is plain HTML, CSS and JS. No framework. It runs because browsers are stubborn.</em>
                 </p>
-                <div class="bio-tags">
-                    <span class="bio-tag">#LifelongLearner</span>
-                    <span class="bio-tag">#ML</span>
-                    <span class="bio-tag">#Electronics</span>
-                    <span class="bio-tag">#Aerospace</span>
-                </div>
             </div>
 
             <div class="about-side">
@@ -2154,17 +2148,6 @@
                     <div class="stat-card reveal reveal-d1"><span class="stat-num">100+</span><span class="stat-label">LeetCode</span></div>
                     <div class="stat-card reveal reveal-d1"><span class="stat-num">2+</span><span class="stat-label">Yrs Coding</span></div>
                     <div class="stat-card reveal reveal-d2"><span class="stat-num">15+</span><span class="stat-label">Tools</span></div>
-                </div>
-
-                <div class="focus-card reveal reveal-d2">
-                    <span class="focus-label">Areas of Interest</span>
-                    <div class="about-focus">
-                        <span class="focus-chip">🤖 AI / ML</span>
-                        <span class="focus-chip">🌐 Web Dev</span>
-                        <span class="focus-chip">🔌 Electronics</span>
-                        <span class="focus-chip">🚀 Aerospace</span>
-                        <span class="focus-chip">📐 CAD</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -2186,7 +2169,7 @@
 
     <hr class="divider">
 
-    <!-- ============ SKILLS ============ -->
+    
     <section class="section skills-section" id="skills">
         <div class="skills-bg-svg">
             <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
@@ -2303,7 +2286,7 @@
 
     <hr class="divider">
 
-    <!-- ============ PROJECTS ============ -->
+    
     <section class="section" id="projects">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">03</span> Projects</span>
@@ -2514,7 +2497,7 @@
 
     <hr class="divider">
 
-    <!-- ============ GITHUB ============ -->
+    
     <section class="section" id="github">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">04</span> GitHub</span>
@@ -2546,7 +2529,7 @@
 
             <div class="gh-card gh-activity reveal reveal-d1">
                 <div class="gh-chart-label">
-                    <span class="mono">Contribution activity — synced from GitHub</span>
+                    <span class="mono">Contribution activity — </span>
                     <span class="gh-legend">Less <span class="sw s0"></span><span class="sw s1"></span><span class="sw s2"></span><span class="sw s3"></span> More</span>
                 </div>
                 <div class="gh-month-labels" id="ghMonths"></div>
@@ -2567,47 +2550,23 @@
 
     <hr class="divider">
 
-    <!-- ============ TESTIMONIALS ============ -->
+    
     <section class="section" id="quotes">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">05</span> Kind Words</span>
             <h2 class="section-title">What people <span class="accent">say</span></h2>
-            <p class="section-sub">A few notes from classmates and teammates. (Replace these with your real ones.)</p>
+            <p class="section-sub">A few notes from classmates and teammates. </p>
         </div>
 
         <div class="quotes-grid">
             <div class="quote-card reveal">
                 <span class="quote-mark">"</span>
-                <p class="quote-text">Shaurya's the person who actually reads the datasheet and makes it work. Watching him debug a LoRa link for three hours and win is peak engineering.</p>
+                <p class="quote-text">soon</p>
                 <div class="quote-who">
-                    <span class="quote-ava">A</span>
+                    <span class="quote-ava">…</span>
                     <div>
-                        <div class="quote-name">Aarav</div>
-                        <div class="quote-role">Classmate, CSE AI/ML</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quote-card reveal reveal-d1">
-                <span class="quote-mark">"</span>
-                <p class="quote-text">Dude just builds stuff. One week it's a telemetry link, next it's a macropad. Always teaching himself the next thing before anyone else.</p>
-                <div class="quote-who">
-                    <span class="quote-ava">R</span>
-                    <div>
-                        <div class="quote-name">Rohan</div>
-                        <div class="quote-role">Hackathon teammate</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quote-card reveal reveal-d2">
-                <span class="quote-mark">"</span>
-                <p class="quote-text">Rare combination of curiosity and patience. He asks the right questions and doesn't stop until the answer actually makes sense to him.</p>
-                <div class="quote-who">
-                    <span class="quote-ava">P</span>
-                    <div>
-                        <div class="quote-name">Priya</div>
-                        <div class="quote-role">Project club member</div>
+                        <div class="quote-name">Coming soon</div>
+                        <div class="quote-role">—</div>
                     </div>
                 </div>
             </div>
@@ -2616,7 +2575,7 @@
 
     <hr class="divider">
 
-    <!-- ============ GUESTBOOK ============ -->
+    
     <section class="section" id="guestbook">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">06</span> Guestbook</span>
@@ -2648,7 +2607,7 @@
 
     <hr class="divider">
 
-    <!-- ============ CONTACT ============ -->
+    
     <section class="section" id="contact">
         <div class="section-head reveal">
             <span class="section-eyebrow"><span class="num">07</span> Contact</span>
@@ -2721,7 +2680,7 @@
 
     <hr class="divider">
 
-    <!-- ============ FOOTER ============ -->
+    
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">Shaurya<span class="dot">.</span>Pandey</div>
@@ -2742,12 +2701,12 @@
         </div>
     </footer>
 
-</div><!-- /wrap -->
+</div>
 
 <div class="gb-toast" id="gbToast"></div>
 
 <script>
-/* ============ LIVE CLOCK ============ */
+
 function updateClock(){
     const el = document.getElementById('tzTime');
     if(!el) return;
@@ -2761,7 +2720,7 @@ function updateClock(){
 updateClock();
 setInterval(updateClock, 30000);
 
-/* ============ SCROLL PROGRESS + NAV STATE ============ */
+
 const progressBar = document.getElementById('progressBar');
 const navbar = document.getElementById('navbar');
 function onScroll(){
@@ -2772,7 +2731,7 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, { passive:true });
 onScroll();
 
-/* ============ ACTIVE NAV LINK ============ */
+
 const sections = document.querySelectorAll('section[id], header[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 const sectionObserver = new IntersectionObserver((entries)=>{
@@ -2784,7 +2743,7 @@ const sectionObserver = new IntersectionObserver((entries)=>{
 }, { rootMargin:'-45% 0px -50% 0px' });
 sections.forEach(s=>sectionObserver.observe(s));
 
-/* ============ MOBILE MENU ============ */
+
 const hamburger = document.getElementById('hamburger');
 const navLinksEl = document.getElementById('navLinks');
 hamburger.addEventListener('click', ()=>{
@@ -2795,7 +2754,7 @@ navLinksEl.querySelectorAll('a').forEach(a=>{
     a.addEventListener('click', ()=> navLinksEl.classList.remove('open'));
 });
 
-/* ============ SCROLL REVEAL (scroll-direction aware) ============ */
+
 let lastY = window.scrollY;
 let scrollingDown = true;
 window.addEventListener('scroll', ()=>{
@@ -2815,7 +2774,7 @@ const revealObserver = new IntersectionObserver((entries)=>{
 }, { threshold:.12 });
 document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 
-/* ============ PROJECTS FILTER ============ */
+
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 filterBtns.forEach(btn=>{
@@ -2828,14 +2787,14 @@ filterBtns.forEach(btn=>{
             card.classList.toggle('hidden', !show);
             if(show){
                 card.classList.remove('showing');
-                void card.offsetWidth; // restart entrance animation
+                void card.offsetWidth; 
                 card.classList.add('showing');
             }
         });
     });
 });
 
-/* ============ PARTICLE NETWORK CANVAS ============ */
+
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 let particles = [], W, H;
@@ -2917,7 +2876,7 @@ document.addEventListener('visibilitychange', ()=>{
 });
 initBg();
 
-/* ============ MOUSE TRACKING ON PROJECT CARDS ============ */
+
 document.querySelectorAll('.project-card').forEach(card=>{
     card.addEventListener('mousemove', e=>{
         const r = card.getBoundingClientRect();
@@ -2926,10 +2885,7 @@ document.querySelectorAll('.project-card').forEach(card=>{
     });
 });
 
-/* ============ HOVER SLIDESHOW ON PROJECT CARDS ============
-   On hover, the project media area auto-cycles through all its
-   photos (main + schematic/assembled/etc from the hidden .project-shots)
-   with a crossfade, dots and a caption. */
+
 const reduceMotionSlide = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('.project-card').forEach(card=>{
     const media = card.querySelector('.project-media');
@@ -2938,7 +2894,7 @@ document.querySelectorAll('.project-card').forEach(card=>{
     const mainImg = media.querySelector(':scope > img');
     const shots = card.querySelectorAll('.project-shots .shot');
 
-    // collect slides: main banner + each labeled shot
+    
     const slides = [];
     if(mainImg && mainImg.src) slides.push({ src: mainImg.src, label: 'Overview' });
     shots.forEach(s => {
@@ -2948,7 +2904,7 @@ document.querySelectorAll('.project-card').forEach(card=>{
     });
     if(slides.length < 2) return;
 
-    // the old static banner becomes slide 1 of the layer stack
+    
     if(mainImg) mainImg.remove();
 
     const layers = document.createElement('div');
@@ -2995,7 +2951,7 @@ document.querySelectorAll('.project-card').forEach(card=>{
     card.addEventListener('mouseleave', stop);
 });
 
-/* ============ LIVE GITHUB DATA (real API) ============ */
+
 fetch('https://api.github.com/users/Shaurya-ey')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(u => {
@@ -3004,20 +2960,20 @@ fetch('https://api.github.com/users/Shaurya-ey')
         const av = document.getElementById('ghAvatar');
         if(u.avatar_url) av.src = u.avatar_url;
     })
-    .catch(()=>{ /* keep the real defaults already in the HTML */ });
+    .catch(()=>{  });
 
 
-/* ============ CONTRIBUTION HEATMAP (real GitHub data + live sync) ============ */
+
 const graph = document.getElementById('contribGraph');
 const monthsEl = document.getElementById('ghMonths');
 const WEEKS = 53;
 const DAYS = 7;
 const monthsShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-// REAL per-day contribution levels (0-4), verified against GitHub's own graph.
+
 const REAL_DATA = {"2025-08-03":0,"2025-08-10":0,"2025-08-17":0,"2025-08-24":0,"2025-08-31":0,"2025-09-07":0,"2025-09-14":0,"2025-09-21":0,"2025-09-28":0,"2025-10-05":0,"2025-10-12":0,"2025-10-19":0,"2025-10-26":0,"2025-11-02":0,"2025-11-09":0,"2025-11-16":0,"2025-11-23":0,"2025-11-30":0,"2025-12-07":0,"2025-12-14":0,"2025-12-21":0,"2025-12-28":0,"2026-01-04":0,"2026-01-11":0,"2026-01-18":0,"2026-01-25":0,"2026-02-01":0,"2026-02-08":0,"2026-02-15":0,"2026-02-22":0,"2026-03-01":0,"2026-03-08":0,"2026-03-15":2,"2026-03-22":0,"2026-03-29":0,"2026-04-05":0,"2026-04-12":0,"2026-04-19":0,"2026-04-26":0,"2026-05-03":0,"2026-05-10":0,"2026-05-17":0,"2026-05-24":0,"2026-05-31":0,"2026-06-07":0,"2026-06-14":0,"2026-06-21":0,"2026-06-28":0,"2026-07-05":0,"2026-07-12":0,"2026-07-19":0,"2026-07-26":0,"2026-08-02":2,"2025-08-04":0,"2025-08-11":0,"2025-08-18":0,"2025-08-25":0,"2025-09-01":0,"2025-09-08":0,"2025-09-15":0,"2025-09-22":0,"2025-09-29":0,"2025-10-06":0,"2025-10-13":0,"2025-10-20":0,"2025-10-27":0,"2025-11-03":0,"2025-11-10":0,"2025-11-17":0,"2025-11-24":0,"2025-12-01":0,"2025-12-08":0,"2025-12-15":0,"2025-12-22":0,"2025-12-29":0,"2026-01-05":0,"2026-01-12":0,"2026-01-19":0,"2026-01-26":0,"2026-02-02":0,"2026-02-09":0,"2026-02-16":1,"2026-02-23":0,"2026-03-02":0,"2026-03-09":4,"2026-03-16":0,"2026-03-23":0,"2026-03-30":0,"2026-04-06":0,"2026-04-13":0,"2026-04-20":0,"2026-04-27":0,"2026-05-04":0,"2026-05-11":0,"2026-05-18":0,"2026-05-25":0,"2026-06-01":0,"2026-06-08":0,"2026-06-15":0,"2026-06-22":0,"2026-06-29":0,"2026-07-06":0,"2026-07-13":0,"2026-07-20":0,"2026-07-27":1,"2026-08-03":2,"2025-08-05":0,"2025-08-12":0,"2025-08-19":0,"2025-08-26":0,"2025-09-02":0,"2025-09-09":0,"2025-09-16":0,"2025-09-23":0,"2025-09-30":0,"2025-10-07":0,"2025-10-14":0,"2025-10-21":0,"2025-10-28":0,"2025-11-04":0,"2025-11-11":0,"2025-11-18":0,"2025-11-25":0,"2025-12-02":0,"2025-12-09":0,"2025-12-16":0,"2025-12-23":0,"2025-12-30":0,"2026-01-06":0,"2026-01-13":0,"2026-01-20":0,"2026-01-27":0,"2026-02-03":0,"2026-02-10":4,"2026-02-17":1,"2026-02-24":1,"2026-03-03":0,"2026-03-10":4,"2026-03-17":0,"2026-03-24":0,"2026-03-31":0,"2026-04-07":0,"2026-04-14":0,"2026-04-21":0,"2026-04-28":0,"2026-05-05":0,"2026-05-12":0,"2026-05-19":0,"2026-05-26":0,"2026-06-02":0,"2026-06-09":0,"2026-06-16":0,"2026-06-23":0,"2026-06-30":0,"2026-07-07":0,"2026-07-14":0,"2026-07-21":0,"2026-07-28":1,"2026-08-04":1,"2025-08-06":0,"2025-08-13":0,"2025-08-20":0,"2025-08-27":0,"2025-09-03":0,"2025-09-10":0,"2025-09-17":0,"2025-09-24":0,"2025-10-01":0,"2025-10-08":0,"2025-10-15":0,"2025-10-22":0,"2025-10-29":0,"2025-11-05":0,"2025-11-12":0,"2025-11-19":0,"2025-11-26":0,"2025-12-03":0,"2025-12-10":0,"2025-12-17":0,"2025-12-24":0,"2025-12-31":0,"2026-01-07":0,"2026-01-14":0,"2026-01-21":0,"2026-01-28":0,"2026-02-04":4,"2026-02-11":0,"2026-02-18":1,"2026-02-25":0,"2026-03-04":0,"2026-03-11":0,"2026-03-18":0,"2026-03-25":0,"2026-04-01":0,"2026-04-08":0,"2026-04-15":0,"2026-04-22":0,"2026-04-29":0,"2026-05-06":0,"2026-05-13":0,"2026-05-20":0,"2026-05-27":0,"2026-06-03":0,"2026-06-10":0,"2026-06-17":0,"2026-06-24":0,"2026-07-01":0,"2026-07-08":0,"2026-07-15":0,"2026-07-22":0,"2026-07-29":1,"2025-08-07":0,"2025-08-14":0,"2025-08-21":0,"2025-08-28":0,"2025-09-04":0,"2025-09-11":0,"2025-09-18":0,"2025-09-25":0,"2025-10-02":0,"2025-10-09":0,"2025-10-16":0,"2025-10-23":0,"2025-10-30":0,"2025-11-06":0,"2025-11-13":0,"2025-11-20":0,"2025-11-27":0,"2025-12-04":0,"2025-12-11":0,"2025-12-18":0,"2025-12-25":0,"2026-01-01":0,"2026-01-08":0,"2026-01-15":0,"2026-01-22":0,"2026-01-29":0,"2026-02-05":0,"2026-02-12":4,"2026-02-19":1,"2026-02-26":1,"2026-03-05":0,"2026-03-12":1,"2026-03-19":0,"2026-03-26":0,"2026-04-02":0,"2026-04-09":0,"2026-04-16":0,"2026-04-23":0,"2026-04-30":0,"2026-05-07":0,"2026-05-14":0,"2026-05-21":0,"2026-05-28":0,"2026-06-04":0,"2026-06-11":0,"2026-06-18":0,"2026-06-25":0,"2026-07-02":0,"2026-07-09":0,"2026-07-16":0,"2026-07-23":0,"2026-07-30":1,"2025-08-08":0,"2025-08-15":0,"2025-08-22":0,"2025-08-29":0,"2025-09-05":0,"2025-09-12":0,"2025-09-19":0,"2025-09-26":0,"2025-10-03":0,"2025-10-10":0,"2025-10-17":0,"2025-10-24":0,"2025-10-31":0,"2025-11-07":0,"2025-11-14":0,"2025-11-21":0,"2025-11-28":0,"2025-12-05":0,"2025-12-12":0,"2025-12-19":0,"2025-12-26":0,"2026-01-02":0,"2026-01-09":0,"2026-01-16":0,"2026-01-23":0,"2026-01-30":0,"2026-02-06":2,"2026-02-13":4,"2026-02-20":0,"2026-02-27":0,"2026-03-06":0,"2026-03-13":0,"2026-03-20":0,"2026-03-27":0,"2026-04-03":0,"2026-04-10":4,"2026-04-17":0,"2026-04-24":0,"2026-05-01":1,"2026-05-08":0,"2026-05-15":0,"2026-05-22":0,"2026-05-29":0,"2026-06-05":0,"2026-06-12":0,"2026-06-19":0,"2026-06-26":0,"2026-07-03":0,"2026-07-10":0,"2026-07-17":0,"2026-07-24":0,"2026-07-31":1,"2025-08-09":0,"2025-08-16":0,"2025-08-23":0,"2025-08-30":0,"2025-09-06":0,"2025-09-13":0,"2025-09-20":0,"2025-09-27":0,"2025-10-04":0,"2025-10-11":0,"2025-10-18":0,"2025-10-25":0,"2025-11-01":0,"2025-11-08":0,"2025-11-15":0,"2025-11-22":0,"2025-11-29":0,"2025-12-06":0,"2025-12-13":0,"2025-12-20":0,"2025-12-27":0,"2026-01-03":0,"2026-01-10":0,"2026-01-17":0,"2026-01-24":0,"2026-01-31":1,"2026-02-07":4,"2026-02-14":0,"2026-02-21":0,"2026-02-28":0,"2026-03-07":0,"2026-03-14":0,"2026-03-21":0,"2026-03-28":0,"2026-04-04":0,"2026-04-11":0,"2026-04-18":0,"2026-04-25":1,"2026-05-02":0,"2026-05-09":0,"2026-05-16":0,"2026-05-23":0,"2026-05-30":0,"2026-06-06":0,"2026-06-13":0,"2026-06-20":0,"2026-06-27":0,"2026-07-04":0,"2026-07-11":0,"2026-07-18":0,"2026-07-25":0,"2026-08-01":1};
 
-// all dates handled in UTC so they line up EXACTLY with GitHub's graph
+
 function iso(d){ return d.toISOString().slice(0,10); }
 const nowUtc = Date.UTC(
     new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate()
@@ -3028,10 +2984,10 @@ for(let i=370; i>=0; i--) cells.push(new Date(nowUtc - i*86400000));
 const real = {};
 cells.forEach(c => { const l = REAL_DATA[iso(c)]; real[iso(c)] = l !== undefined ? l : 0; });
 
-// align columns to weeks that start on Sunday, exactly like GitHub
-const dayIdx = Math.floor(nowUtc/86400000);               // day 0 = Thu 1970-01-01
-const sundayIdx = dayIdx - (((dayIdx - 3) % 7) + 7) % 7;  // last Sunday on/before today
-const firstColSunday = sundayIdx - 52*7;                  // 53 columns back
+
+const dayIdx = Math.floor(nowUtc/86400000);               
+const sundayIdx = dayIdx - (((dayIdx - 3) % 7) + 7) % 7;  
+const firstColSunday = sundayIdx - 52*7;                  
 
 const grid = Array.from({length: 7}, () => []);
 function paintGrid(){
@@ -3044,8 +3000,8 @@ function paintGrid(){
 }
 function renderGraph(){
     let frag = '';
-    // fill the CSS grid row by row (each row = a weekday, each column = a week)
-    // — this is what matches the 53-column grid layout
+    
+    
     for(let d=0; d<DAYS; d++){
         for(let w=0; w<WEEKS; w++){
             const v = grid[d][w];
@@ -3057,7 +3013,7 @@ function renderGraph(){
 paintGrid();
 renderGraph();
 
-// month labels: label a week that contains the 1st of a month
+
 let mfrag = '';
 for(let w=0; w<WEEKS; w++){
     const first = new Date((firstColSunday + w*7) * 86400000);
@@ -3065,7 +3021,7 @@ for(let w=0; w<WEEKS; w++){
 }
 monthsEl.innerHTML = mfrag;
 
-/* LIVE SYNC — refresh recent days from GitHub's public events feed */
+
 fetch('https://api.github.com/users/Shaurya-ey/events/public?per_page=100')
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(events => {
@@ -3087,17 +3043,17 @@ fetch('https://api.github.com/users/Shaurya-ey/events/public?per_page=100')
             renderGraph();
         }
     })
-    .catch(()=>{ /* real data stays; just no live refresh */ });
+    .catch(()=>{  });
 
 
-/* ============ GUESTBOOK (Supabase — shared live list) ============ */
+
 const SUPABASE_URL = 'https://hyvswxalxzxodqoexzvm.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5dnN3eGFseHp4b2Rxb2V4enZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4NTM2NTMsImV4cCI6MjEwMTQyOTY1M30.FokfaAhBwJhVg8cP7a9T4Aj1jeh0MLT1TchU9A58PUI';
 const GB_ENDPOINT = SUPABASE_URL + '/rest/v1/guestbook';
 const VISITS_ENDPOINT = SUPABASE_URL + '/rest/v1/visits';
 
-// one random session id per browser session, so a visitor who signs the
-// guestbook can have their name attached to their visit record
+
+
 const siteSid = (() => {
     let s = sessionStorage.getItem('site_sid');
     if(!s){ s = Math.random().toString(36).slice(2, 12); sessionStorage.setItem('site_sid', s); }
@@ -3191,7 +3147,7 @@ document.getElementById('gbForm').addEventListener('submit', async function(e){
         this.reset();
         showToast('Thanks for signing in, ' + name + '! 🎉');
         await loadEntries();
-        // attach their name to this session's visit record
+        
         fetch(VISITS_ENDPOINT + '?session_id=eq.' + encodeURIComponent(siteSid), {
             method: 'PATCH',
             headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
@@ -3206,7 +3162,7 @@ document.getElementById('gbForm').addEventListener('submit', async function(e){
 
 loadEntries();
 
-/* ============ CONTACT FORM ============ */
+
 document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     const name = document.getElementById('name').value.trim();
@@ -3216,10 +3172,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
     window.location.href = mailto;
 });
 
-/* ============ FOOTER YEAR ============ */
+
 document.getElementById('footerYear').textContent = '© ' + new Date().getFullYear() + ' — plain HTML, CSS & JS. Built by Shaurya.';
 
-/* ============ VISITOR COUNTER (Supabase) ============ */
+
 const visitEl = document.getElementById('visitCount');
 
 function vHeaders(prefer){
@@ -3232,7 +3188,7 @@ function vHeaders(prefer){
     return h;
 }
 
-// record one visit per browser session (a refresh doesn't double-count)
+
 if(!sessionStorage.getItem('site_visited')){
     fetch(VISITS_ENDPOINT, {
         method: 'POST',
@@ -3242,7 +3198,7 @@ if(!sessionStorage.getItem('site_visited')){
     sessionStorage.setItem('site_visited', '1');
 }
 
-// fetch the total number of visits
+
 fetch(VISITS_ENDPOINT + '?select=id', {
     headers: Object.assign(vHeaders('count=exact'), { 'Range': '0-0' })
 })
