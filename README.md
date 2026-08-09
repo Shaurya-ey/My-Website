@@ -5,7 +5,11 @@ My portfolio site, built with plain HTML, CSS and JavaScript. No framework, no b
 </p>
 
 ---
+## Why I made this project?
+I felt the need for myself i=to introduce myself in the tech world 
 
+
+---
 ## Features
 - Space-themed design with a particle-network background and glass navbar
 - Projects section with a Software / Hardware filter and photo cards that auto-slide on hover
@@ -16,7 +20,7 @@ My portfolio site, built with plain HTML, CSS and JavaScript. No framework, no b
 
 ---
 
-## Tech
+## Tech Used
 
 - HTML, CSS, vanilla JS
 - GitHub API (live data)
