@@ -6,10 +6,11 @@ My portfolio site, built with plain HTML, CSS and JavaScript. No framework, no b
 
 ---
 ## Why I made this project?
-I felt the need for myself i=to introduce myself in the tech world 
+I wanted a space that felt like me. Not a generic developer portfolio, but one that matches how I think — space, rockets, circuits, physics and etc.
+Also I felt the need for myself to introduce myself in the tech world.
 
 
----
+
 ## Features
 - Space-themed design with a particle-network background and glass navbar
 - Projects section with a Software / Hardware filter and photo cards that auto-slide on hover
@@ -18,7 +19,7 @@ I felt the need for myself i=to introduce myself in the tech world
 - Hobbies section, scroll animations, responsive layout
 - Deployed on Vercel at [Portfolio website link](https://shauryapdev.vercel.app)
 
----
+
 
 ## Tech Used
 
@@ -26,7 +27,6 @@ I felt the need for myself i=to introduce myself in the tech world
 - GitHub API (live data)
 - Supabase (guestbook + visit tracking)
 
----
 
 ## AI usage
 
