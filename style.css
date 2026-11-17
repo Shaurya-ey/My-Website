@@ -1195,6 +1195,7 @@
         z-index:2;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     .gh-month-labels{
         display:grid;
         grid-template-columns:repeat(53, 1fr);
@@ -1294,6 +1295,9 @@
     }
 }
 
+=======
+    
+>>>>>>> parent of 2461920 (Update style.css)
 
     
     .quotes-grid{
