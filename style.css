@@ -1162,9 +1162,208 @@
 
     
 
-    
-    
+    .github-body{
+        display:flex;
+        flex-direction:column;
+        gap:24px;
+    }
+    .gh-card{
+        border-radius:24px;
+        background:linear-gradient(170deg, rgba(23,26,32,.9), rgba(10,12,16,.95));
+        border:1px solid rgba(148,163,184,.14);
+        padding:26px;
+    }
+    .gh-profile-card{
+        border-radius:24px;
+        background:linear-gradient(170deg, rgba(23,26,32,.9), rgba(10,12,16,.95));
+        border:1px solid rgba(148,163,184,.14);
+        padding:24px 28px;
+        display:flex;
+        align-items:center;
+        gap:28px;
+        flex-wrap:wrap;
+    }
+    .gh-avatar{
+        width:70px;
+        height:70px;
+        border-radius:20px;
+        overflow:hidden;
+        border:1px solid rgba(56,189,248,.35);
+        box-shadow:0 0 26px -6px rgba(56,189,248,.6);
+        flex-shrink:0;
+        background:linear-gradient(135deg, #38bdf8, #6366f1);
+    }
+    .gh-avatar img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block;
+    }
+    .gh-info{
+        flex:1 1 240px;
+        min-width:200px;
+    }
+    .gh-name{
+        font-family:'Space Grotesk', sans-serif;
+        font-weight:700;
+        font-size:1.22rem;
+        color:#f8fafc;
+    }
+    .gh-handle{
+        font-family:'JetBrains Mono', monospace;
+        font-size:.76rem;
+        color:#7dd3fc;
+        margin-top:3px;
+    }
+    .gh-bio{
+        color:#94a3b8;
+        font-size:.88rem;
+        line-height:1.6;
+        margin:10px 0 0;
+    }
+    .gh-stats{
+        display:grid;
+        grid-template-columns:repeat(3, minmax(92px, auto));
+        gap:10px;
+        margin-left:auto;
+    }
+    .gh-stat{
+        text-align:center;
+        padding:14px 12px;
+        border-radius:10px;
+        background:rgba(148,163,184,.06);
+        border:1px solid rgba(148,163,184,.1);
+    }
+    .gh-stat .n{
+        font-family:'Syne', sans-serif;
+        font-weight:800;
+        font-size:1.4rem;
+        color:#bae6fd;
+    }
+    .gh-stat .l{
+        display:block;
+        margin-top:4px;
+        font-family:'JetBrains Mono', monospace;
+        font-size:.6rem;
+        letter-spacing:.08em;
+        text-transform:uppercase;
+        color:#64748b;
+    }
+    .gh-follow{
+        flex-shrink:0;
+        padding:13px 24px;
+        border-radius:999px;
+        background:linear-gradient(120deg, #0ea5e9, #6366f1);
+        color:#fff;
+        font-family:'Space Grotesk', sans-serif;
+        font-weight:600;
+        font-size:.78rem;
+        letter-spacing:.1em;
+        text-transform:uppercase;
+        text-decoration:none;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:9px;
+        transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .gh-follow:hover{
+        transform:translateY(-2px);
+        box-shadow:0 14px 34px -10px rgba(56,189,248,.6);
+    }
 
+    .gh-activity{
+        display:flex;
+        flex-direction:column;
+    }
+    .gh-chart-label{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        margin-bottom:10px;
+    }
+    .gh-chart-label .mono{
+        font-family:'JetBrains Mono', monospace;
+        font-size:.68rem;
+        letter-spacing:.1em;
+        text-transform:uppercase;
+        color:#94a3b8;
+    }
+    .gh-legend{
+        display:flex;
+        align-items:center;
+        gap:6px;
+        font-family:'JetBrains Mono', monospace;
+        font-size:.62rem;
+        color:#94a3b8;
+    }
+    .gh-legend .sw{
+        width:10px; height:10px; border-radius:3px;
+        box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+    }
+    
+    .gh-legend .sw.s0{ background:#21262d; }
+    .gh-legend .sw.s1{ background:#0e4429; }
+    .gh-legend .sw.s2{ background:#1f6f3a; }
+    .gh-legend .sw.s3{ background:#39d353; }
+    .contrib-graph{
+        display:grid;
+        grid-template-columns:repeat(53, 1fr);
+        gap:3px;
+        background:rgba(57,211,83,.035);
+        border:1px solid rgba(57,211,83,.12);
+        border-radius:16px;
+        padding:14px 12px;
+        flex:1;
+    }
+    .day{
+        aspect-ratio:1;
+        border-radius:3px;
+        background:#21262d;
+        transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .day[data-l="1"]{ background:#0e4429; }
+    .day[data-l="2"]{ background:#1f6f3a; }
+    .day[data-l="3"]{ background:#26a641; }
+    .day[data-l="4"]{ background:#39d353; box-shadow:0 0 9px rgba(57,211,83,.55); }
+    .day:hover{
+        transform:scale(1.55);
+        background:#39d353 !important;
+        box-shadow:0 0 12px rgba(57,211,83,.95);
+        z-index:2;
+    }
+    .gh-month-labels{
+        display:grid;
+        grid-template-columns:repeat(53, 1fr);
+        gap:2.5px;
+        padding:8px 10px 0;
+    }
+    .gh-month-labels span{
+        font-family:'JetBrains Mono', monospace;
+        font-size:.56rem;
+        color:#64748b;
+    }
+    .gh-lang{
+        margin-top:18px;
+    }
+    .gh-lang-head{
+        display:flex;
+        justify-content:space-between;
+        font-family:'JetBrains Mono', monospace;
+        font-size:.66rem;
+        color:#94a3b8;
+        margin-bottom:6px;
+    }
+    .lang-bar{
+        height:6px;
+        border-radius:999px;
+        background:rgba(148,163,184,.1);
+        overflow:hidden;
+    }
+    .lang-bar span{
+        display:block;
+        height:100%;
+    }
     .gh-month-labels {
         display: grid;
         grid-auto-flow: column;
@@ -1199,8 +1398,8 @@
     }
 
     .contrib-graph .day:hover {
-        transform: scale(1.3);
-     outline: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.3);
+    outline: 1px solid rgba(255,255,255,0.5);
     }
 
     .gh-status {
@@ -1214,18 +1413,17 @@
     }
 
     @media (max-width: 600px) {
-    .contrib-graph,
-    .gh-month-labels {
-        grid-auto-columns: 10px;
-        gap: 3px;
-    }
+        .contrib-graph,
+        .gh-month-labels {
+            grid-auto-columns: 10px;
+            gap: 3px;
+        }
 
-    .contrib-graph .day {
-        width: 10px;
-        height: 10px;
+        .contrib-graph .day {
+            width: 10px;
+            height: 10px;
+        }
     }
-}
-
 
     
     .quotes-grid{
