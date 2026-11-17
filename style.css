@@ -1332,98 +1332,7 @@
         box-shadow:0 0 12px rgba(57,211,83,.95);
         z-index:2;
     }
-    .gh-month-labels{
-        display:grid;
-        grid-template-columns:repeat(53, 1fr);
-        gap:2.5px;
-        padding:8px 10px 0;
-    }
-    .gh-month-labels span{
-        font-family:'JetBrains Mono', monospace;
-        font-size:.56rem;
-        color:#64748b;
-    }
-    .gh-lang{
-        margin-top:18px;
-    }
-    .gh-lang-head{
-        display:flex;
-        justify-content:space-between;
-        font-family:'JetBrains Mono', monospace;
-        font-size:.66rem;
-        color:#94a3b8;
-        margin-bottom:6px;
-    }
-    .lang-bar{
-        height:6px;
-        border-radius:999px;
-        background:rgba(148,163,184,.1);
-        overflow:hidden;
-    }
-    .lang-bar span{
-        display:block;
-        height:100%;
-    }
-    .gh-month-labels {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: 13px;
-        grid-template-rows: 1fr;
-        gap: 4px;
-        width: max-content;
-        min-width: 100%;
-        margin-bottom: 8px;
-        font-size: 10px;
-        color: var(--text-muted, #94a3b8);
-    }
-
-    .contrib-graph {
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-rows: repeat(7, 1fr);
-        grid-auto-columns: 13px;
-        gap: 4px;
-        width: max-content;
-        min-width: 100%;
-        overflow: visible;
-    }
-
-    .contrib-graph .day {
-        width: 13px;
-        height: 13px;
-        border-radius: 3px;
-        background-color: #161b22;
-        transition: transform 0.15s ease;
-        cursor: pointer;
-    }
-
-    .contrib-graph .day:hover {
-    transform: scale(1.3);
-    outline: 1px solid rgba(255,255,255,0.5);
-    }
-
-    .gh-status {
-        margin-top: 14px;
-        font-size: 12px;
-        color: var(--text-muted, #94a3b8);
-    }
-
-    .gh-card {
-        overflow-x: auto;
-    }
-
-    @media (max-width: 600px) {
-        .contrib-graph,
-        .gh-month-labels {
-            grid-auto-columns: 10px;
-            gap: 3px;
-        }
-
-        .contrib-graph .day {
-            width: 10px;
-            height: 10px;
-        }
-    }
+    
 
     
     .quotes-grid{
@@ -2049,3 +1958,95 @@
     body.theme-light .aurora{ opacity:.3; }
     body.theme-light .contrib-graph{ border-color:#dbe2ec; }
     body.theme-light .gb-empty{ color:#64748b; }
+    .gh-month-labels{
+        display:grid;
+        grid-template-columns:repeat(53, 1fr);
+        gap:2.5px;
+        padding:8px 10px 0;
+    }
+    .gh-month-labels span{
+        font-family:'JetBrains Mono', monospace;
+        font-size:.56rem;
+        color:#64748b;
+    }
+    .gh-lang{
+        margin-top:18px;
+    }
+    .gh-lang-head{
+        display:flex;
+        justify-content:space-between;
+        font-family:'JetBrains Mono', monospace;
+        font-size:.66rem;
+        color:#94a3b8;
+        margin-bottom:6px;
+    }
+    .lang-bar{
+        height:6px;
+        border-radius:999px;
+        background:rgba(148,163,184,.1);
+        overflow:hidden;
+    }
+    .lang-bar span{
+        display:block;
+        height:100%;
+    }
+    .gh-month-labels {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 13px;
+        grid-template-rows: 1fr;
+        gap: 4px;
+        width: max-content;
+        min-width: 100%;
+        margin-bottom: 8px;
+        font-size: 10px;
+        color: var(--text-muted, #94a3b8);
+    }
+
+    .contrib-graph {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(7, 1fr);
+        grid-auto-columns: 13px;
+        gap: 4px;
+        width: max-content;
+        min-width: 100%;
+        overflow: visible;
+    }
+
+    .contrib-graph .day {
+        width: 13px;
+        height: 13px;
+        border-radius: 3px;
+        background-color: #161b22;
+        transition: transform 0.15s ease;
+        cursor: pointer;
+    }
+
+    .contrib-graph .day:hover {
+    transform: scale(1.3);
+    outline: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .gh-status {
+        margin-top: 14px;
+        font-size: 12px;
+        color: var(--text-muted, #94a3b8);
+    }
+
+    .gh-card {
+        overflow-x: auto;
+    }
+
+    @media (max-width: 600px) {
+        .contrib-graph,
+        .gh-month-labels {
+            grid-auto-columns: 10px;
+            gap: 3px;
+        }
+
+        .contrib-graph .day {
+            width: 10px;
+            height: 10px;
+        }
+    }
