@@ -438,15 +438,11 @@
                 </div>
                 <div class="gh-stats">
                     <div class="gh-stat"><span class="n" id="ghRepos">8</span><span class="l">Repos</span></div>
-                    <div class="gh-stat">
-                        <span class="n" id="ghContributions">—</span>
-                        <span class="l">Contribs / yr</span>
-                    </div>
+                    <div class="gh-stat"><span class="n">227</span><span class="l">Contribs / yr</span></div>
                     <div class="gh-stat"><span class="n" id="ghFollowing">8</span><span class="l">Following</span></div>
                 </div>
                 <a href="https://github.com/Shaurya-ey" target="_blank" rel="noopener" class="gh-follow">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2<|fim_middle|>
-
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.793-.26.793-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
                     Follow on GitHub
                 </a>
             </div>
@@ -457,15 +453,7 @@
                     <span class="gh-legend">Less <span class="sw s0"></span><span class="sw s1"></span><span class="sw s2"></span><span class="sw s3"></span> More</span>
                 </div>
                 <div class="gh-month-labels" id="ghMonths"></div>
-                <div class="contrib-graph" id="contribGraph">
-                    <p
-                        id="ghStatus"
-                        class="gh-status"
-                        aria-live="polite"
-                    >
-                        Loading GitHub activity...
-                    </p>
-                </div>
+                <div class="contrib-graph" id="contribGraph"></div>
                 <div class="gh-lang">
                     <div class="gh-lang-head"><span>Python</span><span>40%</span></div>
                     <div class="lang-bar"><span style="width:40%; background:linear-gradient(90deg,#38bdf8,#7dd3fc);"></span></div>
@@ -906,104 +894,86 @@ fetch('https://api.github.com/users/Shaurya-ey')
 
 
 
+const graph = document.getElementById('contribGraph');
+const monthsEl = document.getElementById('ghMonths');
+const WEEKS = 53;
+const DAYS = 7;
+const monthsShort = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-async function loadGitHubContributions() {
-  const graph = document.getElementById("contribGraph");
-  const monthsEl = document.getElementById("ghMonths");
-  const totalEl = document.getElementById("ghContributions");
-  const statusEl = document.getElementById("ghStatus");
 
-  if (!graph || !monthsEl) return;
+const REAL_DATA = {"2025-08-03":0,"2025-08-10":0,"2025-08-17":0,"2025-08-24":0,"2025-08-31":0,"2025-09-07":0,"2025-09-14":0,"2025-09-21":0,"2025-09-28":0,"2025-10-05":0,"2025-10-12":0,"2025-10-19":0,"2025-10-26":0,"2025-11-02":0,"2025-11-09":0,"2025-11-16":0,"2025-11-23":0,"2025-11-30":0,"2025-12-07":0,"2025-12-14":0,"2025-12-21":0,"2025-12-28":0,"2026-01-04":0,"2026-01-11":0,"2026-01-18":0,"2026-01-25":0,"2026-02-01":0,"2026-02-08":0,"2026-02-15":0,"2026-02-22":0,"2026-03-01":0,"2026-03-08":0,"2026-03-15":2,"2026-03-22":0,"2026-03-29":0,"2026-04-05":0,"2026-04-12":0,"2026-04-19":0,"2026-04-26":0,"2026-05-03":0,"2026-05-10":0,"2026-05-17":0,"2026-05-24":0,"2026-05-31":0,"2026-06-07":0,"2026-06-14":0,"2026-06-21":0,"2026-06-28":0,"2026-07-05":0,"2026-07-12":0,"2026-07-19":0,"2026-07-26":0,"2026-08-02":2,"2025-08-04":0,"2025-08-11":0,"2025-08-18":0,"2025-08-25":0,"2025-09-01":0,"2025-09-08":0,"2025-09-15":0,"2025-09-22":0,"2025-09-29":0,"2025-10-06":0,"2025-10-13":0,"2025-10-20":0,"2025-10-27":0,"2025-11-03":0,"2025-11-10":0,"2025-11-17":0,"2025-11-24":0,"2025-12-01":0,"2025-12-08":0,"2025-12-15":0,"2025-12-22":0,"2025-12-29":0,"2026-01-05":0,"2026-01-12":0,"2026-01-19":0,"2026-01-26":0,"2026-02-02":0,"2026-02-09":0,"2026-02-16":1,"2026-02-23":0,"2026-03-02":0,"2026-03-09":4,"2026-03-16":0,"2026-03-23":0,"2026-03-30":0,"2026-04-06":0,"2026-04-13":0,"2026-04-20":0,"2026-04-27":0,"2026-05-04":0,"2026-05-11":0,"2026-05-18":0,"2026-05-25":0,"2026-06-01":0,"2026-06-08":0,"2026-06-15":0,"2026-06-22":0,"2026-06-29":0,"2026-07-06":0,"2026-07-13":0,"2026-07-20":0,"2026-07-27":1,"2026-08-03":2,"2025-08-05":0,"2025-08-12":0,"2025-08-19":0,"2025-08-26":0,"2025-09-02":0,"2025-09-09":0,"2025-09-16":0,"2025-09-23":0,"2025-09-30":0,"2025-10-07":0,"2025-10-14":0,"2025-10-21":0,"2025-10-28":0,"2025-11-04":0,"2025-11-11":0,"2025-11-18":0,"2025-11-25":0,"2025-12-02":0,"2025-12-09":0,"2025-12-16":0,"2025-12-23":0,"2025-12-30":0,"2026-01-06":0,"2026-01-13":0,"2026-01-20":0,"2026-01-27":0,"2026-02-03":0,"2026-02-10":4,"2026-02-17":1,"2026-02-24":1,"2026-03-03":0,"2026-03-10":4,"2026-03-17":0,"2026-03-24":0,"2026-03-31":0,"2026-04-07":0,"2026-04-14":0,"2026-04-21":0,"2026-04-28":0,"2026-05-05":0,"2026-05-12":0,"2026-05-19":0,"2026-05-26":0,"2026-06-02":0,"2026-06-09":0,"2026-06-16":0,"2026-06-23":0,"2026-06-30":0,"2026-07-07":0,"2026-07-14":0,"2026-07-21":0,"2026-07-28":1,"2026-08-04":1,"2025-08-06":0,"2025-08-13":0,"2025-08-20":0,"2025-08-27":0,"2025-09-03":0,"2025-09-10":0,"2025-09-17":0,"2025-09-24":0,"2025-10-01":0,"2025-10-08":0,"2025-10-15":0,"2025-10-22":0,"2025-10-29":0,"2025-11-05":0,"2025-11-12":0,"2025-11-19":0,"2025-11-26":0,"2025-12-03":0,"2025-12-10":0,"2025-12-17":0,"2025-12-24":0,"2025-12-31":0,"2026-01-07":0,"2026-01-14":0,"2026-01-21":0,"2026-01-28":0,"2026-02-04":4,"2026-02-11":0,"2026-02-18":1,"2026-02-25":0,"2026-03-04":0,"2026-03-11":0,"2026-03-18":0,"2026-03-25":0,"2026-04-01":0,"2026-04-08":0,"2026-04-15":0,"2026-04-22":0,"2026-04-29":0,"2026-05-06":0,"2026-05-13":0,"2026-05-20":0,"2026-05-27":0,"2026-06-03":0,"2026-06-10":0,"2026-06-17":0,"2026-06-24":0,"2026-07-01":0,"2026-07-08":0,"2026-07-15":0,"2026-07-22":0,"2026-07-29":1,"2025-08-07":0,"2025-08-14":0,"2025-08-21":0,"2025-08-28":0,"2025-09-04":0,"2025-09-11":0,"2025-09-18":0,"2025-09-25":0,"2025-10-02":0,"2025-10-09":0,"2025-10-16":0,"2025-10-23":0,"2025-10-30":0,"2025-11-06":0,"2025-11-13":0,"2025-11-20":0,"2025-11-27":0,"2025-12-04":0,"2025-12-11":0,"2025-12-18":0,"2025-12-25":0,"2026-01-01":0,"2026-01-08":0,"2026-01-15":0,"2026-01-22":0,"2026-01-29":0,"2026-02-05":0,"2026-02-12":4,"2026-02-19":1,"2026-02-26":1,"2026-03-05":0,"2026-03-12":1,"2026-03-19":0,"2026-03-26":0,"2026-04-02":0,"2026-04-09":0,"2026-04-16":0,"2026-04-23":0,"2026-04-30":0,"2026-05-07":0,"2026-05-14":0,"2026-05-21":0,"2026-05-28":0,"2026-06-04":0,"2026-06-11":0,"2026-06-18":0,"2026-06-25":0,"2026-07-02":0,"2026-07-09":0,"2026-07-16":0,"2026-07-23":0,"2026-07-30":1,"2025-08-08":0,"2025-08-15":0,"2025-08-22":0,"2025-08-29":0,"2025-09-05":0,"2025-09-12":0,"2025-09-19":0,"2025-09-26":0,"2025-10-03":0,"2025-10-10":0,"2025-10-17":0,"2025-10-24":0,"2025-10-31":0,"2025-11-07":0,"2025-11-14":0,"2025-11-21":0,"2025-11-28":0,"2025-12-05":0,"2025-12-12":0,"2025-12-19":0,"2025-12-26":0,"2026-01-02":0,"2026-01-09":0,"2026-01-16":0,"2026-01-23":0,"2026-01-30":0,"2026-02-06":2,"2026-02-13":4,"2026-02-20":0,"2026-02-27":0,"2026-03-06":0,"2026-03-13":0,"2026-03-20":0,"2026-03-27":0,"2026-04-03":0,"2026-04-10":4,"2026-04-17":0,"2026-04-24":0,"2026-05-01":1,"2026-05-08":0,"2026-05-15":0,"2026-05-22":0,"2026-05-29":0,"2026-06-05":0,"2026-06-12":0,"2026-06-19":0,"2026-06-26":0,"2026-07-03":0,"2026-07-10":0,"2026-07-17":0,"2026-07-24":0,"2026-07-31":1,"2025-08-09":0,"2025-08-16":0,"2025-08-23":0,"2025-08-30":0,"2025-09-06":0,"2025-09-13":0,"2025-09-20":0,"2025-09-27":0,"2025-10-04":0,"2025-10-11":0,"2025-10-18":0,"2025-10-25":0,"2025-11-01":0,"2025-11-08":0,"2025-11-15":0,"2025-11-22":0,"2025-11-29":0,"2025-12-06":0,"2025-12-13":0,"2025-12-20":0,"2025-12-27":0,"2026-01-03":0,"2026-01-10":0,"2026-01-17":0,"2026-01-24":0,"2026-01-31":1,"2026-02-07":4,"2026-02-14":0,"2026-02-21":0,"2026-02-28":0,"2026-03-07":0,"2026-03-14":0,"2026-03-21":0,"2026-03-28":0,"2026-04-04":0,"2026-04-11":0,"2026-04-18":0,"2026-04-25":1,"2026-05-02":0,"2026-05-09":0,"2026-05-16":0,"2026-05-23":0,"2026-05-30":0,"2026-06-06":0,"2026-06-13":0,"2026-06-20":0,"2026-06-27":0,"2026-07-04":0,"2026-07-11":0,"2026-07-18":0,"2026-07-25":0,"2026-08-01":1};
 
-  try {
-    const response = await fetch("/api/github-contributions");
 
-    if (!response.ok) {
-      throw new Error("GitHub API request failed");
-    }
+function iso(d){ return d.toISOString().slice(0,10); }
+const nowUtc = Date.UTC(
+    new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate()
+);
+const cells = [];
+for(let i=370; i>=0; i--) cells.push(new Date(nowUtc - i*86400000));
 
-    const data = await response.json();
+const real = {};
+cells.forEach(c => { const l = REAL_DATA[iso(c)]; real[iso(c)] = l !== undefined ? l : 0; });
 
-    const weeks = data.weeks || [];
 
-    if (!weeks.length) {
-      throw new Error("No contribution data received");
-    }
+const dayIdx = Math.floor(nowUtc/86400000);               
+const sundayIdx = dayIdx - (((dayIdx - 3) % 7) + 7) % 7;  
+const firstColSunday = sundayIdx - 52*7;                  
 
-    // Update yearly contribution count
-    if (totalEl) {
-      totalEl.textContent =
-        data.totalContributions.toLocaleString();
-    }
-
-    // Render month labels
-    monthsEl.innerHTML = "";
-
-    const monthLabels = [];
-
-    weeks.forEach((week, index) => {
-      const firstDay = new Date(
-        week.contributionDays[0].date + "T00:00:00Z"
-      );
-
-      const showMonth = firstDay.getUTCDate() <= 7;
-
-      const label = document.createElement("span");
-
-      label.textContent = showMonth
-        ? firstDay.toLocaleDateString("en-US", {
-            month: "short",
-            timeZone: "UTC"
-          })
-        : "";
-
-      label.style.gridColumn = String(index + 1);
-
-      monthLabels.push(label);
+const grid = Array.from({length: 7}, () => []);
+function paintGrid(){
+    cells.forEach(c => {
+        const di = Math.floor(c.getTime()/86400000);
+        const col = Math.floor((di - firstColSunday)/7);
+        const dow = (di - firstColSunday)%7;
+        if(col >= 0 && col < WEEKS) grid[dow][col] = real[iso(c)];
     });
-
-    monthLabels.forEach(label => {
-      monthsEl.appendChild(label);
-    });
-
-    // Render contribution squares
-    graph.innerHTML = "";
-
-    weeks.forEach(week => {
-      week.contributionDays.forEach(day => {
-        const cell = document.createElement("span");
-
-        cell.className = "day";
-
-        cell.style.backgroundColor = day.color;
-
-        cell.dataset.level = day.contributionCount;
-
-        cell.title =
-          `${day.contributionCount} contributions on ${day.date}`;
-
-        cell.setAttribute("aria-label", cell.title);
-
-        graph.appendChild(cell);
-      });
-    });
-
-    if (statusEl) {
-      statusEl.textContent =
-        `Last 12 months · ${data.totalContributions.toLocaleString()} contributions`;
-    }
-
-  } catch (error) {
-    console.error("Contribution graph error:", error);
-
-    if (statusEl) {
-      statusEl.textContent =
-        "Unable to load GitHub activity. Please try again later.";
-    }
-  }
 }
+function renderGraph(){
+    let frag = '';
+    
+    
+    for(let d=0; d<DAYS; d++){
+        for(let w=0; w<WEEKS; w++){
+            const v = grid[d][w];
+            frag += `<span class="day" data-l="${v !== undefined ? v : 0}"></span>`;
+        }
+    }
+    graph.innerHTML = frag;
+}
+paintGrid();
+renderGraph();
 
-loadGitHubContributions();
+
+let mfrag = '';
+for(let w=0; w<WEEKS; w++){
+    const first = new Date((firstColSunday + w*7) * 86400000);
+    mfrag += `<span>${first.getUTCDate() <= 7 ? monthsShort[first.getUTCMonth()] : ''}</span>`;
+}
+monthsEl.innerHTML = mfrag;
+
+
+fetch('https://api.github.com/users/Shaurya-ey/events/public?per_page=100')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(events => {
+        const counts = {};
+        events.forEach(e => {
+            if(e.type !== 'PushEvent' || !e.created_at) return;
+            const key = e.created_at.slice(0, 10);
+            counts[key] = (counts[key] || 0) + 1;
+        });
+        let changed = false;
+        Object.keys(counts).forEach(key => {
+            const n = counts[key];
+            const lvl = n >= 4 ? 4 : n >= 2 ? 3 : 2;
+            if(real[key] !== undefined && real[key] < lvl){ real[key] = lvl; changed = true; }
+        });
+        if(changed){
+            grid.forEach(row => row.length = 0);
+            paintGrid();
+            renderGraph();
+        }
+    })
+    .catch(() => undefined);
 
 
 
